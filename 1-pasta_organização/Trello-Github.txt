@@ -2,4 +2,4 @@
 https://trello.com/b/xQ5loH15/gerenciamento-de-projeto-phos4-grupo-1
 
 -github
-https://github.com/Natanista/PHOS4
+https://github.com/loisfg/PHOS-4
