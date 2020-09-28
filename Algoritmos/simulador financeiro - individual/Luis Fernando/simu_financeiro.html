@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css.css">
+</head>
+<body>
+    <div>
+        <header>
+            <h1> PHOS4</h1>
+        </header>
+        <div class="simulador borda ">
+            <div><h2 class="teste">Simulador Financeiro</h2></div>
+            <ul>
+                
+            <li> Quantidade de lampadas: </li>
+                <input type="text" id="qntlamp" placeholder="Insira o valor"> <br>
+
+            <li> Potencia da lampada em W:</li>
+                <input type="text" id="potw" placeholder="Insira o valor"> <br>
+                
+            <li> Quantidade de horas que a lampada fica acesa por dia:</li>
+                <input type="text" id="hrlamp" placeholder="Insira o valor"> <br>
+
+            <li> Quantidade de dias que a lampada fica acesa por mês:</li>
+                <input type="text" id="meslamp" placeholder="Insira o valor"> <br>
+
+            </ul>
+            <button onclick="teste1()">Simule</button> <br>
+
+            <div id="resultado">Seu valor aparecerá aqui</div>
+
+        </div>
+    <span></span>
+    
+    
+    <script>
+        function teste1() { 
+            
+            var media = ((Number(qntlamp.value) * Number(potw.value) * Number(hrlamp.value) * Number(meslamp.value)) / 1000);
+            
+            var resultado1 = media - ((27 / 100) * media); 
+            
+            resultado.innerHTML = resultado1; 
+            
+        }
+    </script>
+    
+    
+  <!-- Consumo = (qtdLampadas x Potencia W x horasdia x  dias)  1000 
+  consumo - 27%    -->
+    </div>
+</body>
+</html>
+
+

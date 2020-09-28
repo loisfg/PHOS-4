@@ -1,0 +1,87 @@
+body{ 
+    background: url(../Simulador/simulador_01.jpg);
+    background-repeat: no-repeat; /*para não repetir a imagem*/
+    background-size: 100%; /*colocando a imagem na tela toda*/
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;    
+    list-style: none; /*tirando a bolinha da imagem*/
+}
+
+h1{ 
+    margin: 3px; /*margem*/
+    width: auto;
+    height: 100px;
+    text-align: center; /*alianhamento do texto*/
+}
+
+h2{ 
+    margin: 3px; /*margem*/
+    width: auto;
+    height: 40px;
+    text-align: center;
+    font-size: 50px;
+    margin: 5%;
+    margin-bottom: 10%;
+    -webkit-text-stroke-width: 1px; /*largura da borda da letra*/
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.26); /*cor da borda da letra*/
+    
+}
+
+header{  /*cabeçalho não terminado*/
+    width: auto;
+    height: auto;
+    background-color: rgba(255, 217, 0, 0.445);
+}
+
+
+.simulador { /*div do simulador*/
+    width: 600px;
+    height: 700px;
+    background-image: linear-gradient(to bottom,transparent, 1px, rgba(255, 255, 0, 0.753),rgb(240, 158, 6)); /*gradiente com fundo transparente*/
+    margin-left: 10.9%;
+    margin-top: 5%;
+}
+
+.borda{ 
+    padding: 10px; /*borda para dentro*/    
+    -webkit-box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+    -moz-box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+    box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+}
+
+button { 
+    background-color: rgb(224, 224, 240);
+    border-radius: 10px; /*curvatura da borda*/
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    margin-left: 32.9%;
+    font-size: larger;
+    text-shadow: 1px 1px #0000003b;
+}
+
+#resultado { 
+    text-align: center; /* alianhando texto*/
+    margin-top: 30px; 
+    font-size: larger; /*largura da fonte*/
+}
+
+
+li{
+    margin: 6px;
+    padding: 2px; /* margem pra dentro*/
+    -webkit-text-stroke-width: 1px; /*largura da borda da letra*/
+    -webkit-text-stroke-color: rgba(119, 95, 95, 0.26); /*cor da borda da letra*/
+    font-size: 26px;
+}
+
+input { 
+    border-radius: 4px; /*borda curva*/
+    text-align: center;
+    width: 500px;
+    height: 25px;
+    font-size: larger;
+}
+

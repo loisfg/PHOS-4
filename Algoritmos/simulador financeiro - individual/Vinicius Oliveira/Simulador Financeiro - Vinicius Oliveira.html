@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <div id="container" style="background-color:#ffbf6b; border-radius: 20px; width:400px; height:640px">
+        <br>
+
+        <div id="fundo" style="background-color:#fbfccb; border-radius: 20px; width:358px; height:600px; margin-left:20px">
+            <br>
+            <b style="color:rgb(255, 166, 0); font-size:30px; margin-left:95px;">Simulador</b>
+            <b style="color:rgb(18, 90, 22); font-size:30px; margin-left:115px;">Financeiro</b> 
+            <br><br>
+
+            <div style="color:rgb(211, 132, 57); text-align:center"><b>Quantidade de lâmpadas nas empresas:</b></div>
+                <input id="qtdlamp" type="text" placeholder="Insira sua quantidade de lâmpadas" style="width:310px; margin-left:20px">
+            
+                <br><br>
+
+            <div style="color:rgb(211, 132, 57);; text-align: center;"><b>Potência em média (W) das lâmpadas:</b></div>
+                <input id="potencia" type="text" placeholder="Insira a potência em média por Watts" style="width:310px; margin-left:20px">
+
+                <br><br>
+
+             <div style="color:rgb(211, 132, 57);; text-align: center;"><b>Horas ligadas por dia das lâmpadas:</b></div>
+                <input id="hdias" type="text" placeholder="Insira horas ligadas/dia das lâmpadas" style="width:310px; margin-left:20px">
+
+
+                <br><br>
+
+            <div style="color:rgb(211, 132, 57);; text-align: center;"><b>Número de dias(mês) em que a empresa atua:</b></div>
+                <input id="diasmes" type="text" placeholder="Insira o n° de dias por mês" style="width:310px; margin-left:20px">
+
+                <br><br>
+
+                <button onclick="calcular()" style="background:rgb(18, 90, 22); color:white; margin-left:135px; width:80px; height:30px">
+                    <b>Calcular</b>
+                </button>
+                <br><br>
+                
+                <div id="msg" style="color:rgb(128, 51, 6); text-align:center;"></div>
+                <div id="calculo" style="color:rgb(18, 90, 22); text-align:center"></div>
+                
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function calcular(){
+        var operation = ((Number(qtdlamp.value) * Number(potencia.value) * Number(hdias.value) * Number(diasmes.value)) / 1000) * 12;
+        var cost =  operation * 0.8;
+        var result = cost - ((27/100) * cost);
+        calculo.innerHTML = `<b style="color:rgb(211, 132, 57)">Seu potêncial ecônomico é de</b> <br>
+        <b style="font-size:60px"> R$${result.toFixed(2)}</b> <b>/ ano</b> <br>
+        <b style="color:rgb(128, 51, 6); font-size:13px"> O simulador calcula o consumo de energia de acordo
+        com a quantidade, potência e tempo de uso em horas/dias das lâmpadas(W). Logo em seguida é aplicado a 
+        conversão de Watts(W) para QuiloWatts(kW) e a subtração de 27% do seu valor de consumo para simular a sua 
+        possível economia com a nossa tecnologia Daylight Harvesting</b> <br>
+        `
+    }
+
+</script>

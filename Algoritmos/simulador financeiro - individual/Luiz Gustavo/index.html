@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <link rel="stylesheet" href="CSS/Css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <div class="header">Phos<spam style="color:#C72C2C;">4</spam><br></div>
+        <div class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Cadastro</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Simulador</a></li>
+            </ul>
+        <div class="container">
+            <div class="box">
+                <div class="texto">
+        <!-- <input type="range" class="range_input" min="1" max="100">-->
+        <p class="bemvindo" align="center">Bem Vindo ao simulador financeiro!!!</p>
+        <p align="center">Quantas lampadas você tem instaladas:
+            <input type="text" id="lampadas"/></p>
+        <p align="center">Qual a media de potência dessas lampadas (em Watts):
+            <input type="text" id="potencia"/></p>
+        <p align="center">Quantas horas as lâmpadas ficam acesas:
+                <input type="text" id="horas"/></p>
+        <p align="center">Quantos dias no mês a empresa fica em funcionamento:
+                <input type="text" id="dias"/></p>
+        <br>
+        <center><button onclick="descontar()">Calcular</button></center>
+        <p align="center" id="div_mens">Você gasta:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+<script>
+    function descontar(){
+        var media = (Number(lampadas.value) * Number(potencia.value) * Number(horas.value) * Number(dias.value))/1000
+        var mensal = media * 0.85;
+        var economia_mensal = mensal * 0.27;
+        var ano = mensal * 12;
+        var resultado = 0.27 * ano;
+        div_mens.innerHTML = `Você gasta R$ ${media} de energia aproximadamente apenas com as lampadas.<br>
+        Caso passasse a usar nosso projeto pouparia R$ ${economia_mensal}<br>
+        Isso em 1 ano passaria a ser R$ ${resultado}`;
+    }
+</script>

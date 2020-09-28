@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phos4</title>
+</head>
+<body>
+    <h1 style="float:left;">Faça o teste de quanto você economizaria com a nossa  tecnlogia!</h1>
+
+    <img src="https://media3.giphy.com/media/26ufkCVyby0oRsGwE/giphy.gif" style="width:150px;height:150px;" alt="Lâmpada"> <br>
+    
+    Quantas lâmpadas você possui na sua empresa? 
+    <input id='qtdL' type="text"> <br>
+    Quantos Watts em média essas lâmpadas possuem?
+    <input id='qtdMW' type="text"> <br>
+    Quantas horas você mantém essas lâmpadas ligadas em um dia?
+    <input id='hrsL' type="text"> <br>
+    Quanto dias do mês sua empresa está em funcionamento?
+    <input id='diasL' type="text"> <br> <br>
+
+    <button onclick="gasto()">Descubra o quanto você gasta anualmente com luz!</button> 
+    <button onclick="gastotec()">Descubra o quanto você gasta anualmente com luz com a nossa tecnologia!</button> <br> <br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+<script>
+    function gasto() {
+        
+        var media = ((qtdL.value * qtdMW.value * hrsL.value) * diasL.value * 12);
+        var custo = ((media / 1000) * 0.8)
+
+        div_msg.innerHTML +=`<br>  A média que você gasta anualmente é de:<b> R$ ${(custo).toFixed(2)}! </b>`;
+    }
+
+    function gastotec() {
+        var media = ((qtdL.value * qtdMW.value * hrsL.value) * diasL.value * 12);
+        var custo = ((media / 1000) * 0.8)
+
+        div_msg.innerHTML +=`<br> A média que você gasta anualmente com a nossa tecnologia aplicada é de:<b> R$ ${(custo - (custo * 0.27)).toFixed(2)}! </b>`;
+
+    }
+</script>

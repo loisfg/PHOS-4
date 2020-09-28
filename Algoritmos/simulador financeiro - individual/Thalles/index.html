@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="#home"><img src="img/logo.png" alt="" class="logo"></a>
+        <div class="topnav-right">
+          <a href="#comofunciona">como funciona?</a>
+          <a href="#simulador">simulador</a>
+          <a href="#funcionalidades">funcionalidades</a>
+          <a href="#quemsomosnos">quem somos nós?</a>
+          <a href="#login"><img src="img/avatar.png" alt="" class="icone"></a>
+        </div>
+      </div>
+      <div class="leftcontainer">
+          
+      </div>
+      <div   class="container">
+            <p>Quantas lâmpadas existem no escritório?</p>
+            <input type="text" id="qtdLamp" placeholder="Insira aqui a quantidade de lâmpadas" style="width: 225px;">
+            <p>Qual a média da potência das lâmpadas?</p>
+            <input type="text" id="potencia" placeholder="Insira aqui a quantidade em Watts(W)" style="width: 225px;">
+            <p>Quantas horas as lâmpadas ficam acesas?</p>
+            <input type="text" id="qtdHoras" placeholder="Insira aqui a quantidade de horas" style="width: 225px;">
+            <p>Quantos dias as lâmpadas ficam acesas por mês?</p>
+            <input type="text" id="qtdDias" placeholder="Insira aqui a quantidade de dias" style="width: 225px;">
+            <br>
+            <br>
+            <button class="btn" onclick="simular()">Simular</button>
+            <br>
+            <br>
+            <div id="resposta">
+               <p>Qual seu potencial econômico?</p>
+            </div>
+        </div>
+        <div class="rightcontainer">
+          
+        </div>
+      
+      <div class="footer">
+        <div class="foot1">  <a href=""><b>Contato</b></a><br>
+          <a href="">FAQ</a>
+        </div>
+        <div class="foot2">
+        <p><b>Phos4</b> Copyright © Todos os direitos reservados</p>
+
+        </div>
+      </div>
+</body>
+</html>
+<script>
+    function simular() {
+            var media = (Number(qtdLamp.value) * Number(potencia.value) * Number(qtdHoras.value) * Number(qtdDias.value)) / 1000; 
+            var mensal = media * 0.85;
+            var custo = mensal * 12;
+            var resultado = (27 / 100) * custo;
+            var resultado2 = resultado * 5;
+        resposta.innerHTML = `O seu potencial economico anual é R$ ${resultado.toFixed(2)}, ou seja, em até 5 anos você terá economizado até R$ ${resultado2.toFixed(2)}`;}
+</script>

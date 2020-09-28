@@ -1,0 +1,22 @@
+1-inicial - daniel
+2-colaboradores-todos
+3-oq é a luz-daniel
+21-pq p4?-daniel
+4-contexto-daniel
+5-daylight h. - vini
+6-video - vini
+7-sensor - vini 
+8-beneficios - jorge
+9- justificativa - daniel
+10-73% jorge
+11-gráfico - jorge
+12-solução-jorge
+13-como funciona - matheus s
+14-backlog - natan
+15-site institucional - fernando
+16-funcionalidades - fe
+17-simulador fin. - thalles
+18-banco de dados - gustavo
+19-simulador sensor - gustavo
+20-repositorio github - natan
+22-obrigado - daniel
