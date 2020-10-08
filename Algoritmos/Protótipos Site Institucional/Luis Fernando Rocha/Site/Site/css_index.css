@@ -1,0 +1,568 @@
+*{
+    font-family: Arial, Helvetica, sans-serif
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+}
+.img-logo { /*faz parte da navbar*/
+    width: 100px;
+    height: 100px;
+    padding-left: 15px;
+    padding-top: 5px;
+    float: left;
+    position: absolute;
+}
+
+li { /*faz parte da navbar*/
+    list-style: none;
+    text-decoration: none;
+    text-align: right;
+    display: inline-block;
+    padding-left: 70px;
+}
+
+
+.navbar{ /*faz parte da navbar*/
+    width: 100%;
+    height: 110px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+
+.pai {
+    background: url("../ImagensSite/escritorio.jpg")center no-repeat; /*usando parametros junto(center e no-repeat)*/
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    top: 0px;
+    box-shadow: 0px 10px 10px black;
+    
+}
+
+.opcimg{ 
+    background-color: rgba(0, 0, 0, 0.431);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+header{ 
+    background-color: rgba(0, 0, 0, 0.445); /*pondo um pouco de opacidade no background*/
+}
+
+a{ /*faz parte da navbar*/
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.89);
+}
+
+.usericon{ /*faz parte da navbar*/
+    width: 45px;
+    height: 45px;    
+}
+
+/* .menuicon { 
+    width: 40px;
+    height: 40px;
+        
+}*/
+
+.ul1 { /*parte da navbar*/
+    font-size: 1.5em;
+    position: absolute;
+    top: 0px;
+    right: 200px;
+    margin: 0px;
+    padding-right: 40px;
+    padding-top: 35px;
+    padding-bottom: 0px;
+}
+
+.ul2 {  /*parte do usuario(login e menu*/
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.limargem { /*faz parte da navbar*/
+    margin: 0px;
+    padding: 10px;
+}
+
+.simu { 
+    text-align: center;
+    -webkit-text-stroke-width: 0px;  /* largura da borda */
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0); /* cor da borda */
+    font-size: 1px;
+    color: #ffffffbc;
+    padding:0;
+    margin: 0;
+    position: absolute;
+    top: 50%; /*definindo posição(50% do topo da div*/
+    left: 50%;/*definindo posição*/
+    transform: translate(-50%, -50%); /*definindo posição*/
+}
+
+.h3index{
+    font-size: 80px;    
+    padding-bottom:0px;
+    margin-bottom: 0px;
+    margin-top: 30px;    
+}
+
+.linha{
+    top: 50%;
+    left: 50%;
+    transform: translate(20%, 2445%);
+    width: 900px;
+    height: 1px;
+    background-color: white;
+} 
+
+.h4index { 
+    font-size: 40px;
+    padding-top: 0px;
+}
+
+.listamenu:hover {
+    color:rgba(255, 255, 255, 0.685) ;
+}
+
+.bt {
+    border:1px solid #ffffff; /*grossura da borda*/
+    border-radius:4px; /* curvatura da borda */
+    display:inline-block;
+    cursor:pointer; /* quando passar ou mouse fica a mãozinha*/
+    font-weight:bold;
+    font-size:30px;
+    padding:6px 10px;
+    text-decoration:none;  
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.644);
+}
+
+.bt:hover{
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* PROXIMA PAGINA----------------------------------------------------------------------------------- */
+
+
+.container1{
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    /* background-color: blue; */
+    display: flex;
+    justify-content:space-around
+}
+
+
+
+#comofunf{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0.952);
+}
+
+
+.funci{
+    width: 1000px;
+    height: 100px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding:0px;
+    margin: 0px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.411);
+    padding-top: 30px;
+}
+
+.funci h3 { 
+    font-size: 70px;
+    margin-left: 10px;
+    margin-top: 33px;
+}
+
+.funci span {
+    color: rgb(255, 255, 0);
+}
+
+/* COMO FUNCIONA? TERMINA AQUI!! */
+
+/* TEXTOS DO COMO FUNCIONA COMEÇA AQUI */
+
+.funci1 { 
+    width: 390px;
+    height: 200px;
+    margin-top: 150px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    /* background-color: rgb(218, 14, 150); */
+    
+    
+
+}
+.imgnumber{ 
+    height: 45px;
+    width: 45px;
+}
+
+.funci2 { 
+    width: 390px;
+    height: 200px;
+    margin-top: 150px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    /* background-color: rgb(13, 122, 246); */
+}
+
+.funci2 span { 
+    font-size: 60px;
+    color: yellow;
+}
+
+.funci3 { 
+    width: 390px;
+    height: 200px;
+    margin-top: 150px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+    border-right-color: #ffffff;
+    /* background-color: rgb(219, 255, 16); */
+}
+.funci3 span { 
+    font-size: 60px;
+    color: yellow;
+}
+
+.funci4{ 
+    width: 390px;
+    height: 200px;
+    margin-top: 150px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    /* background-color: rgb(255, 7, 7); */
+}
+
+.funci4 span { 
+    font-size: 60px;
+    color: yellow;
+}
+
+.img1{
+    width: 100px;
+    height: 100px;
+    padding-top: 300px;
+ }
+ .img2{
+    width: 70px;
+    height: 70px;
+    padding-top: 300px;
+ }
+ .img3{
+    width: 100px;
+    height: 100px;
+    padding-top: 300px;
+    padding-right: 20px;
+ }
+ .img4{
+    width: 100px;
+    height: 100px;
+    padding-top: 300px;
+ }
+.btn { 
+    margin-left: 45%;
+    margin-bottom: 60px;
+
+}
+.bt:hover{
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* LANÇAR TODAS IMAGENS PARA EXTREMIDADES ANTES DE VER A LOCALIZAÇÃO!!!!!!!!!!!!! */
+
+#pagina3 {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+
+}
+
+.img-terceira{
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.555), 0px -10px 10px rgb(0, 0, 0);
+    background: url(../ImagensSite/fundofuncionalidades.jpg) center no-repeat;
+    background-size: 120%;
+    
+}
+.opcimg1{
+    background-color: rgba(0, 0, 0, 0.431);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.maestro{
+    padding-top: 200px;
+    position: absolute;
+    width: auto;
+    height: auto;
+}
+
+.conteudo{
+    width: 800px;
+    height: auto;
+    /* background-color: white; */
+    margin-left: 30%;
+    margin-right: auto;
+    margin-bottom: 30px;
+   
+}
+.conteudo h2{
+    font-size: 70px;
+    margin: 0px;
+    color: #ffffff;
+}
+.conteudo h4{
+    margin-top: 10px;
+    font-size: 30px;
+    color: yellow;
+}
+.conteudo p{
+    color: #ffffff;
+   font-size: 25px;
+}
+.traco{
+    border-left: 2px solid red;
+    padding-left: 2px;
+}
+
+
+/* PAG 3 FIM */
+
+
+/* COMEÇO 4 */
+#simulador-bckimg {
+    width: 100%;
+    height: 100%;
+    background: url(../ImagensSite/simulador01.jpg)center no-repeat;
+    background-size: cover;
+}
+.simulador-opc{
+    background: rgba(0, 0, 0, 0.486);
+    width: 100%;
+    height: 100%;
+    padding-top: 6%;
+    
+}
+
+
+.simulador h1{ 
+    margin: 3px; /*margem*/
+    width: auto;
+    height: 100px;
+    text-align: center; /*alianhamento do texto*/
+}
+
+.teste{ 
+    margin: 3px; /*margem*/
+    width: auto;
+    height: 40px;
+    text-align: center;
+    font-size: 50px;
+    margin: 5%;
+    margin-bottom: 10%;
+    -webkit-text-stroke-width: 1px; /*largura da borda da letra*/
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.26); /*cor da borda da letra*/
+    
+}
+
+
+.simulador { /*div do simulador*/
+    width: 600px;
+    height: 700px;
+    /* background-image: linear-gradient(to bottom,transparent, 1px, rgba(255, 255, 0, 0.753),rgb(240, 158, 6)); gradiente com fundo transparente */
+    margin-left: 10.9%;
+    background-color: rgba(255, 255, 255, 0.589);
+    
+}
+
+.borda{ 
+    padding: 10px; /*borda para dentro*/    
+    -webkit-box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+    -moz-box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+    box-shadow: 0px 0px 8px 2px #000000; /* sombra da borda*/
+}
+
+.simulador button { 
+    background-color: rgb(255, 255, 0);
+    border-radius: 10px; /*curvatura da borda*/
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    margin-left: 32.9%;
+    font-size: 25px;
+    text-shadow: 1px 1px #0000003b;
+}
+.simulador button:hover{
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#resultado { 
+    text-align: center; /* alianhando texto*/
+    margin-top: 30px; 
+    font-size: 50px; /*largura da fonte*/
+    color: green;
+}
+
+.simulador span { 
+    font-size: 18px;
+}
+
+
+.simulador li{
+    margin: 6px;
+    padding: 2px; /* margem pra dentro*/
+    -webkit-text-stroke-width: 1px; /*largura da borda da letra*/
+    -webkit-text-stroke-color: rgba(119, 95, 95, 0.26); /*cor da borda da letra*/
+    font-size: 45px;
+    text-align: start;
+    padding-top: 60px;
+}
+
+.simulador input { 
+    border-radius: 4px; /*borda curva*/
+    text-align: center;
+    width: 500px;
+    height: 55px;
+    font-size: 30px;
+}
+
+
+
+/* FIM PAG 4 */
+
+
+/* COMEÇO PAG 5 */
+.lider{
+    
+    height: 100%;
+    width: 100%;
+    background: url(../ImagensSite/somosnos1.jpg) center no-repeat;
+    background-size: 100%;
+    
+}
+.lider-img{
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.534);
+    
+    
+}
+.lider-conteudo{
+    padding: 30px;
+    /* margin-top: 200px; */
+}
+.esquerda{
+    text-align: left;
+    width: 20%;
+    margin: 0px;
+    float: left;
+    font-size: 18.1px;
+    color: white;
+}
+.centro{
+    margin-top: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    -webkit-text-stroke-width: 1px; /*largura da borda da letra*/
+    -webkit-text-stroke-color: rgba(119, 95, 95, 0.26); /*cor da borda da letra*/
+}
+.direita{
+    width: 20%;
+    margin: 0px;
+    float: right;
+    text-align: right;
+    font-size: 18.1px;
+    color: white;
+}
+
+/* FIM PAG 5*/
+
+/* FOOTER */
+footer{
+    width: 100%;
+    height: 400px;
+    background: rgb(0, 0, 0);
+}
+#soxials{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 150px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    /* background: white; */
+}
+
+
+
+.telephone{
+    width: 300px;
+    height: 100px;
+    /* background: blueviolet; */
+    float: right;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+}
+
+ /* Por existirem muitos navegadores, e cada um com sua especificação, é necessário adicionar esses prefixos para que um estilo CSS funcione em todos.
+
+Assim temos que:
+
+-webkit- (Chrome, Safari, versões mais recentes do Opera.)
+
+-moz-(Firefox)
+
+-o-(Versões antigas do Opera)
+
+-ms-(Internet Explorer) */
+

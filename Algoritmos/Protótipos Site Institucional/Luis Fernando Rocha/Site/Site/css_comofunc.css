@@ -1,0 +1,130 @@
+*{
+    font-family: Arial, Helvetica, sans-serif
+}
+html{
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.img-logo { 
+    width: 120px;
+    height: 120px;
+    padding-left: 15px;
+    padding-top: 10px;
+    float: left;}
+
+li { 
+    list-style: none;
+    text-decoration: none;
+    text-align: right;
+    display: inline-block;
+    padding-left: 70px;
+    }
+.navbar{ 
+    width: 100%;
+    height: 130px;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.usericon{
+    width: 30px;
+    height: 30px;
+}
+
+.menuicon { 
+    width: 30px;
+    height: 30px;
+}
+
+.ul1 { /*parte da navbar*/
+    font-size: 25px;
+    width: 1000px;
+    position: absolute;
+    top: 0px;
+    right: 200px;
+    margin: 0px;
+    padding-right: 0px;
+    padding-top: 21px;
+    padding-bottom: 0px;
+}
+
+.ul2 {  /*parte do usuario(login e menu*/
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    padding-left: 0px;
+    margin: 0px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+}
+
+.limargem {
+    margin: 0px;
+    padding: 10px;
+}
+.pai { /*Background*/
+    background-image: url("../ImagensSite/fundofunc.jpg");
+    background-color: #cccccc;
+    height: 100%;
+    width: 100%;
+    background-position: center; /*definindo posição*/
+    background-repeat: no-repeat; /*colocando para não repetir a imagem*/
+    background-size: cover;
+    position: absolute; /*definindo posição*/
+}
+.opcimg{ /*Opaciidade do background*/
+    background-color: rgba(0, 0, 0, 0.246);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+a{ /*faz parte da navbar*/
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 2px;  /* largura da borda */
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.109); /* cor da borda */
+}
+
+.h3func { 
+    font-size: 55px;    
+    padding-bottom:0px;
+    margin-bottom: 0px;
+    position: absolute;
+    padding-top: 120px;
+    padding-left: 150px;
+}
+
+.bordaPHOSA{ 
+    color: yellow;
+    -webkit-text-stroke-width: 2px;  /* largura da borda */
+    -webkit-text-stroke-color: rgba(0, 0, 0, 0.24); /* cor da borda */
+}
+
+.divh5 {    
+    position: absolute;
+    left: 270px;
+    top: 230px;
+}
+
+.h5func {
+    font-size: 30px;
+    padding: 30px;
+}
+
+.primeirofunc{
+    font-size: 40px;
+    padding: 30px;
+    padding-right: 0px;
+}
