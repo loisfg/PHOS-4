@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap');
+/* font-family: Montserrat;
+   font-family: Roboto; 
+*/
+
+/* ---------------PÁGINA INICIAL---------------- */
+
+body {
+   padding: 0%;
+   margin: 0%;
+   height: 100%;
+   width: 100%;
+   position: absolute;
+}
+.tudo {
+   height: 100%;
+   width: 100%;
+   background-image: url(../images/banner.jpg);
+   background-size: cover;
+}
+.topo {
+  height: 80px;
+  width: 100%;
+ 
+}
+
+.login{
+   padding: 5px;
+   margin-top: 10px;
+   margin-right: 20px;
+   float: right;
+   height: 30px;
+   width: 50px;
+}
+
+.info {
+   padding: 5px;
+   margin-top: 10px; 
+   float: right;
+   margin-right: 120px; 
+   height: 30px;
+   width: 550px;     
+   text-align: center;
+}
+
+.menu{
+   padding: 5px;
+   margin-top: 10px;
+   margin-right: 20px;
+   float: right;
+   height: 30px;
+   width: 50px;
+   
+   
+   
+
+}
+.logo {
+   padding: 5px;
+   margin-top: 10px;
+   margin-left: 20px;
+   float: left;
+   height: 100px;
+   width: 100px;
+   background-image: url(../images/logo.png);
+   background-size: cover;
+   
+}
+.banner {
+   height: 100px;
+   width: 300px;
+   top: 50%;
+   left: 50%;
+   position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+   
+}
+
+.info li {
+   display: inline-block;
+   font-size: 20px;
+   margin-right: 5%;
+   color: white;
+   
+
+}
+.info a {
+   font-family: Roboto;
+   font-size: 22px;
+   text-decoration: none;
+   color: white;
+
+}
+.info a:hover {
+   color: yellow;
+}
+.banner h2 {
+   color: white;
+   font-size: 60px;
+   margin: 0%;
+}
+.banner h4 {
+   color: white;
+   font-size: 20px;    
+}
+
+.menu img {
+   height: 50px;
+   width: 50px;
+   
+}
+
+/* ---------------PÁGINA SOBRE---------------- */
+
+#sobre{
+   height:600px;
+   width:100%;
+   background-color: #ffffff;
+}
+#sobre h1{
+   margin-bottom: 0px;
+   text-align: center;
+   width: 500px;
+   color: black;
+}
+#sobre h1 span{
+   color: yellow;
+}
+.sobre-detalhes {
+   height:210px;
+   width:48%;
+   float:left;
+}
+#borda1{
+   margin-right:2%;
+   border-bottom:2px solid yellow;
+}
+#borda2{
+   border-bottom:2px solid yellow;
+}
+#borda3{
+   margin-right:2%;
+   border-bottom:2px solid yellow;
+}
+#borda4{
+   margin-right:2%;
+   border-bottom:2px solid yellow;
+}
+.sobre-txt{
+   height: 100%;
+   width:60%;
+   float:left;
+}
+.sobre-txt span {
+   margin-left: 20px;
+   font-size: 60px;
+}
+.sobre-txt p{
+   font-size:18px; 
+   text-align: center;
+}
+.sobre-icones{
+   height: 100%;
+   width:40%;
+   float:left;
+   justify-content: center;
+   flex-direction: row;
+   display:flex;
+   align-items: center;
+}
+
+/* ---------------PÁGINA DO SIMULADOR---------------- */
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   background-color:#232323;
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   background-color:#F8CF2C;
+   padding: 4em;
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
+   margin-bottom:10em;
+   margin-top: 30px;
+   
+   
+}
+
+.btn {
+   background-color: #303C6C;
+   color: white;
+   font-size: 25px;
+   padding: .4em;
+   cursor:pointer;
+  
+}
+.btn:hover {
+   background-color: #2B2A28;
+   color: white;
+}
+
+.title {
+   font-size: 50px;
+}
+
+.pre-resultado {
+   font-size: 30px;
+}
+.resultado {
+   color: blue;
+   font-size: 70px;
+}
+
+.resultado2 {
+   color: green;
+   font-size: 40px;
+}
+
+.container input {
+   font-size: 20px;
+   text-align: center;
+
+}
+
+header {
+   width: 100%;
+   height: 80px;
+   background-color:#68C5CC ;
+  
+}
+
+.title-header{
+   position: absolute;
+   padding: 3px;
+   float: left;
+   margin-left: 2%;
+   font-size: 40px;
+}
+
+.explicando {
+   background-color: #68C5CC;
+   color:black;
+   padding: 4em;
+   width: 50%;
+   margin: 0 auto;
+   text-align: center;
+   margin-bottom:10em;
+   font-size: 20px;  
+   
+}
+
+.explicando a {
+   text-decoration: none;
+   color: white;
+}
+
+.yellow {
+   color: yellow;
+}
+
+.img {
+   width: 75px;
+}
