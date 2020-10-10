@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: black;
+    height: 100px;
+}
+ 
+
+.header .nav .menu a,
+.header span {
+    color: rgb(255, 230, 0);
+    
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    height: 50px;
+}
+ 
+.logo img {
+    width: 100px;
+    height: 80px;
+    float: left;
+    padding-bottom:20px;
+}
+
+.botao {
+    background-color: rgb(255, 208, 0);
+    color:black;
+    border: none;
+    width: 60px;
+    height: 30px;
+    
+
+}
+
+.title-header h1,
+.nav ul
+ {
+    margin: 0;
+}
+
+.title-header{
+    padding-top: 20px;
+    color: white;
+    float: left;
+    
+
+}
+
+.nav{
+    padding-top: 20px;
+    float: right; 
+
+}
+
+.nav a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+
+.nav li{
+    display: inline-block;
+    padding: 10px;
+}
+
+
+.showcase {
+    background-image: url(../img/ali-yahya-ytNFYf4d_30-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    min-height: 400px;
+}
+
+.showcase h1 {
+    margin: 0;
+    font-size: 55px;
+    padding-top: 100px;
+
+}
+
+.showcase p {
+    font-size: 22px;
+
+}
+
+.new {
+    background-color:black;
+    color: white;
+    padding: 30px 0px 20px 0px;
+}
+
+.new h1 {
+    margin: 0;
+    float: left;
+}
+
+.new form {
+    float: right;
+}
+
+.new input {
+    height: 25px;
+    width:225px ;
+}
+
