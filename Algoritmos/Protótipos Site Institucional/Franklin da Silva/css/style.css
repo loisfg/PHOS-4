@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    padding: 0;
+    color: white;
+}
+
+.showcase{
+background-image: url(../img/nastuh-abootalebi-yWwob8kwOCk-unsplash.jpg);
+background-size: cover;
+min-height: 750px;
+text-align:center ;
+padding:50px;
+}
+/*.header h1{
+
+}*/
+ .container h1{
+    
+    padding:245px;
+color:rgba(255, 255, 0, 0.89);
+font-size: 110px;
+}
+.container h1 p {
+    color: white;
+}
+.nav li {
+display: inline-block;
+  padding: 80px;
+  padding: 10px 20px 0 20px;
+ 
+
+}
+.nav {
+    float: right;
+    
+}
+.nav a{
+    color: white;
+    text-decoration: none;
+}
+.img img{
+    float: left;
+    padding-left: 31px;
+
+}
+
+.container p{
+    font-size: 30px;
+
+}
+.showcasee{
+    background-image: url(../img/photo-1497366811353-6870744d04b2.jpg);
+    background-size: cover;
+    min-height: 750px;
+    text-align:center ;
+    padding:50px;
+}
