@@ -1,33 +1,39 @@
 CREATE DATABASE phos4;
 use phos4;
 
- CREATE TABLE luminosidade (
-		id_luminosidade int primary key auto_increment,
-		luminosidade_ideal varchar(10),
-        luminosidade_atual varchar(10),
-		variacao_luminosidade varchar(10),
-        dataluminosidade date
-    ) auto_increment= 1000;
+CREATE TABLE login (
+	id_login int  primary key auto_increment,
+    login_empresa varchar(40),
+    senha varchar(70),
+    adm_usuario char(1),
+    fkcadastro int,
+	);
 
-CREATE TABLE empresa_cadastro (
+ CREATE TABLE empresa_cadastro (
 	id_cadastro  int primary key auto_increment, 
     nome_empresa varchar(70),
     telefone varchar(11),
     email varchar(255),
-    enderço varchar(100),
+    endereço varchar(100),
     cnpj char(14),
-    fkluminosidade int,
-	foreign key(fkluminosidade) references luminosidade (id_luminosidade)
-    ) auto_increment= 100;
+    fklogin int,
+	foreign key(fklogin) references login_empresa (id_login)
+    ) auto_increment = 100;
 
-CREATE TABLE login (
-	id_login int  primary key auto_increment,
-    login varchar(40),
-    senha varchar(70),
-    adm_usuario char(1),
-    fkcadastro int,
-    foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
-    );
+CREATE TABLE luminosidade (
+		id_luminosidade int primary key auto_increment,
+		luminosidade_local varchar(40),
+		luminosidade_ideal decimal(6,2),
+        luminosidade_atual decimal(6,2),
+		variacao_luminosidade decimal(6,2),
+        data_luminosidade date
+		fkcadastro int,
+		foreign key(fkempresa) references empresa_cadastro (id_cadastro)
+
+
+    ) auto_increment = 1000;
+
+
     
 SELECT *
 FROM login;
