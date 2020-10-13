@@ -363,3 +363,33 @@ footer{
     height:80px;
     width:100%;
 }
+
+/* ---------------TELA DE CADASTRO-------------- */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+.fundo {
+    background-image: url(../img/background-cadastro.jpg);
+    height: 100%;
+    background: center;
+    width:100%;
+    background-size: cover;
+    position: absolute;
+    background-repeat: no-repeat;
+
+    
+}
+/* 
+.opc3{
+    background-color: #0000(0, 0, 0, 13);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+} */

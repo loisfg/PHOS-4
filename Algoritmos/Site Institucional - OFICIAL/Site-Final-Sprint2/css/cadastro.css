@@ -1,0 +1,70 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+.fundo {
+    background-image: url(../img/background-cadastro.jpg);
+    height: 100%;
+    /* background: center; */
+    width:100%;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+
+    
+}
+
+.opc3{
+    background-color: #0000(0, 0, 0, 13);
+    z-index: -1;
+  
+;
+}
+
+.cadastro h2{
+    text-align: center;
+    font-size: 29px;
+}
+.usuario{
+    height: 570px;
+    width: 550px;
+    background-color: rgba(0, 0, 0, 0.753);
+    margin-left: 30%;
+    text-align: center;
+    border-radius: 40px 0px 40px 0px;
+    color: #ffff;
+}
+
+
+
+button {
+    margin-top: 12px;
+    width: 180px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:white;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+.usuario input{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    background: transparent;
+    color: white;
+}
+
+.usuario hr{
+    width: 60%;
+}
+
+
+
