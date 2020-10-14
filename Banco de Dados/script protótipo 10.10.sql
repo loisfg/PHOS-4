@@ -26,7 +26,7 @@ CREATE TABLE empresa_cadastro (
 		luminosidade_ideal varchar(10),
         luminosidade_atual varchar(10),
 		variacao_luminosidade varchar(10),
-        dataluminosidade date,
+        data_luminosidade date,
         fkcadastro int,
         foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
     ) auto_increment= 1000;
