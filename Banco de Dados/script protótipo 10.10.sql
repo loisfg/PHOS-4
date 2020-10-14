@@ -1,13 +1,13 @@
 CREATE DATABASE phos4;
 use phos4;
 
- CREATE TABLE luminosidade (
-		id_luminosidade int primary key auto_increment,
-		luminosidade_ideal varchar(10),
-        luminosidade_atual varchar(10),
-		variacao_luminosidade varchar(10),
-        dataluminosidade date
-    ) auto_increment= 1000;
+
+CREATE TABLE empresa_login (
+	id_login int  primary key auto_increment,
+    login_empresa varchar(40),
+    senha varchar(70),
+    adm_usuario char(1)
+    );
 
 CREATE TABLE empresa_cadastro (
 	id_cadastro  int primary key auto_increment, 
@@ -16,21 +16,25 @@ CREATE TABLE empresa_cadastro (
     email varchar(255),
     enderço varchar(100),
     cnpj char(14),
-    fkluminosidade int,
-	foreign key(fkluminosidade) references luminosidade (id_luminosidade)
+    fklogin int,
+	foreign key(fklogin) references empresa_login (id_login)
     ) auto_increment= 100;
+    
+ CREATE TABLE luminosidade (
+		id_luminosidade int primary key auto_increment,
+        luminosidade_local varchar(45),
+		luminosidade_ideal varchar(10),
+        luminosidade_atual varchar(10),
+		variacao_luminosidade varchar(10),
+        dataluminosidade date,
+        fkcadastro int,
+        foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
+    ) auto_increment= 1000;
 
-CREATE TABLE login (
-	id_login int  primary key auto_increment,
-    login varchar(40),
-    senha varchar(70),
-    adm_usuario char(1),
-    fkcadastro int,
-    foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
-    );
+
     
 SELECT *
-FROM login;
+FROM empresa_login;
 
 INSERT INTO luminosidade 
 VALUES(null,'1000lux','980lux','20lux', '1990-05-18'),
@@ -50,7 +54,7 @@ VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','635124890001
       (null,'McDonalds','1198754432','mcdonalds@mcdonalds.com', 'rua joaquim marra', '05125461000125', 1005),
       (null,'GetNet','1153462455','getnet@getnet.com', 'rua coracao de maça','12345688000135', 1006);
 
-INSERT INTO login 
+INSERT INTO empresa_login 
 VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1, 100),
       (null,'LuizGsilva','ghghhghg', 0, 101),
       (null,'ViniOliveira','vinivini321', 0, 102),
@@ -60,6 +64,6 @@ VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1, 100),
       (null,'MatheusDaniel','@123456', 0, 106);
 
 
-select * from empresa_cadastro, luminosidade, login where fkcadastro = id_cadastro and fkluminosidade = id_luminosidade;
+select * from empresa_cadastro, luminosidade, empresa_login where fkcadastro = id_cadastro and fklogin = id_login;
 
       
