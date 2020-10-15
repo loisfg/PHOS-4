@@ -15,7 +15,7 @@ CREATE TABLE empresa_cadastro (
     telefone varchar(11),
     email varchar(255),
     enderço varchar(100),
-    cnpj char(14),
+    CNPJ char(14),
     fklogin int,
 	foreign key(fklogin) references empresa_login (id_login)
     ) auto_increment= 100;
