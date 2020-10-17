@@ -19,31 +19,61 @@ CREATE TABLE empresa_cadastro (
     fklogin int,
 	foreign key(fklogin) references empresa_login (id_login)
     ) auto_increment= 100;
-    
- CREATE TABLE luminosidade (
-		id_luminosidade int primary key auto_increment,
-        luminosidade_local varchar(45),
-		luminosidade_ideal varchar(10),
-        luminosidade_atual varchar(10),
-		variacao_luminosidade varchar(10),
-        data_luminosidade date,
-        fkcadastro int,
-        foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
-    ) auto_increment= 1000;
 
+	create table Ambiente(
+	id_Ambiente int primary key auto_increment,
+	Nome varchar(45),
+	Local_ambiente varchar(45),
+	fkcadastro int,
+    foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
+	)auto_increment = 1000;
+
+    
+ CREATE TABLE Sensor (
+		id_Sensor int primary key auto_increment,
+        Nome varchar(45),
+        fkambiente int,
+        foreign key(fkambiente) references Ambiente (id_Ambiente)
+    ) auto_increment= 5000;
+
+
+CREATE TABLE Leitura (
+		Lux decimal(6,2),
+		data_hora datetime,
+        fksensor int primary key,
+        foreign key(fksensor) references Sensor (id_Sensor)
+    )
 
     
 SELECT *
 FROM empresa_login;
 
-INSERT INTO luminosidade 
-VALUES(null,'1000lux','980lux','20lux', '1990-05-18'),
-      (null,'1100lux','950lux','150lux', '2020-10-10'),
-      (null,'1200lux','1000lux','200lux','2010-10-12'),
-      (null,'1300lux','1050lux','100lux','2001-09-11'),
-      (null,'500lux','300lux','200lux', '2001-08-14'),
-      (null,'750lux','540lux','100lux','2003-04-15'),
-      (null,'650lux','850lux','50lux','1998-06-30');
+INSERT INTO Leitura 
+VALUES('700,45','2020-10-17 12:30:00.000',5000),
+      ('632,00',,'2020-10-17 12:31:00.000',5001),
+      ('550,72','2020-10-17 12:32:00.000',5002),
+      ('666,77','2020-10-17 12:33:00.000',5003),
+      ('676,77','2020-10-17 12:34:00.000',5004),
+      ('600,50','2020-10-17 12:35:00.000',5005),
+      ('689,22','2020-10-17 12:40:00.000',5006),
+
+INSERT INTO Sensor 
+VALUES(null,'Sala 1C',1000),
+      (null,'escritório 1A',1001),
+      (null,'Salão 1',1002),
+      (null,'Sala 1A',1003),
+      (null,'Sala 11B',1004),
+      (null,'Sala 1',1005),
+      (null,'Sala 2E',1006),
+
+INSERT INTO Ambiente 
+VALUES(null,'Sala1C GOOGLE','centro',100),
+      (null,'escritório1A iutube','centro',101),
+      (null,'Salão1 Puma','centro',102),
+      (null,'Sala1A Git','centro',103),
+      (null,'Sala11B amazon','centro',104),
+      (null,'Sala1 McDonalds','centro',105),
+      (null,'Sala2E GetNet','centro',106),	  
       
 INSERT INTO empresa_cadastro 
 VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','63512489000121', 1000),
@@ -64,6 +94,6 @@ VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1, 100),
       (null,'MatheusDaniel','@123456', 0, 106);
 
 
-select * from empresa_cadastro, luminosidade, empresa_login where fkcadastro = id_cadastro and fklogin = id_login;
+select * from empresa_cadastro, Sensor, Leitura, empresa_login where fkcadastro = id_cadastro and fklogin = id_login and fksensor = idSensor and fkambiente = id_Ambiente;
 
       
