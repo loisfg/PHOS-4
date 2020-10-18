@@ -35,27 +35,34 @@ CREATE TABLE empresa_cadastro (
         fkambiente int,
         foreign key(fkambiente) references Ambiente (id_Ambiente)
     ) auto_increment= 5000;
+      
 
-
-CREATE TABLE Leitura (
-		Lux decimal(6,2),
-		data_hora datetime,
-        fksensor int primary key,
-        foreign key(fksensor) references Sensor (id_Sensor)
-    )
-
-    
-SELECT *
-FROM empresa_login;
-
-INSERT INTO Leitura 
-VALUES('700,45','2020-10-17 12:30:00.000',5000),
-      ('632,00',,'2020-10-17 12:31:00.000',5001),
-      ('550,72','2020-10-17 12:32:00.000',5002),
-      ('666,77','2020-10-17 12:33:00.000',5003),
-      ('676,77','2020-10-17 12:34:00.000',5004),
-      ('600,50','2020-10-17 12:35:00.000',5005),
-      ('689,22','2020-10-17 12:40:00.000',5006),
+INSERT INTO empresa_login 
+VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1),
+      (null,'LuizGsilva','ghghhghg', 0),
+      (null,'ViniOliveira','vinivini321', 0 ),
+      (null, 'LuisFRocha','lflflflf', 0),
+      (null,'Carlos','carlos15', 0),
+      (null,'ThallesBuso','thallesb', 0),
+      (null,'MatheusDaniel','@123456', 0);
+      
+      INSERT INTO empresa_cadastro 
+VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','63512489000121', 1),
+      (null,'iutube','21923421421','arebaba@hotmail.com','rua J','26254897000151', 1),
+      (null,'Puma','51977686316','puma@gmail.com','rua augusta', '36598421000119', 2),
+      (null,'Git','1199878787','git@hub.com', 'rua de melo', '23654789000125', 3),
+      (null,'amazon','19933142','amazon@amazon.com','rua hadock', '54236987000141', 4),
+      (null,'McDonalds','1198754432','mcdonalds@mcdonalds.com', 'rua joaquim marra', '05125461000125', 5),
+      (null,'GetNet','1153462455','getnet@getnet.com', 'rua coracao de maça','12345688000135', 6);
+      
+      INSERT INTO Ambiente 
+VALUES(null,'Sala1C GOOGLE','centro',100),
+      (null,'escritório1A iutube','centro',101),
+      (null,'Salão1 Puma','centro',102),
+      (null,'Sala1A Git','centro',103),
+      (null,'Sala11B amazon','centro',104),
+      (null,'Sala1 McDonalds','centro',105),
+      (null,'Sala2E GetNet','centro',106);
 
 INSERT INTO Sensor 
 VALUES(null,'Sala 1C',1000),
@@ -64,36 +71,28 @@ VALUES(null,'Sala 1C',1000),
       (null,'Sala 1A',1003),
       (null,'Sala 11B',1004),
       (null,'Sala 1',1005),
-      (null,'Sala 2E',1006),
-
-INSERT INTO Ambiente 
-VALUES(null,'Sala1C GOOGLE','centro',100),
-      (null,'escritório1A iutube','centro',101),
-      (null,'Salão1 Puma','centro',102),
-      (null,'Sala1A Git','centro',103),
-      (null,'Sala11B amazon','centro',104),
-      (null,'Sala1 McDonalds','centro',105),
-      (null,'Sala2E GetNet','centro',106),	  
+      (null,'Sala 2E',1006);
       
-INSERT INTO empresa_cadastro 
-VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','63512489000121', 1000),
-      (null,'iutube','21923421421','arebaba@hotmail.com','rua J','26254897000151', 1001),
-      (null,'Puma','51977686316','puma@gmail.com','rua augusta', '36598421000119', 1002),
-      (null,'Git','1199878787','git@hub.com', 'rua de melo', '23654789000125', 1003),
-      (null,'amazon','19933142','amazon@amazon.com','rua hadock', '54236987000141', 1004),
-      (null,'McDonalds','1198754432','mcdonalds@mcdonalds.com', 'rua joaquim marra', '05125461000125', 1005),
-      (null,'GetNet','1153462455','getnet@getnet.com', 'rua coracao de maça','12345688000135', 1006);
+      
+      
+      CREATE TABLE Leitura (
+      fksensor int primary key,
+        foreign key(fksensor) references Sensor (id_Sensor),
+		Lux decimal(6,2),
+		data_hora datetime
+    );
 
-INSERT INTO empresa_login 
-VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1, 100),
-      (null,'LuizGsilva','ghghhghg', 0, 101),
-      (null,'ViniOliveira','vinivini321', 0, 102),
-      (null, 'LuisFRocha','lflflflf', 0, 103),
-      (null,'Carlos','carlos15', 0, 104),
-      (null,'ThallesBuso','thallesb', 0, 105),
-      (null,'MatheusDaniel','@123456', 0, 106);
+    
+INSERT INTO Leitura 
+VALUES(5000,'701.45','2020-10-17 12:30:00.000'),
+      (5001,'632.00','2020-10-17 12:31:00.000'),
+      (5002,'550.72','2020-10-17 12:32:00.000'),
+      (5003,'666.77','2020-10-17 12:33:00.000'),
+      (5004,'676.77','2020-10-17 12:34:00.000'),
+      (5005,'600.50','2020-10-17 12:35:00.000'),
+      (5006,'689.22','2020-10-17 12:40:00.000');
 
 
-select * from empresa_cadastro, Sensor, Leitura, empresa_login where fkcadastro = id_cadastro and fklogin = id_login and fksensor = idSensor and fkambiente = id_Ambiente;
+select * from empresa_login, empresa_cadastro, Ambiente, Sensor, leitura where fklogin = id_login and fkcadastro = id_cadastro and fkambiente = id_Ambiente and fksensor = id_Sensor;
 
       
