@@ -7,6 +7,7 @@
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="simulador.js"> -->
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <div id="header-banner">
             <div id="menu">
                 <container class="navbar">
-                    <!-- COMEÇO DA NAVBAR -->
+                    <!----------------------------------- COMEÇO DA NAVBAR ------------------------------------------------>
                     <a href="index.html">
                         <img class="img-logo" src="../Site-Final-Sprint2/img/logo.png"></a> <!-- imagem do logo *menu*-->
                     <ul class="ul1">
@@ -45,6 +46,7 @@
             </div>
         </div>
     </header>
+    <!-- ------------------------------------------------------SOBRE NÓS------------------------------------------------------- -->
     <nav>
         <div id="sobre">
             <div class="container">
@@ -131,6 +133,7 @@
             </div>
         </div>
         <br><br><br><br><br>
+        <!-- --------------------------------------------------SERVIÇOS----------------------------------------------------- -->
         <div id="servico">
             <div class="opcimg1">
                 <div id="text_servico">
@@ -161,7 +164,7 @@
             </div>
         </div>
         <br><br>
-
+<!------------------------------------------------ PARTE DO SIMULADOR ---------------------------------------------------->
         <div id="simulador">
             <div class="container2">
                 <br><br><br>
@@ -169,16 +172,17 @@
                     <br><br>
                     <h1>Simulador <span>financeiro</span></h1>
                     <br>
-                    <h4>Quanto você gasta de energia por mês?</h4>
+                    <h4>Quantas lâmpadas você tem em sua empresa?</h4>
                     <br>
-                    <input placeholder="R$">
+                    <input type="text" id="qtdLampadas" placeholder="Insira o valor">
                     <br><br><br>
-                    <button>economizar</button>
+                    <button onclick="simular()">Economizar</button>
                     <div id="resultado"></div>
                 </div>
             </div>
         </div>
         <br><br>
+<!-- -------------------------------------------------QUEM SOMOS------------------------------------------------ -->
         <div id="time">
             <div class="container3">
                 <br><br><br><br>
@@ -247,3 +251,17 @@
 </body>
 
 </html>
+
+<script>
+    function simular() {
+            var gastoEnergetico = ((Number(qtdLampadas.value) * 26 * 15 * 22) / 1000) *
+            12; //1000 para converter para quilo Watts hora e multiplicar o valor por 12 meses
+            var custo = gastoEnergetico * 0.8; //0,8 é o custo do quilo Wh em SP
+            var custo_m = custo / 12;
+            var desconto = (27 / 100) * custo; // até 27% de desconto na conta
+            var economia_men = ((73 / 100) * custo) / 12;
+            resultado.innerHTML = `Com ${qtdLampadas.value} lâmpadas, seu gasto mensal de energia é R$<span style="color:red">${custo_m.toFixed(2)}</span>, porém com nossa tecnologia seu gasto mensal é de R$<span style="color:green">${economia_men.toFixed(2)}</span>.<br>
+            Isso representa uma economia anual em energia de até R$<span style="color:blue">${desconto.toFixed(2)}</span>`
+
+}
+</script>
