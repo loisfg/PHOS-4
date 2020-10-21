@@ -1,0 +1,94 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+.menu {
+    width: 100px;
+    height: 100%;
+    background: black;
+    position: absolute;
+    
+}
+.logo {
+    width: 100px;  
+}
+
+.icone_grafico {
+    width: 80px;
+    margin-bottom: 15%;
+    margin-top: 10%;
+    margin-left: 8%;
+
+}
+
+.icone_config {
+    width: 80px;
+  margin-left: 8%;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    margin-top: 3.5%;
+    margin-left: 6% ;
+}
+
+.mensagem1  {
+    margin-top: 0%;
+    margin-left: 6%;
+
+
+}
+
+.mensagem2 {
+    margin-top: -2%; 
+    right: 0%;
+    left: 75%;
+    position: absolute;
+    float: right;
+}
+
+
+.show {
+    width: 100%;
+    height: 120px;
+    position: absolute;
+    margin-top: 11%;
+    margin-left: 6% ; 
+}
+
+.mensagem3 {
+    margin-top: 3%; 
+    right: 0%;
+    left: 10%;
+    position: absolute;
+    float: right;
+}
+
+.mensagem4 {
+    margin-top: 3%; 
+    right: 0%;
+    left: 40%;
+    position: absolute;
+    float: right; 
+}
+
+.mensagem5 {
+    margin-top: 3%; 
+    right: 0%;
+    left: 75%;
+    position: absolute;
+    float: right;
+}
+
+.grafico img {
+    bottom: 0%;
+  position: absolute;
+  width: 90%;
+  margin-left: 7%;
+  margin-bottom: 3%;
+}
