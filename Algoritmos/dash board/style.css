@@ -50,6 +50,15 @@ body {
     left: 75%;
     position: absolute;
     float: right;
+    width: 300px;
+    
+    
+}
+ .use {
+width:47px;
+float: right;
+margin: -18% 15% ; 
+
 }
 
 
@@ -67,6 +76,7 @@ body {
     left: 10%;
     position: absolute;
     float: right;
+    
 }
 
 .mensagem4 {
