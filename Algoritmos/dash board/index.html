@@ -5,40 +5,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <title>dash board</title>
+    
 </head>
 
 <body>
-    <div class="menu">
-        <img class="logo" src="logo.png">
-        <img class="icone_grafico" src="grafico.png" alt="">
-        <img class="icone_config" src="config.png" alt="">
+    <div id="conteiner">
+        <div class="menu">
+            <img class="logo" src="logo.png">
+            <img class="icone_grafico" src="grafico.png" alt="">
+            <img class="icone_config" src="config.png" alt="">
+        </div>
+
+        <div id="usuario">
+            <div class="mensagem1">
+                <h3>Olá Franklin,</h3>
+                <p>Veja aqui sua dashboard</p>
+            </div>
 
 
-    </div>
-    <div class="header">
-     
-            <div class="mensagem1"> <h3>Olá Franklin !!!</h3></div>
-       
-        
-            <div class="mensagem2"> <h3>Compania de iluminação</h3> <img class="use" src="user.png" alt=""> </div>
-            
-        
-    </div>
-    <div class="show">
-        
-            <div class="mensagem3"> <h3>Economia penúlmito mês</h3></div>
-        
+            <div class="mensagem2">
+                <h4>Companhia de iluminação</h4> <img class="use" src="user.png" alt="">
+            </div>
 
-            <div class="mensagem4"> <h3>ultimo mês</h3> </div>
-        
-       
-            <div class="mensagem5"> <h3> Economia semanal </h3> </div>
-        
-    </div>
 
-    <div class="grafico">
-        <img src="grafi.png" alt="">
+        </div>
+        <div class="show">
+
+            <div id="ms1" class="mensagem">
+                <h3>Economia penúlmito mês: </h3>
+                <div class="img_icon">
+                    <img src="calendary.png">
+                </div>
+                <div class="text_num">
+                    <p>R$720,00</p>
+                </div>
+            </div>
+
+
+            <div id="ms2" class="mensagem">
+                <h3>Economia ultimo mês</h3>
+                <div class="img_icon">
+                    <img src="icon-economia.png">
+                </div>
+                <div class="text_num">
+                    <p>R$947,00</p>
+                </div>
+            </div>
+
+
+            <div id="ms3" class="mensagem">
+                <h3> Economia semanal </h3>
+                <div id="mes_econ" class="img_icon">
+                    <img src="icon_semanal.png">
+                </div>
+                <div class="text_num">
+                    <p>R$122,00</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="grafico">
+            <img src="grafi.png" alt=""> 
+        </div>
     </div>
 
 </body>
