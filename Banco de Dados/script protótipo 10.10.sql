@@ -6,7 +6,7 @@ CREATE TABLE empresa_login (
 	id_login int  primary key auto_increment,
     login_empresa varchar(40),
     senha varchar(70),
-    adm_usuario char(1)
+    adm_usuario int check (adm_usuario = 0 or adm_usuario = 1)
     );
 
 CREATE TABLE empresa_cadastro (
