@@ -6,7 +6,7 @@ body{
 }
 
 .img-logo { /*faz parte da navbar*/
-    width: 100px;
+    width: 90px;
     padding-left: 40px;
     padding-top: 5px;
     float: left;
@@ -57,7 +57,7 @@ a{ /*faz parte da navbar*/
 
 .navbar{ /*faz parte da navbar*/
     width: 100%;
-    height: 12%;
+    height: 10%;
     top: 0;
     left: 0;
     position: fixed;
