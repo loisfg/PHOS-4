@@ -19,7 +19,7 @@ console.log('Switch: ' + chave)
 
 
 //Atribuindo o retorno da função ldr a variável ldr.
-ldr = sensors.ldr()
+ldr = sensors.ldr(500, 1000);
 
 //Exibindo o valor retornado da função na variável.
 console.log('Luz: ' + ldr)
