@@ -2,6 +2,8 @@ html{
     scroll-behavior: smooth;
 }
 body{
+    height: 100%;
+    width: 100%;
     font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -73,7 +75,7 @@ a{ /*faz parte da navbar*/
 }
 /* inicio */
 #header-banner{
-    min-height:700px;
+    height:100%;
     width:100%;
     background:url(../img/fundo2.jpg)center no-repeat;
     background-size:cover;
@@ -280,6 +282,8 @@ a{ /*faz parte da navbar*/
 }
 #box-simulador input { 
     text-align: center;
+    height: 5%;
+    width: 40%;
     
 }
 #box-simulador h4{
@@ -291,14 +295,20 @@ a{ /*faz parte da navbar*/
  margin-top: 30px;
 }
 #box-simulador button{
-    height:9%;
-    width:50%;
+    height:10%;
+    width:40%;
     background-color:#E9BA02;
-    color:black;
+    color:white;
     border:none;
     font-size:22px;
-    border-radius:1px;
+    border-radius:8px;
 }
+#box-simulador button:hover{
+    border:2px solid #E9BA02;
+    background-color: white;
+    color: #E9BA02;
+}
+
 /* time */
 #time{
     height: 600px;
