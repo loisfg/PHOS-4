@@ -10,6 +10,7 @@ body {
     height: 100%;
     position:absolute;
     background-color:#f4f4f4 ;
+    top:0;
 }
 
 .menu {
@@ -21,9 +22,10 @@ body {
 
 .exit {
     width: 8%; 
+    cursor:pointer;
 }
 
-#div_graf{
+.div_graf{
     width: 100%;
     height: 10%;
     align-items: center;
@@ -38,13 +40,13 @@ body {
     margin-left: 27%;
 }
 
-#div_supor{
+.div_supor{
     margin-bottom: 20%;
     padding-top: 18%;
     padding-bottom: 18%;
+    cursor:pointer;
 }
-
-#div_config{
+.div_config{
     width: 100%;
     height: 10%;
     align-items: center;
@@ -53,8 +55,9 @@ body {
     flex-direction: row; 
     bottom: 0;
     position: absolute;
-}
-    
+    cursor:pointer;
+
+}    
 .logo {
     width: 90%; 
     align-items: center;
@@ -62,6 +65,7 @@ body {
     justify-content: center;
     flex-direction: row; 
     padding-left: 7%; 
+    cursor:pointer;
 }
 
 .icone_grafico {
@@ -205,4 +209,94 @@ body {
 .grafico img {
     width: 96%;
     margin-left: 2%;
+}
+
+/* suporte */
+#container-form{
+    width:100%;
+    height:662px;
+    background-color:#f4f4f4;
+}
+#formulario p{
+    color:rgb(26, 26, 26);
+    font-style: oblique;
+    text-align:left;
+}
+#formulario h2{
+    color:rgb(26, 26, 26);
+    text-align: left;
+    top:2%;
+
+}
+#formulario{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height:60%;
+    width:35%;
+    top:50%;
+    background-color:white;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.campo{
+    height:7%;
+    width:40%;
+    font-size:15px;
+    float:left;
+}
+#inp1{
+    margin-right: 4%;
+}
+#inp3{
+    margin-right: 4%;
+    margin-top: 4%;
+}
+#inp4{
+    margin-top: 4%;
+}
+form{
+    height:100%;
+    width:100%;
+    padding-left: 10%;
+}
+textarea{
+    height:25%;
+    width:86%;
+    font-size:15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 4%;
+}
+.btnform{
+    height:10%;
+    width:25%;
+    border-radius: 7px;
+    font-size: 16px;
+}
+#btnenviar{
+    border: 2px solid #e9ba02;
+    color:#e9ba02;
+    background-color:white;
+    right:11%;
+    position: absolute;
+}
+#btncancelar{
+    border: 2px solid #414141;
+    color:#414141;
+    background-color:white;
+    right:38%;
+    position: absolute;
+}
+#btnenviar:hover{
+    border: 1px solid #e9ba02;
+    color:white;
+    background-color:#e9ba02;
+}
+#btncancelar:hover{
+    border: 1px solid #414141;
+    color:white;
+    background-color:#414141;
 }

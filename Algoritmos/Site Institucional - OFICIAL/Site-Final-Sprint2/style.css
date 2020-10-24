@@ -10,25 +10,32 @@ body {
     background-image: url(fundo.jpg);
     background-size: cover;
     position: absolute;
-    z-index: -1;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center; 
+    z-index: -33;
+    
 }
 .login {
     height: 65%;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.842);
     text-align: center;
     width: 30%;
-    border-radius: 40px 0 ;
-    z-index: 1;
+    border-radius: 20px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: -22;
     font-family: Arial, Helvetica, sans-serif;
 }
 .usuario ul  {
     padding-top: 50px;
     text-decoration: none;
     padding-right: 50px;
+}
+#inpusuario{
+    width:50%;
+}
+#inpsenha{
+    width:50%;
 }
 li {
     text-decoration: none;
@@ -43,29 +50,28 @@ li {
 }
 input{   
     border-radius:4px;
-    -webkit-border-radius:4px;
-    box-shadow: 1px 1px 2px #333333;      
-    -webkit-box-shadow: 1px 1px 2px #333333;
-    background: #cccccc; 
-    border:1px solid #000000;
-    width:200px;
+    /* -webkit-border-radius:4px;
+    box-shadow: 1px 1px 1px #acabab;      
+    -webkit-box-shadow: 1px 1px 1px #acabab; */
+    background: white; 
     outline: none;
-    border-bottom: 1px solid white ;
+    /* border-bottom: 1px solid white ; */
+    border: rgb(99, 98, 98);
+    width: 60%;
+    height: 40px;
+    font-size: 16px;
 }
 .login h3 {
     font-size: 40px;   
 }
 button {
-    border-radius:2px;
-    -webkit-border-radius:2px;
-    box-shadow: 1px 1px px #333333;      
-    -webkit-box-shadow: 1px 1px 1px #333333;
-    width:40%;
+    border-radius:8px;
+    width:50%;
     height: 40px;
     font-size: 20px;    
     background-color: #E9BA02;
     color:white;
-    border-radius: 10%;    
+    border: 2px solid #E9BA02;
 }
 button:hover {
     background-color: white;
@@ -80,16 +86,28 @@ a:hover {
     text-decoration: none;
     color: #000000;
 }
-input {
-    width: 300px;
-    height: 40px;
-    background: transparent;
-    font-size: 16px;
-    border-color: gray;
-}
 .log {
     text-align: center;
+    color:#2E2E2E;
 }
 .lista li a{
     color:royalblue;
+}
+#iconLogin{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    top:18%;
+    left:49%;
+    transform: translate(-18%,-50%);
+    position: absolute; 
+    z-index:-2;
+    
+}
+#userIconLogin{
+    height:100%;
+    width:100%;
+    
 }

@@ -11,21 +11,27 @@
 
 <body>
     <div class="fundo">
-        <div class="opc"> </div>
-        <div class="login">
-            <div class="usuario">
-                <div class="log">
-                    <h3>Login</h3>
+        <div class="opc">
+            <div id="iconLogin">
+                <img id="userIconLogin" src="img/userLogin.png">
+            </div>
+
+            <div class="login">
+
+                <div class="usuario">
+                    <div class="log">
+                        <h3>Login</h3>
+                    </div>
+                    <input id="inpusuario" placeholder="Cnpj/E-mail" type="email" required>
+                    <br><br>
+                    <input id="inpsenha" placeholder="Senha" type="password" required><br><br><br>
+                    <a href="#">
+                        <button id="btnlogin" onclick="entrar()">Login</button>
+                    </a>
+                    <ul class="lista">
+                        <li>Não possui cadastro?<a href="cadastro.html"> Registre-se</a></li>
+                    </ul>
                 </div>
-                <input id="usuario" placeholder="Cnpj/E-mail" type="email" required>
-                <br><br>
-                <input id="senha" placeholder="Senha" type="password" required><br><br><br>
-                <a href="#">
-                    <button onclick="entrar()"><i>Login</i></button>
-                </a>
-                <ul class="lista">
-                    <li>Não possui cadastro?<a href="cadastro.html">Registre-se</a></li>
-                </ul>
             </div>
         </div>
     </div>
