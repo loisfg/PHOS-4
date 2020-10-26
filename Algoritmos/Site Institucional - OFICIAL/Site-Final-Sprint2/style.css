@@ -99,8 +99,8 @@ a:hover {
     justify-content: center;
     flex-direction: row;
     align-items: center;
-    top:18%;
-    left:49%;
+    top:17%;
+    left:48.5%;
     transform: translate(-18%,-50%);
     position: absolute; 
     z-index:-2;
