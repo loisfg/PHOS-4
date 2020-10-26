@@ -1,37 +1,41 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100%;
-    width: 100%;
+body {
     margin: 0%;
     padding: 0%;
-    
-}
-
-.fundo {
-    background-image: url(background-cadastro.jpg);
     height: 100%;
-    width:100%;
+    width: 100%;
+}
+.fundo {
+    height: 100%;
+    width: 100%;
+    background-image: url(../img/fundologin.jpg);
     background-size: cover;
     position: absolute;
-    z-index: -1;  
-    justify-content: center;
-    flex-direction: row;
-    display: flex;
-    align-items: center;
+    z-index: -33;
+    
 }
-.cadastro {
-    height: 70%;
+.login {
+    height: 65%;
     background-color: rgba(255, 255, 255, 0.842);
     text-align: center;
     width: 30%;
-    border-radius: 40px 0 ;
-    z-index: -1;
+    border-radius: 20px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    z-index: -22;
     font-family: Arial, Helvetica, sans-serif;
 }
 .usuario ul  {
     padding-top: 50px;
     text-decoration: none;
     padding-right: 50px;
+}
+#inpusuario{
+    width:50%;
+}
+#inpsenha{
+    width:50%;
 }
 li {
     text-decoration: none;
@@ -46,15 +50,14 @@ li {
 }
 input{   
     border-radius:4px;
-    background: #ffffff; 
-    border:0px solid rgba(255, 255, 255, 0.842);
+    background: white; 
     outline: none;
+    border: rgb(99, 98, 98);
     width: 60%;
     height: 40px;
     font-size: 16px;
-    border-color: gray;
 }
-.cadastro h3 {
+.login h3 {
     font-size: 40px;   
 }
 button {
@@ -65,7 +68,6 @@ button {
     background-color: #E9BA02;
     color:white;
     border: 2px solid #E9BA02;
-    margin-top: 5%;
 }
 button:hover {
     background-color: white;
@@ -80,7 +82,28 @@ a:hover {
     text-decoration: none;
     color: #000000;
 }
-
-.cad {
+.log {
     text-align: center;
+    color:#2E2E2E;
+}
+.lista li a{
+    color:royalblue;
+}
+#iconLogin{
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    top:17%;
+    left:48.5%;
+    transform: translate(-18%,-50%);
+    position: absolute; 
+    z-index:-2;
+    
+}
+#userIconLogin{
+    height:100%;
+    width:100%;
+    
 }
