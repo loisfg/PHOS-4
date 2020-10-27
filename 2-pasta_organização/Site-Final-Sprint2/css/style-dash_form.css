@@ -1,0 +1,305 @@
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+#conteiner {
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    background-color:#f4f4f4 ;
+    top:0;
+}
+
+.menu {
+    width: 6em; 
+    height: 100%;
+    background: black;
+    position: fixed;
+}
+
+.exit {
+    width: 8%; 
+    cursor:pointer;
+    position: absolute;
+    top: 30%;
+    right: 0.2%;
+}
+
+.div_graf{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 20%;
+}
+
+.icon_supor{
+    width: 48%;
+    margin-left: 27%;
+}
+
+.div_supor{
+    margin-bottom: 20%;
+    padding-top: 18%;
+    padding-bottom: 18%;
+    cursor:pointer;
+}
+.div_config{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    bottom: 0;
+    position: absolute;
+    cursor:pointer;
+
+}    
+.logo {
+    width: 90%; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    padding-left: 7%; 
+    cursor:pointer;
+}
+
+.icone_grafico {
+    width: 51px;
+}
+
+.icone_config {
+    width: 41px;
+}
+.icone_grafico{
+    width: 41px;
+}
+
+.div_graf:hover{
+    background-color:#131212;
+}
+
+.div_supor:hover {
+    background-color:#131212;
+}
+
+.div_config:hover{
+    background-color:#131212;
+
+}
+
+.header {
+    width: 100%;
+    height: 49%;
+    position: absolute;   
+}
+
+.mensagem1  {
+    width:40% ;
+}
+.mensagem1 p {
+    margin: 0%;
+    padding-left: 5.5%;
+    font-size: 20px;
+    color: rgba(102, 100, 100, 0.561);
+}
+
+#ms1 img {
+    padding-left: 12%;
+}
+#ms1  h3  {
+    padding-left:6% ;
+}
+#ms2  h3  {
+    padding-left:6% ;
+}
+#ms3  h3  {
+    padding-left:6% ;
+}
+
+.img_icon {
+    float: left;
+    padding-left: 8%;
+}
+
+.text_num {
+    float: left;
+    font-size: 60px;
+    align-items:center ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40%;
+    width: 50%;
+    font-style: initial;
+    font-family: 'Montserrat';font-size: 35px; 
+    margin-left: 10%;
+}
+
+#usuario {
+    width: 92%;
+    height: 10%;
+    padding-left:8% ;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    top:3%;
+    position: relative;
+}
+
+#usuario h3{
+    font-size: 35px;
+    padding-left: 5%;
+    margin-bottom: 1%;
+    color: #272727;
+    
+}
+#usuario p{
+    font-size: 21px; 
+}
+
+.mensagem2 {
+    float: right;
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    top:3% ;
+    position: relative;
+    right: 3%;
+}
+
+.mensagem{
+    width: 29%;
+    height: 50%;
+    background-color: white;
+    float: left;
+
+}
+ .use {
+    width:47px;
+    float: right;
+    margin-right: 8%;
+}
+
+.show {
+    width: 88%;
+    height: 35%;
+    padding-right: 2%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left:10%; 
+}
+
+.grafico {
+    width: 92%;
+    height: 55%;
+    padding-left:8% ;
+}
+
+.grafico img {
+    width: 96%;
+    margin-left: 2%;
+}
+
+/* suporte */
+#container-form{
+    width:100%;
+    height:100%;
+    position: absolute;
+    background-color:#f4f4f4;
+}
+#formulario p{
+    color:rgb(26, 26, 26);
+    font-style: oblique;
+    text-align:left;
+}
+#formulario h2{
+    color:rgb(26, 26, 26);
+    text-align: left;
+    top:2%;
+
+}
+#formulario{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    height:60%;
+    width:35%;
+    top:50%;
+    background-color:white;
+    left:50%;
+    transform:translate(-50%,-50%);
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+.campo{
+    height:7%;
+    width:40%;
+    font-size:15px;
+    float:left;
+}
+#inp1{
+    margin-right: 4%;
+}
+#inp3{
+    margin-right: 4%;
+    margin-top: 4%;
+}
+#inp4{
+    margin-top: 4%;
+}
+form{
+    height:100%;
+    width:100%;
+    padding-left: 10%;
+}
+textarea{
+    height:25%;
+    width:86%;
+    font-size:15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 4%;
+}
+.btnform{
+    height:10%;
+    width:25%;
+    border-radius: 7px;
+    font-size: 16px;
+}
+#btnenviar{
+    border: 2px solid #e9ba02;
+    color:#e9ba02;
+    background-color:white;
+    right:11%;
+    position: absolute;
+}
+#btncancelar{
+    border: 2px solid #414141;
+    color:#414141;
+    background-color:white;
+    right:38%;
+    position: absolute;
+}
+#btnenviar:hover{
+    border: 1px solid #e9ba02;
+    color:white;
+    background-color:#e9ba02;
+}
+#btncancelar:hover{
+    border: 1px solid #414141;
+    color:white;
+    background-color:#414141;
+}

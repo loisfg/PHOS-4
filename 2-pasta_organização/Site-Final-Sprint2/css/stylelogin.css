@@ -60,19 +60,35 @@ input{
 .login h3 {
     font-size: 40px;   
 }
-button {
+.btnlogin {
     border-radius:8px;
     width:50%;
     height: 40px;
     font-size: 20px;    
     background-color: #E9BA02;
     color:white;
+    margin-bottom: 3%;
     border: 2px solid #E9BA02;
 }
-button:hover {
+.btnlogin:hover {
     background-color: white;
     color: #E9BA02;
     border: 2px solid #E9BA02;
+}
+.btnvoltar {
+    border-radius:8px;
+    width:50%;
+    height: 40px;
+    font-size: 20px;    
+    background-color:white;
+    margin-bottom: 3%;
+    border: 2px solid #414141;
+    color:#414141;
+}
+.btnvoltar:hover{
+    border: 1px solid #414141;
+    color:white;
+    background-color:#414141;
 }
 
 a:hover {

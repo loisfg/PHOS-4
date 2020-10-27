@@ -26,7 +26,8 @@
                     <br><br>
                     <input id="inpsenha" placeholder="Senha" type="password" required><br><br><br>
                     <a href="#">
-                        <button id="btnlogin" onclick="entrar()">Login</button>
+                        <button class="btnlogin" onclick="entrar()">Login</button>
+                        <button class="btnvoltar" onclick="voltar()">Voltar</button>
                     </a>
                     <ul class="lista">
                         <li>Não possui cadastro?<a href="#"> Registre-se</a></li>
@@ -42,11 +43,14 @@
 <script>
     function entrar() {
         if (inpusuario.value == "phos4@gmail.com" && inpsenha.value == "1234") {
-            window.location.href = "file:///C:/Users/cebs/Documents/Bandtec2/1%C2%BA%20Semestre/Pesquisa%20e%20Inova%C3%A7%C3%A3o/Sprint%202%20-%20Phos4/PHOS-4/Algoritmos/Site%20Institucional%20-%20OFICIAL/Site-Final-Sprint2/index.html";
+            window.location.href = "dashboard.html";
             // Aqui o usuário prenche os campos com o email e senha acima, e após o login o usuário será direcionado para a página inicial
         }
         else {
             alert("Usuário não cadastrado")
         }
+    }
+    function voltar() {
+        window.location.href = "index.html";
     }
 </script>
