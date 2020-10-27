@@ -13,21 +13,27 @@
             <div class="opc"> </div>
             <div class="cadastro"> 
                 <div class="usuario">
-                    <div class="cad"> <h3>Cadastro</h3> </div>
-                    <input id="nome_empresa" type="text" placeholder="Razão social" required>
-                    <br><br>
-                    <input id="telefone" type="text" placeholder="Telefone" required>
-                    <br><br>
+                    <div class="cad"> <h3>Preencha seus dados</h3> </div>
+                    <input id="nome_empresa" type="text" placeholder="Nome" required>
+                    <input id="razao" type="text" placeholder="Razão social" required>
+
+                    <input id="telefone" type="text" placeholder="Telefone" required> 
                     <input id="email"  type="email" placeholder="Email" required>
-                    <br><br>
-                    <input id="endereco"  type="text" placeholder="Endereço" required >
-                    <br><br>
+
+                    <input id="endereco"  type="text" placeholder="Endereço" required >    
                     <input id="cnpj" type="text" placeholder="CNPJ" required>
-                    <br><br>
-                    <input id="senha" placeholder="Senha" type="password" required><br><br>
-                    <a href="#">
-                        <button onclick="entrar()"><i>Cadastrar</i></button>
-                    </a> 
+                       
+                    <textarea placeholder="Mensagem(opcional)"></textarea>
+                    <div id="group-btn">
+                        <div id="btn1">
+                            <a href="#">
+                                <button id="botao1" onclick="entrar()">Enviar</button>
+                            </a>
+                        </div>
+                        <div id="btn2">
+                            <a href="index.html">
+                                <button id="botao2" onclick="entrar()">Voltar</button>
+                            </a> 
                 </div>
         </div>
     </body>
