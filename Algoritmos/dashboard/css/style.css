@@ -23,6 +23,9 @@ body {
 .exit {
     width: 8%; 
     cursor:pointer;
+    position: absolute;
+    top: 30%;
+    right: 0.2%;
 }
 
 .div_graf{
@@ -79,16 +82,16 @@ body {
     width: 41px;
 }
 
-#div_graf:hover{
-    background-color:#0e0d0d; 
+.div_graf:hover{
+    background-color:#131212;
 }
 
-#div_supor:hover {
-    background-color:#0e0d0d;
+.div_supor:hover {
+    background-color:#131212;
 }
 
-#div_config:hover{
-    background-color:#0e0d0d;
+.div_config:hover{
+    background-color:#131212;
 
 }
 
@@ -164,7 +167,6 @@ body {
 }
 
 .mensagem2 {
-    right: 0%;
     float: right;
     width: 350px;
     display: flex;
