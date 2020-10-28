@@ -60,7 +60,7 @@ a{ /*faz parte da navbar*/
 
 .navbar{ /*faz parte da navbar*/
     width: 100%;
-    height: 10%;
+    height: 100px;
     top: 0;
     left: 0;
     position: fixed;
@@ -71,7 +71,7 @@ a{ /*faz parte da navbar*/
     background-color: rgba(0, 0, 0, 0.219);
     height: 100%;
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0px;
 }
 /* inicio */
@@ -80,7 +80,8 @@ a{ /*faz parte da navbar*/
     width:100%;
     background:url(../img/fundo2.jpg)center no-repeat;
     background-size:cover;
-    position:relative;
+    /* position:absolute; */
+    display: block;
 } 
 #text{
     width: 24%;
@@ -111,7 +112,7 @@ a{ /*faz parte da navbar*/
     display:flex;
     align-items: stretch;
     background-color:#fafafa;
-    position:relative;
+    /* position:absolute; */
 }
 .container{
     height:100%;
@@ -210,14 +211,13 @@ a{ /*faz parte da navbar*/
     width:100%;
     background: url(../img/fundofuncionalidades.jpg) center no-repeat;
     background-size: cover;
-    position:absolute;
+    /* position:absolute; */
 
 }
 .opcimg1{
     background-color: rgba(0, 0, 0, 0.582);
-    height: 600px;
+    height:100%;
     width: 100%;
-    position: absolute;
 }
 
 #text_servico{
@@ -250,14 +250,14 @@ a{ /*faz parte da navbar*/
 }
 /* simulador */
 #simulador{
-    height:100%;
+    height:80%;
     width:100%;
     justify-content: center;
     flex-direction: row;
     display:flex;
     align-items: center;
     background-color:#fafafa;
-    position:relative;
+    /* position:absolute; */
 }
 .container2{
     height:100%;
@@ -302,7 +302,7 @@ a{ /*faz parte da navbar*/
  margin-top: 30px;
 }
 #box-simulador button{
-    height:10%;
+    height:8%;
     width:40%;
     background-color:#E9BA02;
     color:white;
@@ -325,7 +325,7 @@ a{ /*faz parte da navbar*/
     flex-direction:row;
     align-items: center;
     margin-top: 21px;
-    position:relative;
+    /* position:absolute; */
 }
 .container3{
     height:100%;
@@ -393,6 +393,7 @@ footer{
     align-items:center;
     justify-content:center;
     flex-direction:row;
+    margin: 30px 0;
 }
 #cabecalho a{
     margin-right:2%;

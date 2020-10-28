@@ -116,12 +116,16 @@ body {
 }
 #ms1  h3  {
     padding-left:6% ;
+    margin: 10px 0 0 0;
 }
 #ms2  h3  {
     padding-left:6% ;
+    margin: 10px 0 0 0;
 }
 #ms3  h3  {
     padding-left:6% ;
+    margin: 10px 0 0 0;
+
 }
 
 .img_icon {
@@ -141,6 +145,7 @@ body {
     font-style: initial;
     font-family: 'Montserrat';font-size: 35px; 
     margin-left: 10%;
+    margin-top: 3%;
 }
 
 #usuario {
