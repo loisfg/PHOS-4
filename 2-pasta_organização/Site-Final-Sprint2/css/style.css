@@ -5,6 +5,7 @@ body{
     height: 100%;
     width: 100%;
     font-family:Arial, Helvetica, sans-serif;
+    position: absolute;
 }
 
 .img-logo { /*faz parte da navbar*/
@@ -79,13 +80,16 @@ a{ /*faz parte da navbar*/
     width:100%;
     background:url(../img/fundo2.jpg)center no-repeat;
     background-size:cover;
+    position:relative;
 } 
 #text{
     width: 24%;
     height:30%;
     color:white;
-    padding-top: 25%;
-    padding-left: 37%;
+    top:60%;
+    left:50%;
+    transform:translate(-60%,-50%);
+    position: absolute;
 }
 #text h2{
     color:white;
@@ -99,7 +103,7 @@ a{ /*faz parte da navbar*/
 }
 /*sobre*/
 #sobre{
-    height:900px;
+    height:120%;
     width: 100%;
     margin-top: 30px;
     justify-content: center;
@@ -107,6 +111,7 @@ a{ /*faz parte da navbar*/
     display:flex;
     align-items: stretch;
     background-color:#fafafa;
+    position:relative;
 }
 .container{
     height:100%;
@@ -201,10 +206,11 @@ a{ /*faz parte da navbar*/
 }
 /* servico */
 #servico{
-    height: 600px;
+    height: 100%;
     width:100%;
     background: url(../img/fundofuncionalidades.jpg) center no-repeat;
     background-size: cover;
+    position:absolute;
 
 }
 .opcimg1{
@@ -244,13 +250,14 @@ a{ /*faz parte da navbar*/
 }
 /* simulador */
 #simulador{
-    height:500px;
+    height:100%;
     width:100%;
     justify-content: center;
     flex-direction: row;
     display:flex;
     align-items: center;
     background-color:#fafafa;
+    position:relative;
 }
 .container2{
     height:100%;
@@ -258,7 +265,7 @@ a{ /*faz parte da navbar*/
     justify-content: center;
     flex-direction: row;
     display:flex;
-    align-items: center;
+    align-items: center;  position:relative;
 }
 #box-simulador{
     background-color:#fafafa;
@@ -311,13 +318,14 @@ a{ /*faz parte da navbar*/
 
 /* time */
 #time{
-    height: 600px;
+    height: 100%;
     width: 100%;
     display:flex;
     justify-content:center;
     flex-direction:row;
     align-items: center;
     margin-top: 21px;
+    position:relative;
 }
 .container3{
     height:100%;
@@ -367,12 +375,25 @@ a{ /*faz parte da navbar*/
 }
 /* rodapé */
 footer{
-    justify-content: center;
-    flex-direction: row;
-    display:flex;
-    align-items: center;
+    border-top: 6px solid #E9BA02;
+    text-align:center;
     color:white;
     background-color:black;
-    height:80px;
+    height:20%;
     width:100%;
+    position:absolute;
+}
+#cabecalho{
+    width:100%;
+    height:10%;
+    background-color:black;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:row;
+}
+#cabecalho a{
+    margin-right:2%;
 }
