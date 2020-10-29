@@ -184,11 +184,11 @@ body {
 }
 
 .mensagem{
-    width: 29%;
+    width: 25%;
     height: 50%;
     background-color: white;
     float: left;
-
+    margin-bottom: 0;
 }
  .use {
     width:47px;
@@ -217,13 +217,45 @@ body {
     width: 96%;
     margin-left: 2%;
 }
+#divalertas{
+    height:6%;
+    width:40%;
+    margin: auto;
+}
+#divalertas h5{
+    margin:0;
+    font-size: 15px;
+    margin-left: 35%;
+}
+.alerta{
+    height:51%;
+    width:20%;
+    color:white;
+    font-size:17px;
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+#alerta1{
+    background-color: rgb(182, 6, 6);
+    float:left;
+    margin-left: 20%;
+}
+#alerta2{
+    background-color: rgb(221, 221, 0);
+    float:left;
+}
+#alerta3{
+    background-color: rgb(46, 161, 0);
+    float:left;
+}
 
 /* suporte */
 #container-form{
     width:100%;
     height:100%;
     position: absolute;
-    background-color:#f4f4f4;
 }
 #formulario p{
     color:rgb(26, 26, 26);
