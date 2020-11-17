@@ -8,13 +8,14 @@ CREATE TABLE empresa_cadastro (
     email varchar(255),
     enderço varchar(100),
     CNPJ char(14),
-    ) auto_increment= 100;
+    );
 
-	   CREATE TABLE empresa_login (
-	id_login int  primary key auto_increment,
-    login_empresa varchar(40),
-    senha varchar(70),
-    adm_usuario int check (adm_usuario = 0 or adm_usuario = 1),
+	   CREATE TABLE Cadastro_usuario (
+	id_Cadastro_usuario int  primary key auto_increment,
+    E_mail varchar(75),
+    senha varchar(75),
+    CPF char(14),
+	Função varchar(50)
 	fkempresa_cadastro int,
 	foreign key(fkempresa_cadastro) references empresa_cadastro (id_cadastro)
     );
@@ -46,14 +47,21 @@ VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','635124890001
       (null,'McDonalds','1198754432','mcdonalds@mcdonalds.com', 'rua joaquim marra', '05125461000125'),
       (null,'GetNet','1153462455','getnet@getnet.com', 'rua coracao de maça','12345688000135');
 
-	  INSERT INTO empresa_login 
-VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD', 1,100),
-      (null,'LuizGsilva','ghghhghg', 1,101),
-      (null,'ViniOliveira','vinivini321', 1,102),
-      (null, 'LuisFRocha','lflflflf', 1,103),
-      (null,'Carlos','carlos15', 1,104),
-      (null,'ThallesBuso','thallesb', 1,105),
-      (null,'MatheusDaniel','@123456',1, 106);
+	  INSERT INTO Cadastro_usuario
+VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD','849.564.170-47','ADM gestão', 1),
+      (null,'Luciene','glapccd','656.648.130-32','Fullstack', 1),
+	  (null,'LuizGsilva','ghghhghg','383.463.160-46','ADM gestão', 2),
+      (null,'Maristela','joinha','378.665.150-77','Gerente setor A', 2),
+	  (null,'ViniOliveira','vinivini321','143.330.110-51','ADM gestão',3),
+	  (null,'Robson','robinho','630.738.150-74','Assistente ADM gestão', 3),
+      (null, 'LuisFRocha','lflflflf','310.394.080-79','ADM gestão',4),
+      (null,'Cleiton','basquete123','651.678.152-20','Assistente ADM', 4),
+	  (null,'Carlos','carlos15','872.498.160-55','ADM gestão',5),
+	  (null,'Oswaldo','oswaldinho123','438.684.360-49','Analista de dados', 5),
+      (null,'ThallesBuso','thallesb','821.809.740-60','ADM gestão',6),
+	  (null,'Cleberson','batinha','081.754.050-40','Suporte de comunicação e rede',6),
+      (null,'MatheusDaniel','@123456','549.876.370-06','ADM gestão',7),
+	  (null,'Silene','senha123','153.362.910-21','Front-end',7);
       
       INSERT INTO Ambiente 
 VALUES(null,'Sala1C GOOGLE','centro',100),
@@ -93,6 +101,6 @@ VALUES(5000,'701.45','2020-10-17 12:30:00.000'),
       (5006,'689.22','2020-10-17 12:40:00.000');
 
 
-select * from empresa_login, empresa_cadastro, Ambiente, Sensor, leitura where fkcadastro = id_cadastro and fkambiente = id_Ambiente and fksensor = id_Sensor;
+select * from Cadastro_usuario, empresa_cadastro, Ambiente, Sensor, Leitura where fkcadastro = id_cadastro and fkambiente = id_Ambiente and fksensor = id_Sensor;
 
       
