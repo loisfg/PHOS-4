@@ -3,11 +3,13 @@ use phos4;
 
 CREATE TABLE empresa_cadastro (
 	id_cadastro  int primary key auto_increment, 
-    nome_empresa varchar(70),
-    telefone varchar(11),
+	razaosocial varchar (80);
+    nomefantasia varchar(50),
     email varchar(255),
+	telefone varchar(11),
     enderço varchar(100),
     CNPJ char(14),
+	representante varchar(70)
     );
 
 	   CREATE TABLE Cadastro_usuario (
@@ -39,13 +41,13 @@ CREATE TABLE empresa_cadastro (
 
       
       INSERT INTO empresa_cadastro 
-VALUES(null,'GOOGLE','11987388111','google@gmail.com', 'rua cinco','63512489000121' ),
-      (null,'iutube','21923421421','arebaba@hotmail.com','rua J','26254897000151'),
-      (null,'Puma','51977686316','puma@gmail.com','rua augusta', '36598421000119'),
-      (null,'Git','1199878787','git@hub.com', 'rua de melo', '23654789000125'),
-      (null,'amazon','19933142','amazon@amazon.com','rua hadock', '54236987000141'),
-      (null,'McDonalds','1198754432','mcdonalds@mcdonalds.com', 'rua joaquim marra', '05125461000125'),
-      (null,'GetNet','1153462455','getnet@getnet.com', 'rua coracao de maça','12345688000135');
+VALUES(null,'Google LLC','GOOGLE','google@gmail.com','11987388111', 'rua cinco','63512489000121' ),
+      (null,'Alphabet Inc. YouTube','youtube','arebaba@hotmail.com','21923421421','rua J','26254897000151'),
+      (null,'Puma Sports LTDA','Puma','puma@gmail.com','51977686316','rua augusta', '36598421000119'),
+      (null,'Coca-Cola Indústrias Ltda','Coca-Cola','cocacola@gmail.com','1199878787', 'rua de melo', '23654789000125'),
+      (null,'amazon','amazon@amazon.com','19933142','rua hadock', '54236987000141'),
+      (null,'McDonald`s Corporation','McDonalds','mcdonalds@mcdonalds.com','1198754432', 'rua joaquim marra', '05125461000125'),
+      (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','getnet@getnet.com','1153462455', 'rua coracao de maça','12345688000135');
 
 	  INSERT INTO Cadastro_usuario
 VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD','849.564.170-47','ADM gestão', 1),
