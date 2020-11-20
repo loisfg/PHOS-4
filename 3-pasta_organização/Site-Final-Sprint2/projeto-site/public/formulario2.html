@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/style-dash_form.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="icon" href="img/logo.png">
+        <title>Suporte</title>
+    </head>
+    <body>
+        <div id="container-form">
+            <div class="menu">
+                <a href="dashboard.html"><img class="logo" src="img/logo.png"></a>
+                <a href="dashboard.html"><div class="div_graf"> <img class="icone_grafico" src="img/grafico.png" alt=""></div></a>
+                <div class="div_supor" onclick="suporte()"> <img class="icon_supor" src="img/icon_suporte.png"> </div>
+                <div class="div_config" id="iconConfigForm">
+                     <img class="icone_config" src="img/config.png" alt="">
+                    </div>
+            </div>
+
+            <div id="usuario">
+                <div class="mensagem1">
+                    <h3>Olá Franklin,</h3>
+                    <p>Veja aqui sua dashboard</p>
+                </div>
+
+
+                <div class="mensagem2">
+                    <h4>Companhia de iluminação</h4> <img class="use" src="img/user.png" alt="">
+                    <a href="index.html">
+                        <img id="ID_exit" class="exit" src="img/sair_icon.png">
+                    </a>
+                </div>
+            </div>
+            <div id="formulario">
+                <form>
+                    <h2>Fale com o suporte</h2>
+                    <p>Contate-nos</p>
+                    <input type="text" id="inp1" class="campo" placeholder="Nome">
+                    <input type="text" id="inp2" class="campo" placeholder="Sobrenome">
+                    <input type="email" id="inp3" class="campo" placeholder="Email">
+                    <input type="text" id="inp4" class="campo" placeholder="Assunto">
+                    <textarea placeholder="Mensagem"></textarea><br><br>
+                    <button  class="btnform" id="btncancelar" onclick="cancelar()">Cancelar</button>
+                    <button  class="btnform" id="btnenviar" onclick="enviar()">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

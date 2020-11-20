@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="sortcut icon" href="./img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="opc"> </div>
+        <div class="cadastro">
+            <div class="usuario">
+                <div class="cad">
+                    <h3>Cadastro</h3>
+                </div>
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <input id="razaosocial" name="razaosocial" type="text" placeholder="Razão social" required>
+
+                    <input id="nomefantasia" name="nomefantasia" type="text" placeholder="Nome fantasia" required>
+
+                    <input id="telefone" name="telefone" type="fone" placeholder="Telefone" required>
+
+                    <input id="endereco" name="endereco" type="text" placeholder="Endereço" required>
+
+                    <input id="cnpj" name="cnpj" type="text" placeholder="CNPJ" required>
+
+                    <input id="representante" name="representante" type="text" placeholder="Representante" required>
+
+                    <input id="email" name="email" type="email" placeholder="Email" required>
+
+                    <input id="senha" name="senha" type="password" placeholder="********" required>
+
+                    <div id="group-btn">
+                        <div id="btn1">
+                            <button id="botao1">Enviar</button>
+                        </div>
+
+                </form>
+
+                <div id="btn2">
+                    <a href="index.html">
+                        <button id="botao2" onclick="entrar()">Voltar</button>
+                    </a>
+                </div>
+            </div>
+</body>
+
+</html>
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>
