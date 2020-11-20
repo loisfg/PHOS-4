@@ -5,11 +5,12 @@ CREATE TABLE empresa_cadastro (
 	id_cadastro  int primary key auto_increment, 
 	razaosocial varchar (80);
     nomefantasia varchar(50),
-    email varchar(255),
 	telefone varchar(11),
     enderço varchar(100),
     CNPJ char(14),
-	representante varchar(70)
+	representante varchar(70),
+	email varchar(100),
+	senha varchar(50)
     );
 
 	   CREATE TABLE Cadastro_usuario (
@@ -41,28 +42,28 @@ CREATE TABLE empresa_cadastro (
 
       
       INSERT INTO empresa_cadastro 
-VALUES(null,'Google LLC','GOOGLE','google@gmail.com','11987388111', 'rua cinco','63512489000121' ),
-      (null,'Alphabet Inc. YouTube','youtube','arebaba@hotmail.com','21923421421','rua J','26254897000151'),
-      (null,'Puma Sports LTDA','Puma','puma@gmail.com','51977686316','rua augusta', '36598421000119'),
-      (null,'Coca-Cola Indústrias Ltda','Coca-Cola','cocacola@gmail.com','1199878787', 'rua de melo', '23654789000125'),
-      (null,'amazon','amazon@amazon.com','19933142','rua hadock', '54236987000141'),
-      (null,'McDonald`s Corporation','McDonalds','mcdonalds@mcdonalds.com','1198754432', 'rua joaquim marra', '05125461000125'),
-      (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','getnet@getnet.com','1153462455', 'rua coracao de maça','12345688000135');
+VALUES(null,'Google LLC','GOOGLE','11987388111', 'rua cinco','63512489000121','google@gmail.com','Pedro Leiva'),
+      (null,'Alphabet Inc. YouTube','youtube','21923421421','rua J','26254897000151','arebaba@hotmail.com','Luiz Fernando'),
+      (null,'Puma Sports LTDA','Puma','51977686316','rua augusta', '36598421000119','puma@gmail.com','Beatriz Campos'),
+      (null,'Coca-Cola Indústrias Ltda','Coca-Cola','1199878787', 'rua de melo', '23654789000125','cocacola@gmail.com','Franklin Oliveira'),
+      (null,'amazon','19933142','rua hadock', '54236987000141','amazon@amazon.com','Isabella Pires'),
+      (null,'McDonald`s Corporation','McDonalds','1198754432', 'rua joaquim marra', '05125461000125','mcdonalds@mcdonalds.com','Carlos Eduardo'),
+      (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','1153462455', 'rua coracao de maça','12345688000135','getnet@getnet.com','Matheus Silva');
 
 	  INSERT INTO Cadastro_usuario
-VALUES(null,'natanista','@2e1oUdhu8QWQ80BWD','849.564.170-47','ADM gestão', 1),
+VALUES(null,'Pedro Leiva','Pedrohlhl','849.564.170-47','ADM gestão', 1),
       (null,'Luciene','glapccd','656.648.130-32','Fullstack', 1),
-	  (null,'LuizGsilva','ghghhghg','383.463.160-46','ADM gestão', 2),
+	  (null,'Luiz Fernando','lferocha','383.463.160-46','ADM gestão', 2),
       (null,'Maristela','joinha','378.665.150-77','Gerente setor A', 2),
-	  (null,'ViniOliveira','vinivini321','143.330.110-51','ADM gestão',3),
+	  (null,'Franklin Oliveira','frank321','143.330.110-51','ADM gestão',3),
 	  (null,'Robson','robinho','630.738.150-74','Assistente ADM gestão', 3),
-      (null, 'LuisFRocha','lflflflf','310.394.080-79','ADM gestão',4),
+      (null, 'Beatriz Campos','bea3Camp','310.394.080-79','ADM gestão',4),
       (null,'Cleiton','basquete123','651.678.152-20','Assistente ADM', 4),
-	  (null,'Carlos','carlos15','872.498.160-55','ADM gestão',5),
+	  (null,'Isabella Pires','isabel123','872.498.160-55','ADM gestão',5),
 	  (null,'Oswaldo','oswaldinho123','438.684.360-49','Analista de dados', 5),
-      (null,'ThallesBuso','thallesb','821.809.740-60','ADM gestão',6),
+      (null,'Carlos Eduardo','Carlinhos321','821.809.740-60','ADM gestão',6),
 	  (null,'Cleberson','batinha','081.754.050-40','Suporte de comunicação e rede',6),
-      (null,'MatheusDaniel','@123456','549.876.370-06','ADM gestão',7),
+      (null,'Matheus Silva','@123456','549.876.370-06','ADM gestão',7),
 	  (null,'Silene','senha123','153.362.910-21','Front-end',7);
       
       INSERT INTO Ambiente 
