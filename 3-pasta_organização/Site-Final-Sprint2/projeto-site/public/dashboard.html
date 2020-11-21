@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
     <style>
         canvas {
@@ -41,7 +42,7 @@
 
         <div id="usuario">
             <div class="mensagem1">
-                <h3>Olá Franklin,</h3>
+                <h3>Olá, <b id="b_usuario"></b></h3>
                 <p>Veja aqui sua dashboard</p>
             </div>
 
@@ -425,6 +426,7 @@
 
                 //Esse atributo dentro do contexto serve para saber qual foi o último índice processado, assim eliminado os outros elementos na
                 //hora de montar/atualizar o gráfico
+                
                 this.lastIndexLumi = 0;
                 this.timeLumi = 0;
 

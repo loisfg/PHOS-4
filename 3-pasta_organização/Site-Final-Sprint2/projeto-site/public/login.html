@@ -24,10 +24,10 @@
                     </div>
                     <form id="form_login" method="post" onsubmit="return entrar()">
 
-                    <input id="inpusuario" name="cnpj" placeholder="Cnpj" type="email" required>
+                    <input id="inpusuario" name="cnpj" placeholder="Cnpj" type="text" required>
                     <br><br>
                     <input id="inpsenha" name="senha" placeholder="Senha" type="password" required><br><br><br>
-                        <button class="btnlogin">Login</button>
+                        <button id="btnentrar" class="btnlogin">Login</button>
                         <button class="btnvoltar" onclick="voltar()">Voltar</button>
                     </form>
                 
@@ -45,7 +45,7 @@
 <script>
 
     function entrar() {
-        aguardar();
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_login));
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -56,8 +56,8 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.email_usuario_meuapp = json.email;
-                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    sessionStorage.cnpj_usuario_meuapp = json.cnpj;
+                    sessionStorage.senha_usuario_meuapp = json.senha;
 
                     window.location.href = 'dashboard.html';
                 });
@@ -68,7 +68,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    finalizar_aguardar(texto);
+                    // finalizar_aguardar(texto);
                 });
             }
         });
@@ -76,17 +76,17 @@
         return false;
     }
 
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.visibility = 'visible';
-        div_erro.style.visibility = 'hidden';
-    }
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.visibility = 'visible';
+    //     div_erro.style.visibility = 'hidden';
+    // }
 
-    function finalizar_aguardar(resposta) {
-        btn_entrar.disabled = false;
-        img_aguarde.style.visibility = 'hidden';
-        div_erro.style.visibility = 'visible';
-        div_erro.innerHTML = resposta;
-    }
+    // function finalizar_aguardar(resposta) {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.visibility = 'hidden';
+    //     div_erro.style.visibility = 'visible';
+    //     div_erro.innerHTML = resposta;
+    // }
 
 </script>

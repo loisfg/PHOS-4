@@ -12,7 +12,7 @@ router.post('/autenticar', function(req, res, next) {
 	var cnpj = req.body.cnpj; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from usuario where login='${login}' and senha='${senha}'`;
+	let instrucaoSql = `select * from usuario where cnpj='${cnpj}' and senha='${senha}'`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -21,7 +21,7 @@ router.post('/autenticar', function(req, res, next) {
 		console.log(`Encontrados: ${resultado.length}`);
 
 		if (resultado.length == 1) {
-			sessoes.push(resultado[0].dataValues.login);
+			sessoes.push(resultado[0].dataValues.cnpj);
 			console.log('sessoes: ',sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
@@ -61,19 +61,19 @@ router.post('/cadastrar', function(req, res, next) {
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function(req, res, next) {
-	let login = req.params.login;
-	console.log(`Verificando se o usuário ${login} tem sessão`);
+	let cnpj = req.params.cnpj;
+	console.log(`Verificando se o usuário ${cnpj} tem sessão`);
 	
 	let tem_sessao = false;
 	for (let u=0; u<sessoes.length; u++) {
-		if (sessoes[u] == login) {
+		if (sessoes[u] == cnpj) {
 			tem_sessao = true;
 			break;
 		}
 	}
 
 	if (tem_sessao) {
-		let mensagem = `Usuário ${login} possui sessão ativa!`;
+		let mensagem = `Usuário ${cnpj} possui sessão ativa!`;
 		console.log(mensagem);
 		res.send(mensagem);
 	} else {
@@ -85,16 +85,16 @@ router.get('/sessao/:login', function(req, res, next) {
 
 /* Logoff de usuário */
 router.get('/sair/:login', function(req, res, next) {
-	let login = req.params.login;
-	console.log(`Finalizando a sessão do usuário ${login}`);
+	let cnpj = req.params.cnpj;
+	console.log(`Finalizando a sessão do usuário ${cnpj}`);
 	let nova_sessoes = []
 	for (let u=0; u<sessoes.length; u++) {
-		if (sessoes[u] != login) {
+		if (sessoes[u] != cnpj) {
 			nova_sessoes.push(sessoes[u]);
 		}
 	}
 	sessoes = nova_sessoes;
-	res.send(`Sessão do usuário ${login} finalizada com sucesso!`);
+	res.send(`Sessão do usuário ${cnpj} finalizada com sucesso!`);
 });
 
 

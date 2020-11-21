@@ -22,7 +22,7 @@
 
                     <input id="nomefantasia" name="nomefantasia" type="text" placeholder="Nome fantasia" required>
 
-                    <input id="telefone" name="telefone" type="fone" placeholder="Telefone" required>
+                    <input id="telefone" name="telefone" type="text" placeholder="Telefone" required>
 
                     <input id="endereco" name="endereco" type="text" placeholder="Endereço" required>
 
@@ -30,9 +30,9 @@
 
                     <input id="representante" name="representante" type="text" placeholder="Representante" required>
 
-                    <input id="email" name="email" type="email" placeholder="Email" required>
+                    <input id="email" name="email" type="text" placeholder="Email" required>
 
-                    <input id="senha" name="senha" type="password" placeholder="********" required>
+                    <input id="senha" name="senha" type="text" placeholder="********" required>
 
                     <div id="group-btn">
                         <div id="btn1">
@@ -53,7 +53,7 @@
 <script>
 
     function cadastrar() {
-        aguardar();
+        // aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -70,23 +70,23 @@
                 response.text().then(function (resposta) {
                     div_erro.innerHTML = resposta;
                 });
-                finalizar_aguardar();
+                // finalizar_aguardar();
             }
         });
 
         return false;
     }
 
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
-    }
+    // function aguardar() {
+    //     btn_entrar.disabled = true;
+    //     img_aguarde.style.display='block';
+    //     div_erro.style.display='none';
+    // }
 
-    function finalizar_aguardar() {
-        btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
-    }
+    // function finalizar_aguardar() {
+    //     btn_entrar.disabled = false;
+    //     img_aguarde.style.display='none';
+    //     div_erro.style.display='block';
+    // }
 
 </script>

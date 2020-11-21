@@ -1,4 +1,4 @@
-let login_usuario;
+let cnpj_usuario;
 let nome_usuario;
 
 function redirecionar_login() {
@@ -6,13 +6,14 @@ function redirecionar_login() {
 }
 
 function verificar_autenticacao() {
-    login_usuario = sessionStorage.login_usuario_meuapp;
+
+    cnpj_usuario = sessionStorage.cnpj_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
-    
-    if (login_usuario == undefined)  {
+
+    if (cnpj_usuario == undefined)  {
         redirecionar_login();
     } else {
-        b_usuario.innerHTML = nome_usuario;
+        b_usuario.innerHTML = cnpj_usuario;
         validar_sessao();
     }
     
@@ -25,7 +26,7 @@ function logoff() {
 }
 
 function validar_sessao() {
-    fetch(`/usuarios/sessao/${login_usuario}`, {cache:'no-store'})
+    fetch(`/usuarios/sessao/${_usuario}`, {cache:'no-store'})
     .then(resposta => {
         if (resposta.ok) {
             resposta.text().then(texto => {
@@ -39,5 +40,5 @@ function validar_sessao() {
 }
 
 function finalizar_sessao() {
-    fetch(`/usuarios/sair/${login_usuario}`, {cache:'no-store'}); 
+    fetch(`/usuarios/sair/${cnpj_usuario}`, {cache:'no-store'}); 
 }
