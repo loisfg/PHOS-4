@@ -125,9 +125,20 @@ body {
     float: right;
     /* background-color: aquamarine; */
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     font-size: 20px;
     align-items: center;
+}
+
+#sair {
+    width: 30%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sair img {
+    width: 41px;
 }
 
 #nome_user h2 {
@@ -183,7 +194,7 @@ body {
     align-items: center;
     font-size: 60px;
     color: #f4f4f4;
-    display: none;
+    /* display: none; */
 }
 #salas {
     width: 93%;
@@ -201,11 +212,16 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+    cursor: pointer;
+    transition: all 1s;
+}
+#box_salas:hover {
+    background-color: rgb(255, 166, 0);
 }
 #onde {
     width: 100%;
     height: 10%;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.794);
     display: flex;
     align-items: center;
 }
@@ -226,12 +242,21 @@ body {
     width: 93%;
     height: 100%;
     float: right;
-    /* display: none; */
+    display: none;
+}
+#divisao1{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+#divisao2{
+    width: 50%;
+    height: 100%;
+    float: right;
 }
 #imagemplanta{
-    width: 50%;
+    width: 95%;
     height: 90%;
-    background-color: pink;
     background: url(../img/planta_sala.png) center no-repeat;
     background-size: cover;
     margin: 2.5%;
@@ -257,4 +282,36 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 20px;
+}
+#luz {
+    width: 45%;
+    margin: 2%;
+    height: 60%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fba300;
+    border-radius: 20px 0 20px 20px ;
+}
+
+.porcentagens {
+    width: 21.5%;
+    height: 40%;
+    background-color: blue;
+    border-radius: 15px;
+}
+
+#box1 {
+    width: 100%;
+    height: 45%;
+}
+
+#box2 {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }

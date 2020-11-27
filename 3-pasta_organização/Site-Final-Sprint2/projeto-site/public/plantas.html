@@ -31,15 +31,22 @@
             </div>
         </div>
         <div class="container">
+            <!-- PARTE DO USUARIO -->
             <div id="usuario">
                 <div id="nome_user">
                     <h2>
-                        tá
+                       Olá, Math Lindo
                     </h2>
                 </div>
                 <div id="nome_company">
-                    Empresa da luz
+                    Empresa da luz ⚡⚡
+                    <div id="sair">
+                        <a href="">
+                            <img src="img/sair_icon.png" alt="">
+                        </a>
+                    </div>
                 </div>
+                
             </div>
             <div class="box">
                 <div id="divisaobox">
@@ -60,12 +67,27 @@
                     </div>
                     <!-- PLANTAS -->
                     <div id="plantas">
-                        <div id="imagemplanta">
-                            <div id="quadro">
-                                <div id="valores">A</div>
-                                <div id="valores">B</div>
-                                <div id="valores">C</div>
-                                <div id="valores">D</div>
+                        <div id="divisao1">
+                            <div id="imagemplanta">
+                                <div id="quadro">
+                                    <div id="valores">A</div>
+                                    <div id="valores">B</div>
+                                    <div id="valores">C</div>
+                                    <div id="valores">D</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="divisao2">
+                            <div id="box1">
+                                <div id="luz">
+                                    <img src="img/lampadash.png" alt="">
+                                </div>
+                            </div>
+                            <div id="box2">
+                                <div class="porcentagens"></div>
+                                <div class="porcentagens"></div>
+                                <div class="porcentagens"></div>
+                                <div class="porcentagens"></div>
                             </div>
                         </div>
                     </div>
@@ -87,9 +109,13 @@
         var sala = div.id;
         saudacao.style = `display:none`;
         salas.style = `display:block`;
+        plantas.style = `display:none`;
         local.innerHTML = `${sala}`;
     }
     function Alterar(div) {
-
+        salas.style = `display:none`;
+        plantas.style = `display:block`;
     }
 </script>
+<!--imagem da lampada pra trocar de cores
+https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&position=3&related_item_id=702797 -->
