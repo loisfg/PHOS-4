@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/plantas.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <title>Plantinhas</title>
+</head>
+
+<body>
+    <div id="pagplantas">
+        <div class="menu">
+            <img class="logo" src="img/logo.png">
+            <a href="dashboard.html">
+                <div class="div_graf">
+                    <img class="icone_grafico" src="img/grafico.png" alt="">
+                </div>
+            </a>
+            <a href="formulario.html">
+                <div class="div_supor">
+                    <img class="icon_supor" src="img/icon_suporte.png">
+                </div>
+            </a>
+            <div class="icon_salas">
+                <img class="icon_planos" src="img/planos.png" alt="">
+            </div>
+            <div class="div_config">
+                <img class="icone_config" src="img/config.png" alt="">
+            </div>
+        </div>
+        <div class="container">
+            <div id="usuario">
+                <div id="nome_user">
+                    <h2>
+                        tá
+                    </h2>
+                </div>
+                <div id="nome_company">
+                    Empresa da luz
+                </div>
+            </div>
+            <div class="box">
+                <div id="divisaobox">
+                    <!-- SAUDAÇÃO -->
+                    <div id="saudacao">
+                        <h2>SEJA BEM VINDO 💡</h2>
+                    </div>
+                    <!-- DIVISOES DAS SALAS -->
+                    <div id="salas">
+                        <div id="onde">
+                            <h2>VOCÊ ESTÁ NO ANDAR <b id="local"></b></h2>
+                        </div>
+                        <div id="divsalas">
+                            <div id="box_salas" onclick="Alterar(this)">A1</div>
+                            <div id="box_salas" onclick="Alterar(this)">C2</div>
+                            <div id="box_salas" onclick="Alterar(this)">B3</div>
+                        </div>
+                    </div>
+                    <!-- PLANTAS -->
+                    <div id="plantas">
+                        <div id="imagemplanta">
+                            <div id="quadro">
+                                <div id="valores">A</div>
+                                <div id="valores">B</div>
+                                <div id="valores">C</div>
+                                <div id="valores">D</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="numeros">
+                        <div class="divisao_num" id="1" onclick="myFunction(this)">1</div>
+                        <div class="divisao_num" id="2" onclick="myFunction(this)">2</div>
+                        <div class="divisao_num" id="3" onclick="myFunction(this)">3</div>
+                        <div class="divisao_num" id="4" onclick="myFunction(this)">4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    function myFunction(div) {
+        var sala = div.id;
+        saudacao.style = `display:none`;
+        salas.style = `display:block`;
+        local.innerHTML = `${sala}`;
+    }
+    function Alterar(div) {
+
+    }
+</script>
