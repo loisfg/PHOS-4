@@ -35,7 +35,7 @@
             <div id="usuario">
                 <div id="nome_user">
                     <h2>
-                       Olá, Math Lindo
+                        Olá, Math Lindo
                     </h2>
                 </div>
                 <div id="nome_company">
@@ -46,7 +46,7 @@
                         </a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="box">
                 <div id="divisaobox">
@@ -80,14 +80,24 @@
                         <div id="divisao2">
                             <div id="box1">
                                 <div id="luz">
-                                    <img src="img/lampadash.png" alt="">
+                                    <img id="imagemdaluz" src="img/lampadash.png" alt="">
                                 </div>
                             </div>
                             <div id="box2">
-                                <div class="porcentagens"></div>
-                                <div class="porcentagens"></div>
-                                <div class="porcentagens"></div>
-                                <div class="porcentagens"></div>
+                                <div class="porcentagens">
+                                    <span id="s_leitura">
+                                        <b id="b_leitura">?</b>%
+                                    </span>
+                                </div>
+                                <div class="porcentagens">
+                                    
+                                </div>
+                                <div class="porcentagens">
+
+                                </div>
+                                <div class="porcentagens">
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,7 +125,41 @@
     function Alterar(div) {
         salas.style = `display:none`;
         plantas.style = `display:block`;
+        
     }
+
+var limiteMax = 50;
+var limiteMin = 35;
+
+function receberNovasLeituras() {
+    setTimeout(() => {
+
+        luminosidade = (Math.random() * (limiteMax-limiteMin) + limiteMin).toFixed(1)
+
+        // calculo de uma posição de 0 a 100% "entre" os limites min e max
+        var posicao = (luminosidade - limiteMin) / (limiteMax - limiteMin) * 100;
+
+        
+        // temp está "baixa" (<25), "ok" (>=25 && <=75) ou "ok" (>75) ?
+        // trocando a imagem e o estilo do valor da leitura
+        if (posicao <= 40) {
+            luz.style.background = "rgb(47, 67, 134)";
+        } else {            
+            luz.style.background = "#fba300";
+        }
+
+
+        // atualizando o valor da leitura na página
+        b_leitura.innerHTML = luminosidade;
+
+        // função que agenda a recuperação da última leitura para daqui a 3 segundos
+        receberNovasLeituras();	
+
+    }, 2000); // 3000 ms -> 3 segundos
+}
+
+// indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
+window.onload = receberNovasLeituras;
 </script>
 <!--imagem da lampada pra trocar de cores
 https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&position=3&related_item_id=702797 -->
