@@ -81,13 +81,10 @@ a:hover {
     left:0;
 }
 
-/* -----------------teste----------------- */
+/* -----------------inputs----------------- */
 
-#nome_empresa{
-    margin-right: 5%;
-}
-#email{
-    margin-right: 5%;
+#nomefantasia{
+    margin-left: 5%;
 }
 #email{
     margin-top:5%;
@@ -102,7 +99,14 @@ a:hover {
 }
 #cnpj{
     margin-top:5%;
-    margin-bottom: 10%;
+}
+#representante{
+    margin-top:5%;
+    margin-left:5%;
+}
+#senha{
+    margin-left:5%;
+    margin-top:5%;
 }
 textarea{
     width:85%;
@@ -166,11 +170,10 @@ button {
     background-color: #E9BA02;
     color:white;
     border: 2px solid #E9BA02;
-    margin-top: 5%;
+    margin-top: 40%;
 }
 #botao1:hover {
     background-color: #e0b505;
     border: 2px solid #e0b505;
     cursor:pointer;
-
 }
