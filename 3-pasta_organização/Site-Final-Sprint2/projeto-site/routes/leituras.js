@@ -4,23 +4,22 @@ var sequelize = require('../models').sequelize;
 var Leitura = require('../models').Leitura;
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function(req, res, next) {
+router.get('/ultimas/:fkSensor', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
-	const limite_linhas = 7;
+	const limite_linhas = 7; // mudar isso aqui depois
 
-	var idcaminhao = req.params.idcaminhao;
+	var idLuminosidade = req.params.fkSensor;
 
-	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
+	console.log(`Recuperando as ultimas ${limite_linhas} leituras`); // quantos selects seram feitos
 	
 	const instrucaoSql = `select top ${limite_linhas} 
-						temperatura, 
-						umidade, 
+						lux,
 						momento,
 						FORMAT(momento,'HH:mm:ss') as momento_grafico
 						from leitura
-						where idcaminhao = ${idcaminhao}
-						order by id desc`;
+						where fkSensor = ${fkSensor}
+						order by fkSensor desc`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
@@ -41,7 +40,7 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 	
 	console.log(`Recuperando a ultima leitura`);
 
-	const instrucaoSql = `select top 4 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, idcaminhao from leitura order by id desc`;
+	const instrucaoSql = `select top 4 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura order by id desc`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {
@@ -54,13 +53,13 @@ router.get('/ultimas/:idcaminhao', function(req, res, next) {
 });
 */
 
-router.get('/tempo-real/:idcaminhao', function(req, res, next) {
+router.get('/tempo-real/:fkSensor', function(req, res, next) {
 	console.log('Recuperando caminhões');
 
-	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var idcaminhao = req.params.idcaminhao;
+	//var fkSensor = req.body.fkSensor; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var fkSensor = req.params.fkSensor;
 
-	let instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, idcaminhao from leitura where idcaminhao = ${idcaminhao} order by id desc`;
+	let instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura where fkSensor = ${fkSensor} order by id desc`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })

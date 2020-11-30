@@ -33,12 +33,11 @@
                     <input id="email" name="email" type="text" placeholder="Email" required>
 
                     <input id="senha" name="senha" type="text" placeholder="********" required>
-
-                </form> 
-                <div id="group-btn">
                     <div id="btn1">
                         <button id="botao1">Enviar</button>
                     </div>
+                </form> 
+                <div id="group-btn">                   
 
                     <div id="btn2">
                         <a href="index.html">
@@ -60,7 +59,7 @@
         }).then(function (response) {
             
             if (response.ok) {
-
+                alert('cadastro realizado com sucesso')
                 window.location.href='login.html';
 
             } else {
