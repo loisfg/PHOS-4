@@ -62,7 +62,7 @@ router.post('/cadastrar', function(req, res, next) {
 /* Verificação de usuário */
 router.get('/sessao/:login', function(req, res, next) {
 	let cnpj = req.params.cnpj;
-	console.log(`Verificando se o usuário ${cnpj} tem sessão`);
+	console.log(`Verificando se o usuário ${representante_usuario} tem sessão`);
 	
 	let tem_sessao = false;
 	for (let u=0; u<sessoes.length; u++) {
@@ -73,7 +73,7 @@ router.get('/sessao/:login', function(req, res, next) {
 	}
 
 	if (tem_sessao) {
-		let mensagem = `Usuário ${cnpj} possui sessão ativa!`;
+		let mensagem = `Usuário ${representante_usuario} possui sessão ativa!`;
 		console.log(mensagem);
 		res.send(mensagem);
 	} else {

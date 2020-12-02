@@ -1,5 +1,6 @@
 let cnpj_usuario;
 let nome_usuario;
+let representante_usuario;
 
 function redirecionar_login() {
     window.location.href = 'login.html';
@@ -9,11 +10,12 @@ function verificar_autenticacao() {
 
     cnpj_usuario = sessionStorage.cnpj_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
+    representante_usuario = sessionStorage.representante_meuapp;
 
     if (cnpj_usuario == undefined)  {
         redirecionar_login();
     } else {
-        b_usuario.innerHTML = cnpj_usuario;
+        b_usuario.innerHTML = representante_usuario;
         validar_sessao();
     }
     
@@ -26,7 +28,7 @@ function logoff() {
 }
 
 function validar_sessao() {
-    fetch(`/usuarios/sessao/${_usuario}`, {cache:'no-store'})
+    fetch(`/usuarios/sessao/${cnpj}`, {cache:'no-store'})
     .then(resposta => {
         if (resposta.ok) {
             resposta.text().then(texto => {
