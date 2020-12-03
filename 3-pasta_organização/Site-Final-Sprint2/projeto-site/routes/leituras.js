@@ -18,8 +18,8 @@ router.get('/ultimas/:fkSensor', function(req, res, next) {
 						momento,
 						FORMAT(momento,'HH:mm:ss') as momento_grafico
 						from leitura
-						where fkSensor = ${fkSensor}
-						order by fkSensor desc`;
+						where fkSensor = ${idLeitura}
+						order by idleitura desc`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,

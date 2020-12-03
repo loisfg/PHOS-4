@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Alterei aqui (Luis) -->
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <!-- Alterei aqui (Luis) -->
+    <link rel="stylesheet" href="./css/style-dash_form.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="icon" href="img/logo.png">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div id="conteiner">
+        <div class="menu">
+            <img class="logo" src="img/logo.png">
+            <a href="dashboard.html">
+                <div class="div_graf">
+                    <img class="icone_grafico" src="img/grafico.png" alt="">
+                </div>
+            </a>
+            <a href="formulario.html">
+                <div class="div_supor">
+                    <img class="icon_supor" src="img/icon_suporte.png">
+                </div>
+            </a>
+            <div class="div_config">
+                <img class="icone_config" src="img/config.png" alt="">
+            </div>
+            <div class="salas">
+                <img class="icon_planos" src="img/planos.png" alt="">
+            </div>
+        </div>
+
+        <div id="usuario">
+            <div class="mensagem1">
+                <h3>Olá, <b id="b_usuario"></b></h3>
+                <p>Veja aqui sua dashboard</p>
+            </div>
+
+
+            <div class="mensagem2">
+                <h4>Companhia de iluminação</h4> <img class="use" src="img/user.png" alt="">
+                <a href="login.html"><img id="ID_exit" class="exit" src="img/sair_icon.png"></a>
+            </div>
+        </div>
+
+        <div class="show" id="divshow">
+            <div id="ms1" class="mensagem">
+                <h3>Economia penúlmito mês: </h3>
+                <div class="img_icon">
+                    <img src="img/calendary.png">
+                </div>
+                <div class="text_num">
+                    <p>R$720,00</p>
+                </div>
+            </div>
+
+
+            <div id="ms2" class="mensagem">
+                <h3>Economia ultimo mês</h3>
+                <div class="img_icon">
+                    <img src="img/icon-economia.png">
+                </div>
+                <div class="text_num">
+                    <p>R$947,00</p>
+                </div>
+            </div>
+
+
+            <div id="ms3" class="mensagem">
+                <h3> Economia semanal </h3>
+                <div id="mes_econ" class="img_icon">
+                    <img src="img/icon_semanal.png">
+                </div>
+                <div class="text_num">
+                    <p>R$122,00</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="divalertas">
+            <h5>Alerta de luminosidade</h5>
+            <div class="alerta" id="alerta1">Crítico</div>
+            <div class="alerta" id="alerta2">Alerta</div>
+            <div class="alerta" id="alerta3">Ideal</div>
+        </div>
+        <div class="graficos">
+            <div id="boxgraficos">
+                <button class="btn" onclick="chamargraficos(1)">Sala 1</button>
+                <button class="btn" onclick="chamargraficos(2)">Sala 2</button>
+                <button class="btn" onclick="chamargraficos(3)">Sala 3</button>
+                <button class="btn" onclick="chamargraficos(4)">Sala 4</button>
+                <canvas id="canvas_grafico"></canvas>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <script>
+            //para identificar seus usuários você deve chamar esse método passando o nome e o email do usuário e opcionalmente informar o id de seu chat
+            //lembrando que isso é apenas um modelo teste. Você deve chamar esse método em seu site para efetuar o login. Você pode autenticar seu usuário em qualquer momento no fluxo do seu site.
+            function logar_chat(usuario) {
+                octadesk.chat.login({
+                    name: usuario.name, // nome do seu usuário
+                    email: usuario.email // email do seu usuário
+                });
+            };
+        </script>
+    </div>
+
+</body>
+</html>
+<script>
+    
+    let proximaAtualizacao;
+
+    window.onload = obterDadosGraficoPrimeiraVez(1);
+
+
+    function chamargraficos(fkSensor) {
+
+        obterDadosGraficoPrimeiraVez(fkSensor)
+        //atualizarGrafico(fkSensor)
+
+    }
+
+    verificar_autenticacao();
+
+    // neste JSON tem que ser 'labels', 'datasets' etc, 
+    // porque é o padrão do Chart.js
+
+
+
+    // altere aqui as configurações do gráfico
+    // (tamanhos, cores, textos, etc)
+    function configurarGrafico() {
+        var configuracoes = {
+            responsive: true,
+            animation: { duration: 500 },
+            hoverMode: 'index',
+            stacked: false,
+            title: {
+                display: true,
+                text: 'Histórico recente de luminosidade'
+            },
+            scales: {
+                yAxes: [{
+                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                    display: true,
+                    position: 'left',
+                    id: 'y-Luminosidade',
+                }, {
+                    // grid line settings
+                    gridLines: {
+                        drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    },
+                }],
+            }
+        };
+
+        return configuracoes;
+    }
+
+    // altere aqui como os dados serão exibidos
+    // e como são recuperados do BackEnd
+    function obterDadosGraficoPrimeiraVez(fkSensor) {
+
+        if (proximaAtualizacao!=undefined) {
+            clearTimeout(proximaAtualizacao);
+        }
+
+        fetch(`/leituras/ultimas/${fkSensor}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    var dados = {
+                        labels: [],
+                        datasets: [
+                            {
+                                yAxisID: 'y-luminosidade',
+                                label: 'Luminosidade',
+                                borderColor: window.chartColors.red,
+                                backgroundColor: window.chartColors.red,
+                                fill: false,
+                                data: []
+                            },
+                        ]
+                    };
+                    for (i = 0; i < resposta.length; i++) {
+                        var registro = resposta[i];
+                        dados.labels.push(registro.momento_grafico);
+                        dados.datasets[0].data.push(registro.luminosidade);
+                    }
+                    console.log(JSON.stringify(dados));
+                    plotarGrafico(dados, fkSensor);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+    function atualizarGrafico(fkSensor, dados) {
+
+        fetch(`/leituras/tempo-real/${fkSensor}`, { cache: 'no-store' }).then(function (response) {
+            console.log("Estou tentando pegar fkSensor = ", fkSensor)
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+                    dados.datasets[0].data.shift();  // apagar o primeiro de luminosidade
+                    dados.datasets[0].data.push(novoRegistro.luminosidade); // incluir uma nova leitura de luminosidade
+
+                    console.log("meu sensor é o " + fkSensor)
+
+                    window.grafico_linha.update();
+
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(fkSensor, dados), 5000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(fkSensor, dados), 5000);
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    // só altere aqui se souber o que está fazendo!
+    function plotarGrafico(dados, fkSensor) {
+        console.log('iniciando plotagem do gráfico...');
+
+        var ctx = canvas_grafico.getContext('2d');
+        window.grafico_linha = Chart.Line(ctx, {
+            data: dados,
+            options: configurarGrafico()
+        });
+
+        setTimeout(() => atualizarGrafico(fkSensor, dados), 2000);
+    }
+
+
+    function sendData() {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:9000/api/sendData', false);
+        http.send(null);
+    }
+
+    setInterval(() => {
+        sendData();
+    }, 2000);
+
+</script>

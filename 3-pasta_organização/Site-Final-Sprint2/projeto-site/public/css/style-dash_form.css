@@ -259,6 +259,20 @@ body {
     background-color: rgb(46, 161, 0);
     float:left;
 }
+.graficos{
+    width: 100%;
+    height: 48%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#boxgraficos {
+    width: 88%;
+    margin-left: 5%;
+    height: 100%;
+    background-color: orangered;
+}
 
 /* suporte */
 #container-form{
