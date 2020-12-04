@@ -17,6 +17,7 @@ body {
     height: 100%;
     background: black;
     position: fixed;
+    float: left;
 }
 
 .exit {
@@ -27,24 +28,33 @@ body {
     right: 0.2%;
 }
 
+.div_graf, .div_supor, .div_config, .salas p{
+    margin:0;
+    color:white;
+    text-decoration: none;
+    border:none;
+    border-bottom: 0;
+    margin-top:0;
+    font-size:13px;
+}
 .div_graf{
     width: 100%;
     height: 10%;
     align-items: center;
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    margin-bottom: 20%;
+    flex-direction: column;
+    margin-top: 35%;
 }
-
 
 .div_supor{
     width: 100%;
     height: 10%;
     align-items: center;
+    margin:0;
     display: flex;
     justify-content: center;
-    flex-direction: row; 
+    flex-direction: column; 
     cursor:pointer;
 }
 .div_config{
@@ -53,11 +63,10 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    flex-direction: row; 
+    flex-direction: column; 
     bottom: 0;
     position: absolute;
     cursor:pointer;
-
 }
 .salas {
     width: 100%;
@@ -65,7 +74,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    flex-direction: row; 
+    flex-direction: column; 
     bottom: 0;
     cursor:pointer;
 
@@ -80,14 +89,12 @@ body {
     cursor:pointer;
 }
 
-.icone_grafico {
-    width: 51px;
+.icone_grafico,.icon_planos,.icone_config{
+    width: 30px;
 }
-
-.icone_grafico,.icon_planos,.icone_config,.icon_supor{
-    width: 41px;
+.icon_supor{
+    width: 45px;
 }
-
 .div_graf:hover{
     background-color:#131212;
 }
@@ -259,20 +266,6 @@ body {
     background-color: rgb(46, 161, 0);
     float:left;
 }
-.graficos{
-    width: 100%;
-    height: 48%;
-    background-color: orange;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#boxgraficos {
-    width: 88%;
-    margin-left: 5%;
-    height: 100%;
-    background-color: rgba(255, 68, 0, 0.301);
-}
 
 /* suporte */
 #container-form{
@@ -362,4 +355,83 @@ textarea{
     border: 1px solid #414141;
     color:white;
     background-color:#414141;
+}
+
+/* Suporte ADMIN */
+.box-container-dash{
+    height:65%;
+    width:80%;
+    float:left;
+    margin-left: 10%;
+    margin-top:7%;
+    background-color: #fcfcfb;
+    border-radius: 4px;
+}
+.box_predios{
+    height:100%;
+    width:8%;
+    float:left;
+}
+.box-container-dash h3{
+    position:absolute;
+    top: 50%;
+    left: 45%;
+    translate: transform (-50, -45);
+}
+.predios{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height:19%;
+    margin-top: 3%;
+    width:100%;
+    border:1px solid black;
+    border-radius: 4px;
+    font-weight: 550;
+    font-size:16px;
+    color:black;
+    cursor:pointer;
+}
+.predios:hover{
+    transition: linear 0.3s;
+    width:115%;
+    color:rgb(80, 80, 80);
+}
+#box_problemas{
+    background-color: #fcfcfb;
+    height:100%;
+    width:90%;
+    margin-left:2%;
+    float:left;
+    border-radius: 5px;
+}
+#box_problemas h4{
+    margin-left: 10%;
+}
+#box_problemas input{
+    height:7%;
+    width:65%;
+    border:1px solid grey;
+    border-radius: 4px;
+}
+textarea{
+    margin-top: 0;
+    width:65%;
+    border:1px solid grey;
+    border-radius: 4px;
+}
+#btnChamado{
+    height:9%;
+    width:15%;
+    background-color: #e9ba02;
+    color:white;
+    margin-left: 51%;
+    margin-top:1%;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#btnChamado:hover{
+    background-color: #bd9700;
 }

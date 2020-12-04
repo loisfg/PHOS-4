@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+        <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+        <script type="text/javascript" src="funcoes.js"></script>
+        <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+        <link rel="stylesheet" href="./css/style-dash_form.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+        <link rel="icon" href="img/logo.png">
+        <title>Dashboard-Suporte</title>
+    </head>
+    <body>
+        <div id="conteiner">
+            <div class="menu">
+                <img class="logo" src="img/logo.png">
+                <a href="dashboard.html">
+                    <div class="div_graf">
+                        <img class="icone_grafico" src="img/analytics.png" alt="">
+                        <p style="margin-top: 8%;">Analytics</p>
+                    </div>
+                </a>
+                <a href="formulario.html">
+                    <div class="div_supor">
+                        <img class="icon_supor" src="img/fone-de-ouvido (1).png">
+                        <p style="margin-top: 0;">Suporte</p>
+                    </div>
+                </a>
+                <div class="div_config">
+                    <img class="icone_config" src="img/config.png" alt="">
+                    <p style="margin-top: 4%;">Configuração</p>
+                </div>
+                <div class="salas">
+                    <img class="icon_planos" src="img/planos.png" alt="">
+                    <p style="margin-top: 5%;">Plantas</p>
+                </div>
+            </div>
+
+            <div id="usuario">
+                <div class="mensagem1">
+                    <h3>Olá, <b id="b_usuario"></b></h3>
+                    <p>Veja aqui sua dashboard</p>
+                </div>
+
+
+                <div class="mensagem2">
+                    <h4>Companhia de iluminação</h4> <img class="use" src="img/user.png" alt="">
+                    <a href="login.html"><img id="ID_exit" class="exit" src="img/sair_icon.png"></a>
+                </div>
+            </div> 
+
+            <div id="boxContaneinerDash" class="box-container-dash">
+                <div class="box_predios">
+                    <button onclick="verProblemas()" class="predios" id="predio1">Ilux</button>
+                    <button onclick="verProblemas()" class="predios" id="predio2">Tupi</button>
+                    <button onclick="verProblemas()" class="predios" id="predio3">Penaz</button>
+                    <button onclick="verProblemas()" class="predios" id="predio4">Tenco</button>
+                    <button onclick="verProblemas()" class="predios" id="predio5">Banco</button>
+                </div>
+                <h3 id="ola">Olá admin, veja aqui seus clientes</h3>
+                <div id="box_problemas" style="display: none;">
+                    <h4>Incidente com Dashboard</h4>
+                    <form>
+                        <label>Nome do representante:</label><br>
+                        <input id="txtRepresentante" placeholder="Nome" type="text"><br>
+                        <label>Local:</label><br>
+                        <input id="txtLocal" placeholder="Local" type="text"><br>
+                        <label>Causa:</label><br>
+                        <textarea placeholder="Motivo"></textarea><br>
+                        <label>Abertura de chamado:</label><br>
+                        <input type="date" id="dataAbertura" placeholder="Data"><br>
+                        <button id="btnChamado">Fechar chamado</button>
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </body>
+</html>
+<script>
+    function verProblemas(){
+        box_problemas.style="display:block"
+        ola.innerHTML="";
+    }
+</script>
