@@ -7,8 +7,12 @@ CREATE TABLE empresa_cadastro (
     nomefantasia varchar(50),
 	telefone char(13),
 	celular char(14),
-    endereco varchar(100),
-    CNPJ char(14),
+    estado varchar(100),
+	cidade varchar(100),
+	bairro varchar(100),
+	rua varchar(100),
+	numero int,
+    CNPJ char(18),
 	representante varchar(70),
 	email varchar(100),
 	senha varchar(50)
@@ -43,13 +47,13 @@ CREATE TABLE empresa_cadastro (
 
       
       INSERT INTO empresa_cadastro 
-VALUES(null,'Google LLC','GOOGLE','(11)4002-8922','(11)98360-8328', 'rua cinco','63512489000121','google@gmail.com','Pedro Leiva'),
-      (null,'Alphabet Inc. YouTube','youtube','(11)4969-0122','(11)97622-9000','rua J','26254897000151','arebaba@hotmail.com','Luiz Fernando'),
-      (null,'Puma Sports LTDA','Puma','(11)4880-3562','(11)99028-0121','rua augusta', '36598421000119','puma@gmail.com','Beatriz Campos'),
-      (null,'Coca-Cola Indústrias Ltda','Coca-Cola','(11)4272-8054','(11)94227-0031', 'rua de melo', '23654789000125','cocacola@gmail.com','Franklin Oliveira'),
-      (null,'amazon','19933142','rua hadock', '(11)4462-5662','(11)97714-3475','amazon@amazon.com','Isabella Pires'),
-      (null,'McDonald`s Corporation','McDonalds','(11)4955-9231','(11)98852-1372', 'rua joaquim marra', '05125461000125','mcdonalds@mcdonalds.com','Carlos Eduardo'),
-      (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','(11)4976-4548','(11)99774-2019', 'rua coracao de maça','12345688000135','getnet@getnet.com','Matheus Silva');
+VALUES(null,'Google LLC','GOOGLE','(11)4002-8922','(11)98360-8328','São Paulo','São Paulo','Jardins', 'rua cinco',100,'63.512.489/0001-21','Pedro Leiva','google@gmail.com','Pedrohlhl'),
+      (null,'Alphabet Inc. YouTube','youtube','(11)4969-0122','(11)97622-9000','Amazonas','Manaus','Vila Mariana','rua Jácoba',52,'26.254.897/0001-51','Luiz Fernando','arebaba@hotmail.com','lferocha'),
+      (null,'Puma Sports LTDA','Puma','(11)4880-3562','(11)99028-0121','Rio de Janeiro','Rio de Janeiro','Maria','rua augustina',1057,'36.598.421/0001-19','Beatriz Campos','puma@gmail.com','bea3Camp'),
+      (null,'Coca-Cola Indústrias Ltda','Coca-Cola','(11)4272-8054','(11)94227-0031','Minas Gerais','Belo horizonte','Vila Mercedez', 'rua de melo',201, '23.654.789/0001-25','Franklin Oliveira','cocacola@gmail.com','frank321'),
+      (null,'Amazon.com, Inc.','Amazon', '(11)4462-5662','(11)97714-3475','Santa Catarina','Criciuma','Leonidas','rua hadock',300,'86.968.356/0001-39','Isabella Pires','amazon@amazon.com','isabel123','isabel123'),
+      (null,'McDonald`s Corporation','McDonalds','(11)4955-9231','(11)98852-1372','São Paulo','São Caetano','Albuquerque','rua joaquim marra',511,'05.125.461/0001-25','mcdonalds@mcdonalds.com','Carlos Eduardo','Carlinhos321'),
+      (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','(11)4976-4548','(11)99774-2019','São Paulo','itaquaquecetuba','Paraíso',1001,'rua alcântara','12.345.688/0001-35','Matheus Silva','getnet@getnet.com','@123456');
 
 	  INSERT INTO Cadastro_usuario
 VALUES(null,'Pedro Leiva','Pedrohlhl','849.564.170-47','ADM gestão', 1),

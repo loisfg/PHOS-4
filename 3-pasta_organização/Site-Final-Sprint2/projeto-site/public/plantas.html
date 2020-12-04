@@ -35,13 +35,13 @@
             <div id="usuario">
                 <div id="nome_user">
                     <h2>
-                        Olá, Math Lindo
+                        Olá, <b id="b_usuario"></b>
                     </h2>
                 </div>
                 <div id="nome_company">
-                    Empresa da luz ⚡⚡
+                        ⚡Phos4⚡
                     <div id="sair">
-                        <a href="">
+                        <a href="login.html">
                             <img src="img/sair_icon.png" alt="">
                         </a>
                     </div>
@@ -85,18 +85,27 @@
                             </div>
                             <div id="box2">
                                 <div class="porcentagens">
+                                <h2>A</h2>
                                     <span id="s_leitura">
                                         <b id="b_leitura">?</b>%
                                     </span>
                                 </div>
                                 <div class="porcentagens">
-                                    
+                                    <h2>B</h2>
+                                    <span id="s_leitura2">
+                                        <b id="b_leitura2">?</b>%
+                                    </span>
                                 </div>
                                 <div class="porcentagens">
-
+                                    <h2>C</h2>
+                                    <span id="s_leitura3">
+                                        <b id="b_leitura3">?</b>%
+                                    </span>
                                 </div>
                                 <div class="porcentagens">
-
+                                    <h2>D</h2>
+                                    <span class="cemporcento">
+                                        <b>100</b>%</span>
                                 </div>
                             </div>
                         </div>
@@ -125,41 +134,52 @@
     function Alterar(div) {
         salas.style = `display:none`;
         plantas.style = `display:block`;
-        
+
     }
 
-var limiteMax = 50;
-var limiteMin = 35;
+    var limiteMax = 45;
+    var limiteMin = 30;
 
-function receberNovasLeituras() {
-    setTimeout(() => {
+    var limiteMax2 = 60;
+    var limiteMin2 = 45;
 
-        luminosidade = (Math.random() * (limiteMax-limiteMin) + limiteMin).toFixed(1)
+    var limiteMax3 = 80;
+    var limiteMin3 = 60;
+    function receberNovasLeituras() {
+        setTimeout(() => {
 
-        // calculo de uma posição de 0 a 100% "entre" os limites min e max
-        var posicao = (luminosidade - limiteMin) / (limiteMax - limiteMin) * 100;
+            luminosidade = (Math.random() * (limiteMax - limiteMin) + limiteMin).toFixed(1);
+            luminosidade2 = (Math.random() * (limiteMax2 - limiteMin2) + limiteMin2).toFixed(1);
+            luminosidade3 = (Math.random() * (limiteMax3 - limiteMin3) + limiteMin3).toFixed(1);
 
-        
-        // temp está "baixa" (<25), "ok" (>=25 && <=75) ou "ok" (>75) ?
-        // trocando a imagem e o estilo do valor da leitura
-        if (posicao <= 40) {
-            luz.style.background = "rgb(47, 67, 134)";
-        } else {            
-            luz.style.background = "#fba300";
-        }
+            // calculo de uma posição de 0 a 100% "entre" os limites min e max
+            var posicao = (luminosidade - limiteMin) / (limiteMax - limiteMin) * 100;
+            var posicao2 = (luminosidade2 - limiteMin2) / (limiteMax2 - limiteMin2) * 100;
+            var posicao3 = (luminosidade3 - limiteMin3) / (limiteMax3 - limiteMin3) * 100;
+
+            // temp está "baixa" (<25), "ok" (>=25 && <=75) ou "ok" (>75) ?
+            // trocando a imagem e o estilo do valor da leitura
+            if (posicao <= 40) {
+                luz.style.background = "rgb(47, 67, 134)";
+                alert("Luz abaixo do ideal! O sistema aumentará automaticamente!")
+            } else {
+                luz.style.background = "#fba300";
+            }
 
 
-        // atualizando o valor da leitura na página
-        b_leitura.innerHTML = luminosidade;
+            // atualizando o valor da leitura na página
+            b_leitura.innerHTML = luminosidade;
+            b_leitura2.innerHTML = luminosidade2;
+            b_leitura3.innerHTML = luminosidade3;
 
-        // função que agenda a recuperação da última leitura para daqui a 3 segundos
-        receberNovasLeituras();	
+            // função que agenda a recuperação da última leitura para daqui a 3 segundos
+            receberNovasLeituras();
 
-    }, 2000); // 3000 ms -> 3 segundos
-}
+        }, 4000); // 3000 ms -> 3 segundos
+    }
 
-// indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
-window.onload = receberNovasLeituras;
+    // indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
+    window.onload = receberNovasLeituras;
 </script>
 <!--imagem da lampada pra trocar de cores
 https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&position=3&related_item_id=702797 -->

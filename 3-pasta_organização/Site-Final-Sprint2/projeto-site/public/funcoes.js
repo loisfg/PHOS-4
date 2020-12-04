@@ -10,7 +10,7 @@ function verificar_autenticacao() {
 
     cnpj_usuario = sessionStorage.cnpj_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
-    representante_usuario = sessionStorage.representante_meuapp;
+    representante_usuario = sessionStorage.representante_usuario_meuapp;
 
     if (cnpj_usuario == undefined)  {
         redirecionar_login();
