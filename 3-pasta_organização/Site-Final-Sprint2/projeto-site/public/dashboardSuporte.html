@@ -16,26 +16,7 @@
         <div id="conteiner">
             <div class="menu">
                 <img class="logo" src="img/logo.png">
-                <a href="dashboard.html">
-                    <div class="div_graf">
-                        <img class="icone_grafico" src="img/analytics.png" alt="">
-                        <p style="margin-top: 8%;">Analytics</p>
-                    </div>
-                </a>
-                <a href="formulario.html">
-                    <div class="div_supor">
-                        <img class="icon_supor" src="img/fone-de-ouvido (1).png">
-                        <p style="margin-top: 0;">Suporte</p>
-                    </div>
-                </a>
-                <div class="div_config">
-                    <img class="icone_config" src="img/config.png" alt="">
-                    <p style="margin-top: 4%;">Configuração</p>
-                </div>
-                <div class="salas">
-                    <img class="icon_planos" src="img/planos.png" alt="">
-                    <p style="margin-top: 5%;">Plantas</p>
-                </div>
+                
             </div>
 
             <div id="usuario">
@@ -61,20 +42,100 @@
                 </div>
                 <h3 id="ola">Olá admin, veja aqui seus clientes</h3>
                 <div id="box_problemas" style="display: none;">
-                    <h4>Incidente com Dashboard</h4>
-                    <form>
-                        <label>Nome do representante:</label><br>
-                        <input id="txtRepresentante" placeholder="Nome" type="text"><br>
-                        <label>Local:</label><br>
-                        <input id="txtLocal" placeholder="Local" type="text"><br>
-                        <label>Causa:</label><br>
-                        <textarea placeholder="Motivo"></textarea><br>
-                        <label>Abertura de chamado:</label><br>
-                        <input type="date" id="dataAbertura" placeholder="Data"><br>
-                        <button id="btnChamado">Fechar chamado</button>
-                    </form>
+                    <div class="incidentes" id="incidente1">
+                      
+                        <div class="div_problema" onclick="incidente1()">
+                            <div class="icone_atencao">
+                                <img src="img/atencao.png" id="imgAtencao">
+                            </div>
+                            <div class="text_problema" >
+                                <h6>Erro de leituras</h6>
+                                <h6>Reportador: <span>Francisco Parente</span></h6>
+                            </div>
+                        </div>
+                        <div class="div_problema" onclick="incidente2()">
+                            <div class="icone_atencao">
+                                <img src="img/atencao.png" id="imgAtencao">
+                            </div>
+                            <div class="text_problema">
+                                <h6>Dashboard não atualiza</h6>
+                                <h6>Reportador: <span>Luíza Miguel</span></h6>
+                            </div>
+                        </div>
+                        <div class="div_problema" onclick="incidente3()">
+                            <div class="icone_atencao">
+                                <img src="img/atencao.png" id="imgAtencao">
+                            </div>
+                            <div class="text_problema">
+                                <h6>Sensores quebrados</h6>
+                                <h6>Reportador: <span>Patrícia Santos</span></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="incidentes" id="div_incidente2" style="display:none">
+                        <h5>Nome:<span> Francisco Parente</span></h5>
+                        <h5>Email: <span>francisco.parente@gmail.com</span></h5>
+                        <h5>Assunto: <span>Erro de leituras</span></h5>
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quod sit deserunt reiciendis at, quia animi nihil voluptas ab voluptates. Voluptatum, dignissimos quibusdam nobis ea id possimus ipsam quis impedit!
+                        Praesentium atque debitis earum quo beatae voluptatibus. Est eum inventore laborum nam explicabo ullam, rem perspiciatis pariatur at a quas. Autem dolore sit nihil voluptates, provident iste. Eligendi, itaque voluptas.
+                        Expedita dolores repudiandae quisquam sunt a accusantium aperiam voluptatum dolore non nulla possimus, excepturi laudantium, necessitatibus ab reprehenderit quos doloremque est molestiae nostrum! Tenetur, libero cumque suscipit eum explicabo impedit!
+                        Praesentium impedit molestias, modi unde ipsam dolore asperiores ratione, id repellendus nobis quis voluptate non minus, alias laboriosam doloremque dicta officia magni vero natus tenetur aut? Fugiat inventore id sunt.</h5>
+                    </div>
+
+                    <div class="incidentes" id="div_incidente3" style="display:none">
+                        <h5>Nome:<span> Luiza Amélia</span></h5>
+                        <h5>Email: <span>luizamel@gmail.com</span></h5>
+                        <h5>Assunto: <span>Dashboard não atualiza</span></h5>
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quod sit deserunt reiciendis at, quia animi nihil voluptas ab voluptates. Voluptatum, dignissimos quibusdam nobis ea id possimus ipsam quis impedit!
+                        Praesentium atque debitis earum quo beatae voluptatibus. Est eum inventore laborum nam explicabo ullam, rem perspiciatis pariatur at a quas. Autem dolore sit nihil voluptates, provident iste. Eligendi, itaque voluptas.
+                        Expedita dolores repudiandae quisquam sunt a accusantium aperiam voluptatum dolore non nulla possimus, excepturi laudantium, necessitatibus ab reprehenderit quos doloremque est molestiae nostrum! Tenetur, libero cumque suscipit eum explicabo impedit!
+                        Praesentium impedit molestias, modi unde ipsam dolore asperiores ratione, id repellendus nobis quis voluptate non minus, alias laboriosam doloremque dicta officia magni vero natus tenetur aut? Fugiat inventore id sunt.</h5>
+                    </div>
+
+                    <div class="incidentes" id="div_incidente4" style="display:none">
+                        <h5>Nome: <span>Patrícia Santos</span></h5>
+                        <h5>Email: <span>patricia@gmail.com</span></h5>
+                        <h5>Assunto: <span>Sensores quebrados</span></h5>
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium quod sit deserunt reiciendis at, quia animi nihil voluptas ab voluptates. Voluptatum, dignissimos quibusdam nobis ea id possimus ipsam quis impedit!
+                        Praesentium atque debitis earum quo beatae voluptatibus. Est eum inventore laborum nam explicabo ullam, rem perspiciatis pariatur at a quas. Autem dolore sit nihil voluptates, provident iste. Eligendi, itaque voluptas.
+                        Expedita dolores repudiandae quisquam sunt a accusantium aperiam voluptatum dolore non nulla possimus, excepturi laudantium, necessitatibus ab reprehenderit quos doloremque est molestiae nostrum! Tenetur, libero cumque suscipit eum explicabo impedit!
+                        Praesentium impedit molestias, modi unde ipsam dolore asperiores ratione, id repellendus nobis quis voluptate non minus, alias laboriosam doloremque dicta officia magni vero natus tenetur aut? Fugiat inventore id sunt.</h5>
+                    </div>      
+                    
+                    <div class="incidentes" id="div_incidente5" style="display:none">
+                        <div id="div_imgPlanta">
+                            <img id="imgPlanta" src="img/planta_sala.png">
+                        </div>
+                        <div id="box2">
+                            <div class="porcentagens">
+                            <h2>A</h2>
+                                <span id="s_leitura">
+                                    <b id="b_leitura">?</b>%
+                                </span>
+                            </div>
+                            <div class="porcentagens">
+                                <h2>B</h2>
+                                <span id="s_leitura2">
+                                    <b id="b_leitura2">?</b>%
+                                </span>
+                            </div>
+                            <div class="porcentagens">
+                                <h2>C</h2>
+                                <span id="s_leitura3">
+                                    <b id="b_leitura3">?</b>%
+                                </span>
+                            </div>
+                            <div class="porcentagens">
+                                <h2>D</h2>
+                                <span class="cemporcento">
+                                    <b id="b_leitura4">?</b>%
+                                </span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <button onclick="lado()" id="btnPassar" style="display: none;">></button>
         </div>    
     </body>
 </html>
@@ -82,5 +143,90 @@
     function verProblemas(){
         box_problemas.style="display:block"
         ola.innerHTML="";
+        btnPassar.style="diplay:block"
+
     }
+    function incidente1(){
+        div_incidente2.style="display:block"
+        div_incidente3.style="display:none"
+        div_incidente5.style="display:none"
+        div_incidente4.style="display:none"
+    }
+    function incidente2(){
+        div_incidente3.style="display:block"
+        div_incidente2.style="display:none"
+        div_incidente5.style="display:none"
+        div_incidente4.style="display:none"
+    }
+    function incidente3(){
+        div_incidente4.style="display:block"
+        div_incidente3.style="display:none"
+        div_incidente2.style="display:none"
+        div_incidente5.style="display:none"
+    }
+    function lado(){
+        div_incidente2.style="display:none"
+        div_incidente3.style="display:none"
+        div_incidente4.style="display:none"
+        div_incidente5.style="display:block"
+    }
+</script>
+<script>
+    function myFunction(div) {
+        var sala = div.id;
+        saudacao.style = `display:none`;
+        salas.style = `display:block`;
+        plantas.style = `display:none`;
+        local.innerHTML = `${sala}`;
+    }
+    function Alterar(div) {
+        salas.style = `display:none`;
+        plantas.style = `display:block`;
+
+    }
+
+    var limiteMax = 45;
+    var limiteMin = 35;
+
+    var limiteMax2 = 55;
+    var limiteMin2 = 45;
+
+    var limiteMax3 = 65;
+    var limiteMin3 = 60;
+
+    var limiteMax4 = 85;
+    var limiteMin4 = 70;
+
+    function receberNovasLeituras() {
+        setTimeout(() => {
+
+            luminosidade = (Math.random() * (limiteMax - limiteMin) + limiteMin).toFixed(1);
+            luminosidade2 = (Math.random() * (limiteMax2 - limiteMin2) + limiteMin2).toFixed(1);
+            luminosidade3 = (Math.random() * (limiteMax3 - limiteMin3) + limiteMin3).toFixed(1);
+            luminosidade4 = (Math.random() * (limiteMax4 - limiteMin4) + limiteMin4).toFixed(1);
+
+            var posicao = (luminosidade - limiteMin) / (limiteMax - limiteMin) * 100;
+            var posicao2 = (luminosidade2 - limiteMin2) / (limiteMax2 - limiteMin2) * 100;
+            var posicao3 = (luminosidade3 - limiteMin3) / (limiteMax3 - limiteMin3) * 100;
+            var posicao4 = (luminosidade4 - limiteMin4) / (limiteMax4 - limiteMin4) * 100;
+
+            if (posicao <= 40) {
+                luz.style.background = "rgb(47, 67, 134)";
+                
+            } else {
+                luz.style.background = "#fba300";
+            }
+
+            b_leitura.innerHTML = luminosidade;
+            b_leitura2.innerHTML = luminosidade2;
+            b_leitura3.innerHTML = luminosidade3;
+            b_leitura4.innerHTML = luminosidade4;
+
+            receberNovasLeituras();
+
+        }, 4000); 
+    }
+
+    window.onload = receberNovasLeituras;
+    verificar_autenticacao();
 </script>
