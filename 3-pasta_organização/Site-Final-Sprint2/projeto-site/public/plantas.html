@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantas.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="funcoes.js"></script>
     <title>Plantinhas</title>
 </head>
 
@@ -105,7 +106,8 @@
                                 <div class="porcentagens">
                                     <h2>D</h2>
                                     <span class="cemporcento">
-                                        <b>100</b>%</span>
+                                        <b id="b_leitura4">?</b>%
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -138,30 +140,38 @@
     }
 
     var limiteMax = 45;
-    var limiteMin = 30;
+    var limiteMin = 35;
 
-    var limiteMax2 = 60;
+    var limiteMax2 = 55;
     var limiteMin2 = 45;
 
-    var limiteMax3 = 80;
+    var limiteMax3 = 65;
     var limiteMin3 = 60;
+
+    var limiteMax4 = 85;
+    var limiteMin4 = 70;
+
     function receberNovasLeituras() {
         setTimeout(() => {
 
             luminosidade = (Math.random() * (limiteMax - limiteMin) + limiteMin).toFixed(1);
             luminosidade2 = (Math.random() * (limiteMax2 - limiteMin2) + limiteMin2).toFixed(1);
             luminosidade3 = (Math.random() * (limiteMax3 - limiteMin3) + limiteMin3).toFixed(1);
+            luminosidade4 = (Math.random() * (limiteMax4 - limiteMin4) + limiteMin4).toFixed(1);
+
 
             // calculo de uma posição de 0 a 100% "entre" os limites min e max
             var posicao = (luminosidade - limiteMin) / (limiteMax - limiteMin) * 100;
             var posicao2 = (luminosidade2 - limiteMin2) / (limiteMax2 - limiteMin2) * 100;
             var posicao3 = (luminosidade3 - limiteMin3) / (limiteMax3 - limiteMin3) * 100;
+            var posicao4 = (luminosidade4 - limiteMin4) / (limiteMax4 - limiteMin4) * 100;
+
 
             // temp está "baixa" (<25), "ok" (>=25 && <=75) ou "ok" (>75) ?
             // trocando a imagem e o estilo do valor da leitura
             if (posicao <= 40) {
                 luz.style.background = "rgb(47, 67, 134)";
-                alert("Luz abaixo do ideal! O sistema aumentará automaticamente!")
+                // alert("Luz abaixo do ideal! O sistema aumentará automaticamente!")
             } else {
                 luz.style.background = "#fba300";
             }
@@ -171,15 +181,18 @@
             b_leitura.innerHTML = luminosidade;
             b_leitura2.innerHTML = luminosidade2;
             b_leitura3.innerHTML = luminosidade3;
+            b_leitura4.innerHTML = luminosidade4;
+
 
             // função que agenda a recuperação da última leitura para daqui a 3 segundos
             receberNovasLeituras();
 
         }, 4000); // 3000 ms -> 3 segundos
     }
-
     // indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
     window.onload = receberNovasLeituras;
+    verificar_autenticacao();
 </script>
+
 <!--imagem da lampada pra trocar de cores
 https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&position=3&related_item_id=702797 -->

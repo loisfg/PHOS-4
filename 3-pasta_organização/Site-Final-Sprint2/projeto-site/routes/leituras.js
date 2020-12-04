@@ -60,7 +60,7 @@ router.get('/tempo-real/:fkSensor', function(req, res, next) {
 	//var fkSensor = req.body.fkSensor; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var fkSensor = req.params.fkSensor;
 
-	let instrucaoSql = `select top 1 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura where fkSensor = ${fkSensor} order by id desc`;
+	let instrucaoSql = `select top 1 lux, luminosidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura where fkSensor = ${fkSensor} order by id desc`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
