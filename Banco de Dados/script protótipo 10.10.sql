@@ -32,8 +32,8 @@ CREATE TABLE empresa_cadastro (
 	id_Ambiente int primary key auto_increment,
 	Nome varchar(45),
 	Local_ambiente varchar(45),
-	fkcadastro int,
-    foreign key(fkcadastro) references empresa_cadastro (id_cadastro)
+	fkempresa_cadastro int,
+    foreign key(fkempresa_cadastro) references empresa_cadastro (id_cadastro)
 	)auto_increment = 1000;
 
 
@@ -92,23 +92,24 @@ VALUES(null,'Sala 1C',1000),
       
       
       CREATE TABLE Leitura (
-      fksensor int primary key,
-        foreign key(fksensor) references Sensor (id_Sensor),
+	  id_leitura in primary key auto_increment,
 		Lux decimal(6,2),
-		data_hora datetime
-    );
+		data_hora datetime,
+		 fksensor int,
+        foreign key(fksensor) references Sensor (id_Sensor),
+    )auto_increment = 10000;
 
     
 INSERT INTO Leitura 
-VALUES(5000,'701.45','2020-10-17 12:30:00.000'),
-      (5001,'632.00','2020-10-17 12:31:00.000'),
-      (5002,'550.72','2020-10-17 12:32:00.000'),
-      (5003,'666.77','2020-10-17 12:33:00.000'),
-      (5004,'676.77','2020-10-17 12:34:00.000'),
-      (5005,'600.50','2020-10-17 12:35:00.000'),
-      (5006,'689.22','2020-10-17 12:40:00.000');
+VALUES(null,'701.45','2020-10-17 12:30:00.000',5000),
+      (null,'632.00','2020-10-17 12:31:00.000',5001),
+      (null,'550.72','2020-10-17 12:32:00.000',5002),
+      (null,'666.77','2020-10-17 12:33:00.000',5003),
+      (null,'676.77','2020-10-17 12:34:00.000',5004),
+      (null,'600.50','2020-10-17 12:35:00.000',5005),
+      (null,'689.22','2020-10-17 12:40:00.000',5006);
 
 
-select * from Cadastro_usuario, empresa_cadastro, Ambiente, Sensor, Leitura where fkcadastro = id_cadastro and fkambiente = id_Ambiente and fksensor = id_Sensor;
+select * from Cadastro_usuario, empresa_cadastro, Ambiente, Sensor, Leitura where fkempresa_cadastro = id_cadastro and fkambiente = id_Ambiente and fksensor = id_Sensor;
 
       
