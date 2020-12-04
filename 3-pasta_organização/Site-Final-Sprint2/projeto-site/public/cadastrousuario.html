@@ -12,50 +12,25 @@
 <body>
     <div class="fundo">
         <div class="opc"> </div>
-        <div class="cadastro">
+        <div class="cadastrousuario">
             <div class="usuario">
                 <div class="cad">
                     <h3>Cadastro</h3>
                 </div>
 
                 <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
-                    <div id="parte1">
-                        <label for="razaosocial">Razão social:</label>
-                        <input id="razaosocial" name="razaosocial" type="text" placeholder="Razão social" required>
-
-                        <label for="nomefantasia">Nome fantasia:</label>
-                        <input id="nomefantasia" name="nomefantasia" type="text" placeholder="Nome fantasia" required>
-
-                        <label for="telefone">Telefone:</label>
-                        <input id="telefone" name="telefone" type="number" placeholder="Telefone" required max="13">
-                        
-                        <label for="celular">Celular:</label>
-                        <input id="celular" name="celular" type="number" placeholder="Celular" required [maxlength]="14">
-
-                        <label for="estado">Estado (UF):</label>
-                        <input id="estado" name="estado" type="text" placeholder="Estado-UF" required maxlength="2">
-
-                        <label for="cidade">Cidade:</label>
-                        <input id="cidade" name="cidade" type="text" placeholder="Cidade" required>
-
-                        <label for="Bairro">Bairro:</label>
-                        <input id="bairro" name="bairro" type="text" placeholder="Bairro" required>
-                    </div>
-                    <div id="parte2">
-                        <label for="rua">Rua/Avenida:</label>
-                        <input id="rua" name="rua" type="text" placeholder="Rua" required>
-
-                        <label for="numero">Numero:</label>
-                        <input id="numero" name="numero" type="number" placeholder="Numero" required>
-
-                        <label for="cnpj">CNPJ:</label>
-                        <input id="cnpj" name="cnpj" type="number" placeholder="CNPJ" required minlength="14" maxlength="14">
-                            
-                        <label for="representante">Representante:</label>
-                        <input id="representante" name="representante" type="text" placeholder="Representante" required>
+                    <div id="divisoria">
+                        <label for="nome">Nome:</label>
+                        <input id="nome" name="nome" type="text" placeholder="Nome" required>
 
                         <label for="email">Email:</label>
                         <input id="email" name="email" type="email" placeholder="Email" required>
+
+                        <label for="CPF">CPF:</label>
+                        <input id="CPF" name="CPF" type="number" placeholder="CPF" required>
+
+                        <label for="Função">Função:</label>
+                        <input id="funcao" name="funcao" type="number" placeholder="Função" required>
 
                         <label for="senha">Senha:</label>
                         <input id="senha" name="senha" type="password" placeholder="Senha" required maxlength="20">

@@ -7,6 +7,7 @@ body{
     
 }
 
+/* CADASTRO EMPRESA */
 .fundo {
     background-image: url(../img/background-cadastro.jpg);
     height: 100%;
@@ -19,31 +20,7 @@ body{
     display: flex;
     align-items: center;
 }
-.cadastro {
-    height: 75%;
-    background-color: rgba(255, 255, 255, 0.842);
-    text-align: center;
-    width: 40%;
-    border-radius: 20px;
-    z-index: 1;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.usuario{
-    width:100%;
-    height:100%;
-    left:5%;
-    position: relative;
-  
-}
-.usuario ul  {
-    padding-top: 50px;
-    text-decoration: none;
-    padding-right: 50px;
-}
-li {
-    text-decoration: none;
-    list-style: none;
-}   
+
 .opc {
     width: 100%;
     height: 100%;
@@ -51,129 +28,122 @@ li {
     position: absolute;
    z-index: -1;  /*para decidir o que vem por cima ex: 1 e -1  */
 }
-input{   
-    border-radius:4px;
-    background: #ffffff; 
-    border:0px solid rgba(255, 255, 255, 0.842);
-    outline: none;
-    width: 60%;
-    height: 40px;
-    font-size: 16px;
-    border-color: gray;
-}
 
-.cadastro h3 {
+.cadastro {
+    height: 75%;
+    background-color: rgba(255, 255, 255, 0.842);
+    text-align: center;
+    width: 55%;
+    border-radius: 20px;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.usuario {
+    width:90%;
+    height:100%;
+    margin: auto;
+}  
+
+.cadastro, .cadastrousuario h3 {
     font-size: 30px; 
     color:#2E2E2E;  
 }
 
-
-a:hover {
-    color:#E9BA02;
-}
-.lista li a {
-    text-decoration: none;
-    color: #000000;
-}
-
 .cad {
     text-align: center;
-    left:0;
 }
 
 /* -----------------inputs----------------- */
 
-#nomefantasia{
-    margin-left: 5%;
-}
-#email{
-    margin-top:5%;
-}
-#telefone{
-    margin-top:5%;
-    margin-right: 5%;
-}
-#endereco{
-    margin-top:5%;
-    margin-right: 5%;
-}
-#cnpj{
-    margin-top:5%;
-}
-#representante{
-    margin-top:5%;
-    margin-left:5%;
-}
-#senha{
-    margin-left:5%;
-    margin-top:5%;
-}
-textarea{
-    width:85%;
-    height:70px;
-    font-size:16px;
-    margin-top:5%;
-    right:5%;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-}
-input{
-    width: 40%;
+input {
+    width:95%;
     height: 40px;
     background: white; 
     font-size: 16px;
     border-radius:4px;
     border:1px solid rgb(99, 98, 98);
+    margin-top: 2%;
+    margin-bottom: 2%;
     outline: none;
-    float:left;
 }
-#group-btn{
-    width:50%;
-    height: 40px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-left: 39%;
 
+.btn1 {
+    width:30%;
+    float: right;
 }
-#btn1{
-    margin-right: 4%;
-    width:48%;
-}
-#btn2{
-    width:48%;
-}
-#botao1{
+
+#botao1 {
     background-color: #E9BA02;
-    color:white;
     border: 2px solid #E9BA02;
-    width:100%;
+    float: right;
 }
-#botao2{
+
+#botao2 {
     background-color: grey;
-    color:white;
     border: 2px solid grey;
-    border-radius:8px;
-    width:100px;
+    float: right;
 }
-#botao2:hover{
+
+#botao2:hover {
     background-color:rgb(112, 112, 112);
     border: 2px solid rgb(112, 112, 112);
     cursor:pointer;
 }
+
 button {
     border-radius:8px;
-    width:50%;
     height: 40px;
-    font-size: 20px;    
-    background-color: #E9BA02;
+    width:100px;
+    font-size: 20px;
     color:white;
-    border: 2px solid #E9BA02;
-    margin-top: 40%;
+    margin: 10px;
 }
+
 #botao1:hover {
     background-color: #e0b505;
     border: 2px solid #e0b505;
     cursor:pointer;
+}
+
+#parte1 {
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+#parte2 {
+    width: 50%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+
+/* CADASTRO USUARIO */
+
+#divisoria {
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.cadastrousuario {
+    height: 75%;
+    background-color: rgba(255, 255, 255, 0.842);
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
 }

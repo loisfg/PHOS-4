@@ -31,19 +31,41 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-
-		endereco: {
-			field: 'endereco',
+		celular: {
+			field: 'celular',
+			type: DataTypes.INTEGER,
+			allowNull: false
+		},
+		estado: {
+			field: 'estado',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		
+		cidade: {
+			field: 'cidade',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		bairro: {
+			field: 'bairro',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		rua: {
+			field: 'rua',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		numero: {
+			field: 'numero',
+			type: DataTypes.STRING,
+			allowNull: false
+		},		
 		cnpj: {
 			field: 'cnpj',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		
 		representante: {
 			field: 'representante',
 			type: DataTypes.STRING,
@@ -54,7 +76,6 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-
 		senha: {
 			field: 'senha',
 			type: DataTypes.STRING,
