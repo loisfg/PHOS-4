@@ -83,14 +83,14 @@ luminosidade = ArduinoDataLuminosity.List[ArduinoDataLuminosity.List.length -1]
 db.conectar()
     .then(() => {
         const sql = `
-        INSERT into dbo.leitura (lux, momento, fkSensor) 
-        values (${luminosidade+10}, '${agora()}', 1);
-        INSERT into dbo.leitura (lux, momento, fkSensor)
-        values (${luminosidade-10}, '${agora()}', 2);
-        INSERT into dbo.leitura (lux, momento, fkSensor)
-        values (${luminosidade+5}, '${agora()}', 3);
-        INSERT into dbo.leitura (lux, momento, fkSensor)
-        values (${luminosidade-5}, '${agora()}', 4);`;
+        INSERT into dbo.leitura (lux,luminosidade, momento, fkSensor) 
+        values (${luminosidade+10},${luminosidade+10},'${agora()}', 1);
+        INSERT into dbo.leitura (lux,luminosidade, momento, fkSensor)
+        values (${luminosidade-10},${luminosidade+10},'${agora()}', 2);
+        INSERT into dbo.leitura (lux,luminosidade, momento, fkSensor)
+        values (${luminosidade+5},${luminosidade+10},'${agora()}', 3);
+        INSERT into dbo.leitura (lux,luminosidade, momento, fkSensor)
+        values (${luminosidade-5},${luminosidade+10},'${agora()}', 4);`;
         console.log(sql);
     return db.sql.query(sql).then(()=>{
         console.log("Registro inserido com sucesso! \n");

@@ -15,11 +15,12 @@ router.get('/ultimas/:fkSensor', function(req, res, next) {
 	
 	const instrucaoSql = `select top ${limite_linhas} 
 						lux,
+						luminosidade,
 						momento,
 						FORMAT(momento,'HH:mm:ss') as momento_grafico
 						from leitura
-						where fkSensor = ${idLeitura}
-						order by idleitura desc`;
+						where fkSensor = 1
+						order by id desc`;
 
 	sequelize.query(instrucaoSql, {
 		model: Leitura,
