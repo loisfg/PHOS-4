@@ -172,6 +172,7 @@
     }
 </script>
 <script>
+    
     function myFunction(div) {
         var sala = div.id;
         saudacao.style = `display:none`;
@@ -182,7 +183,6 @@
     function Alterar(div) {
         salas.style = `display:none`;
         plantas.style = `display:block`;
-
     }
 
     var limiteMax = 45;
@@ -210,12 +210,12 @@
             var posicao3 = (luminosidade3 - limiteMin3) / (limiteMax3 - limiteMin3) * 100;
             var posicao4 = (luminosidade4 - limiteMin4) / (limiteMax4 - limiteMin4) * 100;
 
-            if (posicao <= 40) {
-                luz.style.background = "rgb(47, 67, 134)";
+            // if (posicao <= 40) {
+            //     luz.style.background = "rgb(47, 67, 134)";
                 
-            } else {
-                luz.style.background = "#fba300";
-            }
+            // } else {
+            //     // luz.style.background = "#fba300";
+            // }
 
             b_leitura.innerHTML = luminosidade;
             b_leitura2.innerHTML = luminosidade2;
