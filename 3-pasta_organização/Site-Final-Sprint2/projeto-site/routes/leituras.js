@@ -4,22 +4,22 @@ var sequelize = require('../models').sequelize;
 var Leitura = require('../models').Leitura;
 
 /* Recuperar as últimas N leituras */
-router.get('/ultimas/:fkSensor', function(req, res, next) {
+router.get('/ultimas/:idsensor', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
-	const limite_linhas = 7; // mudar isso aqui depois
+	const limite_linhas = 7;
 
-	var idLuminosidade = req.params.fkSensor;
+	var idsensor = req.params.idsensor;
 
-	console.log(`Recuperando as ultimas ${limite_linhas} leituras`); // quantos selects seram feitos
+	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
 	
 	const instrucaoSql = `select top ${limite_linhas} 
-						lux,
-						luminosidade,
+						lux, 
+						luminosidade, 
 						momento,
 						FORMAT(momento,'HH:mm:ss') as momento_grafico
 						from leitura
-						where fkSensor = 1
+						where idsensor = ${idsensor}
 						order by id desc`;
 
 	sequelize.query(instrucaoSql, {
@@ -41,7 +41,7 @@ router.get('/ultimas/:fkSensor', function(req, res, next) {
 	
 	console.log(`Recuperando a ultima leitura`);
 
-	const instrucaoSql = `select top 4 temperatura, umidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura order by id desc`;
+	const instrucaoSql = `select top 4 lux, luminosidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, idcaminhao from leitura order by id desc`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {
@@ -54,13 +54,13 @@ router.get('/ultimas/:fkSensor', function(req, res, next) {
 });
 */
 
-router.get('/tempo-real/:fkSensor', function(req, res, next) {
-	console.log('Recuperando caminhões');
+router.get('/tempo-real/:idsensor', function(req, res, next) {
+	console.log('Recuperando silos');
 
-	//var fkSensor = req.body.fkSensor; // depois de .body, use o nome (name) do campo em seu formulário de login
-	var fkSensor = req.params.fkSensor;
+	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var idsensor = req.params.idsensor;
 
-	let instrucaoSql = `select top 1 lux, luminosidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, fkSensor from leitura where fkSensor = ${fkSensor} order by id desc`;
+	let instrucaoSql = `select top 1 lux, luminosidade, FORMAT(momento,'HH:mm:ss') as momento_grafico, idsensor from leitura where idsensor = ${idsensor} order by id desc`;
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
@@ -78,12 +78,12 @@ router.get('/estatisticas', function (req, res, next) {
 	console.log(`Recuperando as estatísticas atuais`);
 
 	const instrucaoSql = `select 
-							max(temperatura) as temp_maxima, 
-							min(temperatura) as temp_minima, 
-							avg(temperatura) as temp_media,
-							max(umidade) as umidade_maxima, 
-							min(umidade) as umidade_minima, 
-							avg(umidade) as umidade_media 
+							max(lux) as temp_maxima, 
+							min(lux) as temp_minima, 
+							avg(lux) as temp_media,
+							max(luminosidade) as luminosidade_maxima, 
+							min(luminosidade) as luminosidade_minima, 
+							avg(luminosidade) as luminosidade_media 
 						from leitura`;
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
