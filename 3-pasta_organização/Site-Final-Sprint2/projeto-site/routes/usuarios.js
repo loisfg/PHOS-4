@@ -9,10 +9,16 @@ let sessoes = [];
 router.post('/autenticar', function(req, res, next) {
 	console.log('Recuperando usuário por login e senha');
 
-	var cnpj = req.body.cnpj; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var cnpj_cpf = req.body.cnpj_cpf; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
-	let instrucaoSql = `select * from usuario where cnpj='${cnpj}' and senha='${senha}'`;
+	let instrucaoSql = `select * from usuario
+	inner join cadastro_usuario on
+	usuario.id = cadastro_usuario.fkusuario
+	where (usuario.cnpj = '${cnpj_cpf}' and usuario.senha= '${senha})'
+	or
+	(cadastro_usuario.CPF = '${cnpj_cpf}' and cadastro_usuario.senha = '${senha}')`;
+
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -63,6 +69,24 @@ router.post('/cadastrar', function(req, res, next) {
   	});
 });
 
+// empresa cadastrando usuario
+/* Cadastrar usuário */
+router.post('/cadastrar-usuario', function(req, res, next) {
+	console.log('Criando um usuário');
+	
+	cadastrar_usuario.create({
+		nome: req.body.nome,
+		email: req.body.email,
+		CPF: req.body.CPF,
+		senha: req.body.senha
+	}).then(resultado => {
+		console.log(`Registro criado: ${resultado}`)
+        res.send(resultado);
+    }).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+});
 
 /* Verificação de usuário */
 router.get('/sessao/:login', function(req, res, next) {

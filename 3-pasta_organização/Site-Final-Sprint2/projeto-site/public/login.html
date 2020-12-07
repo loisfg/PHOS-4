@@ -24,7 +24,7 @@
                     </div>
                     <form id="form_login" method="post" onsubmit="return entrar()">
 
-                    <input id="inpusuario" name="cnpj" placeholder="CNPJ" type="text" required>
+                    <input id="inpusuario" name="cnpj_cpf" placeholder="CNPJ" type="text" required>
                     <br><br>
                     <input id="inpsenha" name="senha" placeholder="Senha" type="password" required><br><br><br>
                         <button id="btnentrar" class="btnlogin">Login</button>
@@ -56,7 +56,7 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.cnpj_usuario_meuapp = json.cnpj;
+                    sessionStorage.cnpj_usuario_meuapp = json.cnpj_cpf;
                     sessionStorage.senha_usuario_meuapp = json.senha;
                     sessionStorage.representante_meuapp = json.representante;
 

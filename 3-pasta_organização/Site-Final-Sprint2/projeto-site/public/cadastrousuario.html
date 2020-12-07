@@ -18,7 +18,7 @@
                     <h3>Cadastro</h3>
                 </div>
 
-                <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <form id="form_cadastro" method="post" onsubmit="return cadastrar_usuario()">
                     <div id="divisoria">
                         <label for="nome">Nome:</label>
                         <input id="nome" name="nome" type="text" placeholder="Nome" required>
@@ -53,7 +53,7 @@
 
     function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
-        fetch("/usuarios/cadastrar", {
+        fetch("/usuarios/cadastrar-usuario", {
             method: "POST",
             body: formulario
         }).then(function (response) {
@@ -66,7 +66,6 @@
 
                 console.log('Erro de cadastro!');
                 response.text().then(function (resposta) {
-                    div_erro.innerHTML = resposta;
                 });
             }
         });
