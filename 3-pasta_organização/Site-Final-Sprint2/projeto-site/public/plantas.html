@@ -40,7 +40,7 @@
                     </h2>
                 </div>
                 <div id="nome_company">
-                        ⚡Phos4⚡
+                    ⚡Phos4⚡
                     <div id="sair">
                         <a href="login.html">
                             <img src="img/sair_icon.png" alt="">
@@ -84,9 +84,12 @@
                                     <img id="imagemdaluz" src="img/lampadash.png" alt="">
                                 </div>
                             </div>
+                            <div id="butaografico">
+                                <button id="btngrafic" onclick="plotgrafico()">Gráfico</button>
+                            </div>
                             <div id="box2">
                                 <div class="porcentagens">
-                                <h2>A</h2>
+                                    <h2>A</h2>
                                     <span id="s_leitura">
                                         <b id="b_leitura">?</b>%
                                     </span>
@@ -109,6 +112,9 @@
                                         <b id="b_leitura4">?</b>%
                                     </span>
                                 </div>
+                            </div>
+                            <div id="mensagem">
+
                             </div>
                         </div>
                     </div>
@@ -171,9 +177,10 @@
             // trocando a imagem e o estilo do valor da leitura
             if (posicao <= 40) {
                 luz.style.background = "rgb(47, 67, 134)";
-                // alert("Luz abaixo do ideal! O sistema aumentará automaticamente!")
+                mensagem.innerHTML=  `Luz abaixo do ideal! O sistema aumentará automaticamente!`
             } else {
                 luz.style.background = "#fba300";
+                mensagem.innerHTML = `Luz está no ideal!`; 
             }
 
 
@@ -187,22 +194,22 @@
             // função que agenda a recuperação da última leitura para daqui a 3 segundos
             receberNovasLeituras();
 
-        }, 4000); // 3000 ms -> 3 segundos
+        }, 2000); // 3000 ms -> 3 segundos
     }
     // indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
     window.onload = receberNovasLeituras;
-    verificar_autenticacao();
+    // verificar_autenticacao();
 </script>
 
 <!--imagem da lampada pra trocar de cores
 https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&position=3&related_item_id=702797 -->
 <script>
     (function (o, c, t, a, d, e, s, k) {
-      o.octadesk = o.octadesk || {};
-      s = c.getElementsByTagName("body")[0];
-      k = c.createElement("script");
-      k.async = 1;
-      k.src = t + '/' + a + '?showButton=' +  d + '&openOnMessage=' + e;
-      s.appendChild(k);
-    })(window, document, 'https://chat.octadesk.services/api/widget', 'phos4',  true, true);
-  </script>
+        o.octadesk = o.octadesk || {};
+        s = c.getElementsByTagName("body")[0];
+        k = c.createElement("script");
+        k.async = 1;
+        k.src = t + '/' + a + '?showButton=' + d + '&openOnMessage=' + e;
+        s.appendChild(k);
+    })(window, document, 'https://chat.octadesk.services/api/widget', 'phos4', true, true);
+</script>
