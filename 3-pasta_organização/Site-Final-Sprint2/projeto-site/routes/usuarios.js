@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
+var cadastrar_usuario = require('../models').cadastro_usuario;
+
 
 let sessoes = [];
 
@@ -72,12 +74,13 @@ router.post('/cadastrar', function(req, res, next) {
 // empresa cadastrando usuario
 /* Cadastrar usuário */
 router.post('/cadastrar-usuario', function(req, res, next) {
-	console.log('Criando um usuário');
+	console.log('Criando um usuário da empresa');
 	
 	cadastrar_usuario.create({
+		CPF: req.body.CPF,
 		nome: req.body.nome,
 		email: req.body.email,
-		CPF: req.body.CPF,
+		funcao: req.body.funcao,
 		senha: req.body.senha
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
