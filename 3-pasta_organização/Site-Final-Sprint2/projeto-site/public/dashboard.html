@@ -23,23 +23,31 @@
 <body>
     <div id="conteiner">
         <div class="menu">
-            <img class="logo" src="img/logo.png">
+            <a href="dashboard.html">
+                <img class="logo" src="img/logo.png">
+            </a>
             <a href="dashboard.html">
                 <div class="div_graf">
-                    <img class="icone_grafico" src="img/grafico.png" alt="">
+                    <img class="icone_grafico" src="img/analytics.png" alt="">
+                    <p style="margin-top: 8%;">Analytics</p>
                 </div>
             </a>
-            <a href="formulario.html">
+            <a href="formulario2.html">
                 <div class="div_supor">
-                    <img class="icon_supor" src="img/icon_suporte.png">
+                    <img class="icon_supor" src="img/fone-de-ouvido (1).png">
+                    <p style="margin-top: 0;">Suporte</p>
                 </div>
             </a>
             <div class="div_config">
                 <img class="icone_config" src="img/config.png" alt="">
+                <p style="margin-top: 4%;">Configuração</p>
             </div>
-            <div class="salas">
-                <img class="icon_planos" src="img/planos.png" alt="">
-            </div>
+            <a href="plantas.html">
+                <div class="salas">
+                    <img class="icon_planos" src="img/planos.png" alt="">
+                    <p style="margin-top: 5%;">Plantas</p>
+                </div>
+            </a>
         </div>
 
         <div id="usuario">
@@ -111,19 +119,15 @@
 
 
 
-
-
-
-
         <script>
             //para identificar seus usuários você deve chamar esse método passando o nome e o email do usuário e opcionalmente informar o id de seu chat
             //lembrando que isso é apenas um modelo teste. Você deve chamar esse método em seu site para efetuar o login. Você pode autenticar seu usuário em qualquer momento no fluxo do seu site.
-            function logar_chat(usuario) {
-                octadesk.chat.login({
-                    name: usuario.name, // nome do seu usuário
-                    email: usuario.email // email do seu usuário
-                });
-            };
+            // function logar_chat(usuario) {
+            //     octadesk.chat.login({
+            //         name: usuario.name, // nome do seu usuário
+            //         email: usuario.email // email do seu usuário
+            //     });
+            // };
         </script>
     </div>
 
@@ -144,7 +148,7 @@
 
         }
 
-        verificar_autenticacao();
+        // verificar_autenticacao();
 
         // neste JSON tem que ser 'labels', 'datasets' etc, 
         // porque é o padrão do Chart.js

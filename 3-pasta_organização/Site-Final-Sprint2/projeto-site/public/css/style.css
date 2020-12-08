@@ -352,9 +352,6 @@ a{ /*faz parte da navbar*/
     flex-direction:row;
     align-items: center;    
 }
-.box-time h5{
-
-}
 .sub-box-time{
     height:75%;
     width:20%;
@@ -397,4 +394,57 @@ footer{
 }
 #cabecalho a{
     margin-right:2%;
+}
+
+#fale{
+    height:85%;
+    width:100%;
+    top: 3%;
+    margin:auto;
+    display: flex;
+    align-items: flex-end;
+    background:url(../img/fundo4.png)center no-repeat ;
+}
+#formContato{
+    height:82%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#formContato input{
+    height:10%;
+    width:60%;
+    border-radius: 8px;
+    border: 1px solid grey;
+    margin-top:1%;
+    background-color: rgba(255, 255, 255, 0.87);
+}
+#formContato h1, h6{
+    color:white;
+    text-align: center;
+}
+#formContato h1{
+    font-size:30px;
+    font-weight: 550;
+}
+#formContato span{
+    color:#E9BA02;
+}
+#formContato h6{
+    font-size:25px;
+    margin-bottom: 7%;
+}
+#btnEnviarForm{
+    height:9%;
+    width:20%;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid #E9BA02;
+    background-color:  #E9BA02;
+    margin-top:2%;  
+    color:white;
+    font-size:18px;
+    font-weight:700;
 }
