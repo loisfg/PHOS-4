@@ -6,7 +6,7 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let cadastrar_usuario = sequelize.define('cadastrar_usuario',{
+    let cadastrarUsuario = sequelize.define('cadastrar_usuario',{
 		CPF: {
 			field: 'CPF',
 			type: DataTypes.INTEGER,
@@ -34,7 +34,11 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false
 		},
 
-	
+		fkUsuario: {
+			field: 'fkUsuario',
+			type: DataTypes.STRING,
+			allowNull: false
+		}
 	}, 
 	{
 		tableName: 'cadastrar_usuario', 
@@ -43,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	});
 
-    return cadastrar_usuario;
+    return cadastrarUsuario;
 };
 
 // cadastro para usuario comum

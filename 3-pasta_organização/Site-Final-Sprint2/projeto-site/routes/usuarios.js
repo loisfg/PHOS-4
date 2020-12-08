@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
-var cadastrar_usuario = require('../models').cadastro_usuario;
+var cadastrar_usuario = require('../models').cadastro_usuarios;
 
 
 let sessoes = [];
@@ -15,11 +15,7 @@ router.post('/autenticar', function(req, res, next) {
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
 	let instrucaoSql = `select * from usuario
-	inner join cadastro_usuario on
-	usuario.id = cadastro_usuario.fkusuario
-	where (usuario.cnpj = '${cnpj_cpf}' and usuario.senha= '${senha})'
-	or
-	(cadastro_usuario.CPF = '${cnpj_cpf}' and cadastro_usuario.senha = '${senha}')`;
+	where usuario.cnpj = '${cnpj_cpf}' and usuario.senha= '${senha}'`;
 
 	console.log(instrucaoSql);
 
@@ -76,7 +72,7 @@ router.post('/cadastrar', function(req, res, next) {
 router.post('/cadastrar-usuario', function(req, res, next) {
 	console.log('Criando um usuário da empresa');
 	
-	cadastrar_usuario.create({
+	cadastrarUsuario.create({
 		CPF: req.body.CPF,
 		nome: req.body.nome,
 		email: req.body.email,

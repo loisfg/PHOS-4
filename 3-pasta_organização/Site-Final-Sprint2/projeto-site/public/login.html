@@ -56,9 +56,9 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.cnpj_usuario_meuapp = json.cnpj_cpf;
-                    sessionStorage.senha_usuario_meuapp = json.senha;
+                    sessionStorage.cnpj_usuario_meuapp = json.cnpj;
                     sessionStorage.representante_meuapp = json.representante;
+                    sessionStorage.getItem('cnpj_usuario_meuapp');
 
                     window.location.href = 'plantas.html';
                 });

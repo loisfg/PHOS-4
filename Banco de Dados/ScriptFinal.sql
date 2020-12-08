@@ -18,16 +18,6 @@ CREATE TABLE empresa_cadastro (
 	senha varchar(20)
     );
 
-	CREATE TABLE Cadastro_usuario (
-	 fkEmpresa_cadastro int,
-     foreign key (fkEmpresa_cadastro) references empresa_cadastro (id_cadastro),
-     CPF char(14),
-    email varchar(225),
-    senha varchar(20),
-	Função varchar(45),
-	primary key (fkEmpresa_cadastro, CPF)
-    );
-
 	create table Ambiente(
 	id_Ambiente int primary key auto_increment,
 	Nome varchar(45),
@@ -55,22 +45,6 @@ VALUES(null,'Google LLC','GOOGLE','(11)4002-8922','(11)98360-8328','SP','São Pa
       (null,'Amazon.com, Inc.','Amazon', '(11)4462-5662','(11)97714-3475','SC','Criciuma','Leonidas','rua hadock',300,'86968356000139','Isabella Pires','amazon@amazon.com','isabel123'),
       (null,'McDonald`s Corporation','McDonalds','(11)4955-9231','(11)98852-1372','SP','São Caetano','Albuquerque','rua joaquim marra',511,'05125461000125','Carlos Eduardo','mcdonalds@mcdonalds.com','Carlinhos321'),
       (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','(11)4976-4548','(11)99774-2019','SP','itaquaquecetuba','Paraíso','rua alcântara',1001,'12345688000135','Matheus Silva','getnet@getnet.com','@123456');
-
-	  INSERT INTO Cadastro_usuario
-VALUES(1,'849.564.170-47','leonardolg@gmail.com','leo12nardo','ADM gestão'),
-      (1,'656.648.130-32','fernandamg@gmail.com','f3rn4nd4','Fullstack'),
-	  (2,'383.463.160-46','gabriellaalb@gmail.com','g4br13ll4','ADM gestão'),
-      (2,'378.665.150-77','kaiquefgds@gmail.com','k41qu3123','Gerente setor A'),
-	  (3,'143.330.110-51','marcoskst@gmail.com','m4rc0s123','ADM gestão'),
-	  (3,'630.738.150-74','luisavict@gmail.com','lu1s4v1c123','Assistente ADM gestão'),
-      (4,'310.394.080-79','rafaelacam@gmail.com','r4f43l4123','ADM gestão'),
-      (4,'651.678.152-20','victorhenr@gmail.com','v1ct0rh3nr1123','Assistente ADM'),
-	  (5,'872.498.160-55','lendrobrol@gmail.com','l34ndr0br123','ADM gestão'),
-	  (5,'438.684.360-49','geovannasest@gmail.com','g30v4nn4s3st4','Analista de dados'),
-      (6,'821.809.740-60','joaovilr@gmail.com','j040v1t0r123','ADM gestão'),
-	  (6,'081.754.050-40','julianaamparo@gmail.com','jul14n44mp4r0','Suporte de comunicação e rede'),
-      (7,'549.876.370-06','samueldepor@gmail.com','s4mu3lde123','ADM gestão'),
-	  (7,'153.362.910-21','lucasaugus@gmail.com','luc4s4ugust0','Front-end');
       
       INSERT INTO Ambiente 
 VALUES(null,'Sala 1C',1,1),
