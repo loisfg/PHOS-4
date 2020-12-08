@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="./css/style-dash_form.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="icon" href="img/logo.png">
+        <script type="text/javascript" src="funcoes.js"></script>
         <title>Suporte</title>
     </head>
     <body>
@@ -31,20 +32,20 @@
                     <p style="margin-top: 4%;">Configuração</p>
                 </div>
                 <div class="salas">
-                    <img class="icon_planos" src="img/planos.png" alt="">
+                  <a href="plantas.html"> <img class="icon_planos" src="img/planos.png" alt=""> </a>
                     <p style="margin-top: 5%;">Plantas</p>
                 </div>
             </div>
 
             <div id="usuario">
                 <div class="mensagem1">
-                    <h3>Olá Franklin,</h3>
+                    <h3>Olá, <b id="b_usuario"></b></h3>
                     <p>Veja aqui sua dashboard</p>
                 </div>
 
 
                 <div class="mensagem2">
-                    <h4>Companhia de iluminação</h4> <img class="use" src="img/user.png" alt="">
+                    <h4>⚡ <b id="b_empresa" style="font-size: 25px;"></b> ⚡</h4> <img class="use" src="img/user.png" alt="">
                     <a href="index.html">
                         <img id="ID_exit" class="exit" src="img/sair_icon.png">
                     </a>
@@ -66,3 +67,6 @@
         </div>
     </body>
 </html>
+        <script>
+            verificar_autenticacao();
+        </script>

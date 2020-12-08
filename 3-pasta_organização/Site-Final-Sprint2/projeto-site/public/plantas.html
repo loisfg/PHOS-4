@@ -5,32 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/plantas.css">
+
+    <!-- Alterei aqui (Luis) -->
+    <!-- script do google charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+
+    <!-- scripts do Chart.js -->
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <!-- Alterei aqui (Luis) -->
+
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="funcoes.js"></script>
-    <title>Plantinhas</title>
+    <script type="text/javascript" src="funcoes.js"></script>
+
+    <title>Plantas</title>
 </head>
 
 <body>
     <div id="pagplantas">
         <div class="menu">
-            <img class="logo" src="img/logo.png">
+            <a href="dashboard.html">
+                <img class="logo" src="img/logo.png">
+            </a>
             <a href="dashboard.html">
                 <div class="div_graf">
-                    <img class="icone_grafico" src="img/grafico.png" alt="">
+                    <img class="icone_grafico" src="img/analytics.png" alt="">
+                    <p style="margin-top: 8%;">Analytics</p>
                 </div>
             </a>
-            <a href="formulario.html">
+            <a href="formulario2.html">
                 <div class="div_supor">
-                    <img class="icon_supor" src="img/icon_suporte.png">
+                    <img class="icon_supor" src="img/fone-de-ouvido (1).png">
+                    <p style="margin-top: 0;">Suporte</p>
                 </div>
             </a>
-            <div class="icon_salas">
-                <img class="icon_planos" src="img/planos.png" alt="">
-            </div>
             <div class="div_config">
                 <img class="icone_config" src="img/config.png" alt="">
+                <p style="margin-top: 4%;">Configuração</p>
             </div>
+            <a href="plantas.html">
+                <div class="salas">
+                    <img class="icon_planos" src="img/planos.png" alt="">
+                    <p style="margin-top: 5%;">Plantas</p>
+                </div>
+            </a>
         </div>
+
         <div class="container">
             <!-- PARTE DO USUARIO -->
             <div id="usuario">
@@ -40,7 +62,7 @@
                     </h2>
                 </div>
                 <div id="nome_company">
-                    ⚡Phos4⚡
+                    ⚡ <b id="b_empresa"></b> ⚡
                     <div id="sair">
                         <a href="login.html">
                             <img src="img/sair_icon.png" alt="">
@@ -85,7 +107,8 @@
                                 </div>
                             </div>
                             <div id="butaografico">
-                                <button id="btngrafic" onclick="plotgrafico()">Gráfico</button>
+                                <button id="btngrafic" onclick="visualizar()">Gráfico</button>
+                                <button id="btnvoltar" onclick="voltar()">Voltar</button>
                             </div>
                             <div id="box2">
                                 <div class="porcentagens">
@@ -111,6 +134,15 @@
                                     <span class="cemporcento">
                                         <b id="b_leitura4">?</b>%
                                     </span>
+                                </div>
+                            </div>
+                            <div id="graficochart">
+                                <div id="boxgraficos">
+                                    <div id="div_grafico_canvas">
+                                        <section style="width:100%">
+                                            <canvas id="canvas_grafico"></canvas>
+                                            <section>
+                                    </div>
                                 </div>
                             </div>
                             <div id="mensagem">
@@ -177,10 +209,10 @@
             // trocando a imagem e o estilo do valor da leitura
             if (posicao <= 40) {
                 luz.style.background = "rgb(47, 67, 134)";
-                mensagem.innerHTML=  `Luz abaixo do ideal! O sistema aumentará automaticamente!`
+                mensagem.innerHTML = `Luz abaixo do ideal! O sistema aumentará automaticamente!`
             } else {
                 luz.style.background = "#fba300";
-                mensagem.innerHTML = `Luz está no ideal!`; 
+                mensagem.innerHTML = `Luz está no ideal!`;
             }
 
 
@@ -196,9 +228,10 @@
 
         }, 2000); // 3000 ms -> 3 segundos
     }
-    // indicando que a função "receberNovasLeituras" será invocada assim que a página carregar
-    window.onload = receberNovasLeituras;
+    // indicando que a função "receberNovasLeituras" será invocada assim que a página carrega
+    window.onload = receberNovasLeituras();
     verificar_autenticacao();
+
 </script>
 
 <!--imagem da lampada pra trocar de cores
@@ -212,4 +245,188 @@ https://www.flaticon.com/br/icone-gratis/lampada_702797?term=light&page=1&positi
         k.src = t + '/' + a + '?showButton=' + d + '&openOnMessage=' + e;
         s.appendChild(k);
     })(window, document, 'https://chat.octadesk.services/api/widget', 'phos4', true, true);
+</script>
+
+<script>
+    
+    //AQUI COMEÇA PLOTAR GRAFICO
+
+    let proximaAtualizacao;
+
+        window.onload = obterDadosGraficoPrimeiraVez(1);
+
+
+        function chamargraficos(idsensor) {
+
+            obterDadosGraficoPrimeiraVez(idsensor)
+            atualizarGrafico(idsensor)
+
+        }
+
+        verificar_autenticacao();
+
+        // neste JSON tem que ser 'labels', 'datasets' etc, 
+        // porque é o padrão do Chart.js
+
+
+
+        // altere aqui as configurações do gráfico
+        // (tamanhos, cores, textos, etc)
+        function configurarGrafico() {
+            var configuracoes = {
+                responsive: true,
+                animation: { duration: 500 },
+                hoverMode: 'index',
+                stacked: false,
+                title: {
+                    display: true,
+                    text: 'Histórico recente de temperatura e umidade'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                        display: true,
+                        position: 'left',
+                        id: 'y-temperatura',
+
+                        gridLines: {
+                            drawOnChartArea: false, // only want the grid lines for one axis to show up
+                        },
+                    }],
+                }
+            };
+
+            return configuracoes;
+        }
+
+        // altere aqui como os dados serão exibidos
+        // e como são recuperados do BackEnd
+        function obterDadosGraficoPrimeiraVez(idsensor) {
+
+            if (proximaAtualizacao != undefined) {
+                clearTimeout(proximaAtualizacao);
+            }
+
+            fetch(`/leituras/ultimas/${idsensor}`, { cache: 'no-store' }).then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+                        var dados = {
+                            labels: [],
+                            datasets: [
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'Lux',
+                                    borderColor: window.chartColors.yellow,
+                                    backgroundColor: window.chartColors.grey,
+                                    fill: false,
+                                    data: []
+                                }
+                            ]
+                        };
+                        for (i = 0; i < resposta.length; i++) {
+                            var registro = resposta[i];
+                            dados.labels.push(registro.momento_grafico);
+                            dados.datasets[0].data.push(registro.lux);
+                            // dados.datasets[1].data.push(registro.luminosidade);
+
+                        }
+                        console.log(JSON.stringify(dados));
+                        plotarGrafico(dados, idsensor);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+
+        }
+
+
+
+        // só mexer se quiser alterar o tempo de atualização
+        // ou se souber o que está fazendo!
+        function atualizarGrafico(idsensor, dados) {
+
+            fetch(`/leituras/tempo-real/${idsensor}`, { cache: 'no-store' }).then(function (response) {
+                console.log("Estou tentando pegar idsensor = ", idsensor)
+                if (response.ok) {
+                    response.json().then(function (novoRegistro) {
+
+                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                        console.log(`Dados atuais do gráfico: ${dados}`);
+
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
+                        dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                        // dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                        dados.datasets[0].data.push(novoRegistro.lux); // incluir uma nova leitura de temperatura
+                        // dados.datasets[1].data.push(novoRegistro.luminosidade); // incluir uma nova leitura de umidade
+
+                        console.log("meu Lux é o " + idsensor)
+
+                        window.grafico_linha.update();
+
+
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
+                }
+            })
+                .catch(function (error) {
+                    console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+                });
+
+        }
+
+        // só altere aqui se souber o que está fazendo!
+        function plotarGrafico(dados, idsensor) {
+            console.log('iniciando plotagem do gráfico...');
+
+            var ctx = canvas_grafico.getContext('2d');
+            window.grafico_linha = Chart.Line(ctx, {
+                data: dados,
+                options: configurarGrafico()
+            });
+
+            setTimeout(() => atualizarGrafico(idsensor, dados), 5000);
+        }
+
+
+// function sendData() {
+//     var http = new XMLHttpRequest();
+//     http.open('GET', 'http://localhost:9000/api/sendData', false);
+//     http.send(null);
+// }
+
+// setInterval(() => {
+//     sendData();
+// }, 2000);
+
+</script>
+
+<script>
+    function visualizar() {
+       graficochart.style = `display: block`;
+       btnvoltar.style = `display: block`;
+       box2.style = `display: none`;
+       btngrafic.style = `display: none`;
+       mensagem.style = `display: none`;
+
+    }
+    function voltar() {
+        graficochart.style = `display: none`;
+        btnvoltar.style = `display: none`;
+        box2.style = `display: block`;
+        box2.style = `display: flex`;
+        btngrafic.style = `display: block`;
+        mensagem.style = `display: block`;
+    }
 </script>

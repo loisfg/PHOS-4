@@ -221,7 +221,7 @@ body {
 #onde {
     width: 100%;
     height: 10%;
-    background-color: rgba(255, 0, 0, 0.794);
+    background-color: rgba(255, 166, 0, 0.911);
     display: flex;
     align-items: center;
 }
@@ -298,7 +298,7 @@ body {
 .porcentagens {
     width: 21.5%;
     height: 50%;
-    background-color: blue;
+    background-color: #fba300;
     border-radius: 15px;
 }
 
@@ -324,11 +324,31 @@ body {
     text-transform: uppercase;
 }
 
+#btnvoltar {
+
+    width: 43%;
+    height: 120%;
+    background-color: #fba300;
+    border-radius: 10px;
+    margin-right: 2%;
+    border: none;
+    font-size: 18x;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: none;
+}
+
 #btngrafic:hover{
     background-color: white;
     color:#fba300;
     border-radius: 10px;
-    margin-right: 5%;
+    border: none;
+
+}
+#btnvoltar:hover{
+    background-color: white;
+    color:#fba300;
+    border-radius: 10px;
     border: none;
 
 }
@@ -392,4 +412,118 @@ body {
     text-align: center;
     color: white;
     font-size: 20px;
+}
+
+#graficochart{
+    width: 100%;
+    height: 55%;
+    display: none;
+}
+
+.menu {
+    width: 6em; 
+    height: 100%;
+    background: black;
+    position: fixed;
+    float: left;
+}
+
+.exit {
+    width: 8%; 
+    cursor:pointer;
+    position: absolute;
+    top: 30%;
+    right: 0.2%;
+}
+
+.div_graf, .div_supor, .div_config, .salas p{
+    margin:0;
+    color:white;
+    text-decoration: none;
+    border:none;
+    border-bottom: 0;
+    margin-top:0;
+    font-size:13px;
+}
+
+.div_graf{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 35%;
+}
+
+.div_supor{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    cursor:pointer;
+}
+.div_config{
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    bottom: 0;
+    position: absolute;
+    cursor:pointer;
+}
+.salas {
+    width: 100%;
+    height: 10%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    bottom: 0;
+    cursor:pointer;
+
+}
+.logo {
+    width: 90%; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    padding-left: 7%; 
+    cursor:pointer;
+}
+
+.icone_grafico,.icon_planos,.icone_config{
+    width: 30px;
+}
+.icon_supor{
+    width: 45px;
+}
+.div_graf:hover{
+    background-color:#131212;
+}
+
+.div_supor:hover {
+    background-color:#131212;
+}
+
+.div_config:hover{
+    background-color:#131212;
+}
+.salas:hover{
+    background-color:#131212;
+}
+
+.header {
+    width: 100%;
+    height: 49%;
+    position: absolute;   
+}
+a:link {
+    text-decoration:none;
 }

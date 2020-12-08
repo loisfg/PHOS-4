@@ -1,6 +1,7 @@
 let cnpj_usuario;
 let nome_usuario;
 let representante_usuario;
+let nome_empresa;
 
 function redirecionar_login() {
     window.location.href = 'login.html';
@@ -11,11 +12,14 @@ function verificar_autenticacao() {
     cnpj_usuario = sessionStorage.cnpj_usuario_meuapp;
     nome_usuario = sessionStorage.nome_usuario_meuapp;
     representante_usuario = sessionStorage.representante_meuapp;
+    nomeempresa = sessionStorage.nomefantasia_meuapp;
+
 
     if (cnpj_usuario == undefined)  {
         redirecionar_login();
     } else {
         b_usuario.innerHTML = representante_usuario;
+        b_empresa.innerHTML = nomeempresa;
         validar_sessao();
     }
     
