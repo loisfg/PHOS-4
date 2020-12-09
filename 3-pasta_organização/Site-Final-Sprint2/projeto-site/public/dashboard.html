@@ -165,7 +165,7 @@
                 stacked: false,
                 title: {
                     display: true,
-                    text: 'Histórico recente de temperatura e umidade'
+                    text: 'Histórico recente da média de lux na sua sala!'
                 },
                 scales: {
                     yAxes: [{
@@ -249,11 +249,11 @@
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro.momento_grafico); // incluir um novo momento
                         dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                        dados.datasets[1].data.shift();  // apagar o primeiro de umidade
+                        // dados.datasets[1].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro.lux); // incluir uma nova leitura de temperatura
                         // dados.datasets[1].data.push(novoRegistro.luminosidade); // incluir uma nova leitura de umidade
 
-                        console.log("meu Silo é o " + idsensor)
+                        console.log("meu sensor é o " + idsensor)
 
                         window.grafico_linha.update();
 
