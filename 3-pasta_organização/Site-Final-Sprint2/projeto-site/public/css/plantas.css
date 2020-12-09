@@ -255,9 +255,9 @@ body {
     float: right;
 }
 #imagemplanta{
-    width: 95%;
+    width: 96.5%;
     height: 90%;
-    background: url(../img/planta_sala.png) center no-repeat;
+    background: url(/img/planta_sala.png) center no-repeat;
     background-size: cover;
     margin: 2.5%;
     
