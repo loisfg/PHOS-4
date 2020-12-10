@@ -26,6 +26,16 @@ CREATE TABLE empresa_cadastro (
     foreign key(fkempresa_cadastro) references empresa_cadastro (id_cadastro)
 	)auto_increment = 1000;
     
+       CREATE TABLE Cadastro_usuario (
+	CPF int,
+    fkempresa_cadastro int,
+	foreign key(fkempresa_cadastro) references empresa_cadastro (id_cadastro),
+    primary key(CPF,fkempresa_cadastro),
+    E_mail varchar(75),
+    senha varchar(75),
+	Função varchar(50),
+    Nome varchar(70)
+    );
 
 
  CREATE TABLE Sensor (
@@ -45,6 +55,22 @@ VALUES(null,'Google LLC','GOOGLE','(11)4002-8922','(11)98360-8328','SP','São Pa
       (null,'Amazon.com, Inc.','Amazon', '(11)4462-5662','(11)97714-3475','SC','Criciuma','Leonidas','rua hadock',300,'86968356000139','Isabella Pires','amazon@amazon.com','isabel123'),
       (null,'McDonald`s Corporation','McDonalds','(11)4955-9231','(11)98852-1372','SP','São Caetano','Albuquerque','rua joaquim marra',511,'05125461000125','Carlos Eduardo','mcdonalds@mcdonalds.com','Carlinhos321'),
       (null,'GETNET ADQUIRENCIA E SERVICOS PARA MEIOS DE PAGAMENTO S.A.','GetNet','(11)4976-4548','(11)99774-2019','SP','itaquaquecetuba','Paraíso','rua alcântara',1001,'12345688000135','Matheus Silva','getnet@getnet.com','@123456');
+      
+       INSERT INTO Cadastro_usuario
+VALUES('849.564.170-47','natanista','@2e1oUdhu8QWQ80BWD','ADM gestão'),
+      ('656.648.130-32','Luciene','glapccd','Fullstack'),
+	  ('383.463.160-46','LuizGsilva','ghghhghg','ADM gestão'),
+      ('378.665.150-77','Maristela','joinha','Gerente setor A'),
+	  ('143.330.110-51','ViniOliveira','vinivini321','ADM gestão'),
+	  ('630.738.150-74','Robson','robinho','Assistente ADM gestão'),
+      ('310.394.080-79', 'LuisFRocha','lflflflf','ADM gestão'),
+      ('651.678.152-20','Cleiton','basquete123','Assistente ADM'),
+	  ('872.498.160-55','Carlos','carlos15','ADM gestão'),
+	  ('438.684.360-49','Oswaldo','oswaldinho123','Analista de dados'),
+      ('821.809.740-60','ThallesBuso','thallesb','ADM gestão'),
+	  ('081.754.050-40','Cleberson','batinha','Suporte de comunicação e rede'),
+      ('549.876.370-06','MatheusDaniel','@123456','ADM gestão'),
+	  ('153.362.910-21','Silene','senha123','Front-end');
       
       INSERT INTO Ambiente 
 VALUES(null,'Sala 1C',1,1),
